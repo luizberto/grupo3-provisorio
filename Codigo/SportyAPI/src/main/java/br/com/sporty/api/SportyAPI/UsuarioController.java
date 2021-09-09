@@ -13,6 +13,35 @@ public class UsuarioController {
 
     List<Usuario> listaUser = new ArrayList<>();
 
+    @PostMapping("/login")
+    public String login(@RequestBody String email, @RequestBody String senha){
+        for(Usuario u: listaUser){
+            if(u.getEmail().equals(email) && u.getSenha().equals(senha)){
+                if(u.getAutenticado()){
+                    return "Usuario já está logado";
+                }else{
+                    u.setAutenticado(true);
+                    return "Usuario logado com sucesso";
+                }
+            }
+        }
+        return "Usuario não encontrado";
+    }
+
+    @PostMapping("/logoff")
+    public String logoff(@RequestBody String email){
+        for(Usuario u: listaUser){
+            if(u.getEmail().equals(email)){
+                if(!u.getAutenticado()){
+                    return "Usuario não está logado";
+                }else{
+                    u.setAutenticado(false);
+                    return "Usuário saiu";
+                }
+            }
+        }
+        return "Usuario não encontrado";
+    }
 
     @PostMapping("/jogador")
     public String addUserJogador(@RequestBody UsuarioJogador u){

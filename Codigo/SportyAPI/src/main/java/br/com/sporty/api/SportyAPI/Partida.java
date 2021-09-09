@@ -1,12 +1,14 @@
 package br.com.sporty.api.SportyAPI;
 
+import java.util.Date;
+
 public class Partida {
     private Integer id;
-    private String hora;
+    private Date horario;
 
-    public Partida(Integer id, String hora) {
+    public Partida(Integer id, Date hora) {
         this.id = id;
-        this.hora = hora;
+        this.horario = hora;
     }
 
     public Integer getId() {
@@ -17,11 +19,11 @@ public class Partida {
         this.id = id;
     }
 
-    public String getHora() {
-        return hora;
+    public Date getHorario() {
+        return horario;
     }
 
-    public void setHora(String hora) {
-        this.hora = hora;
+    public void setHorario(Date hora) {
+        this.horario = hora;
     }
 }
