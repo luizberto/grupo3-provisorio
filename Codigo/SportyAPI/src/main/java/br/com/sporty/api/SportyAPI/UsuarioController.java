@@ -15,13 +15,13 @@ public class UsuarioController {
 
 
     @PostMapping("/jogador")
-    public String addUserJogador(@RequestBody br.com.joao.c13adsajoaovitorrosa01201126.UsuarioJogador u){
+    public String addUserJogador(@RequestBody UsuarioJogador u){
         listaUser.add(u);
         u.setId(listaUser.size());
         return "Cadastrado";
     }
     @PostMapping("/dono")
-    public String addUserDono(@RequestBody br.com.joao.c13adsajoaovitorrosa01201126.UsuarioDono u){
+    public String addUserDono(@RequestBody UsuarioDono u){
         listaUser.add(u);
         u.setId(listaUser.size());
         return "Cadastrado";
@@ -32,7 +32,7 @@ public class UsuarioController {
                 .sorted(Comparator.comparing(Usuario::getId))
                 .collect(Collectors.toList());
     }
-    @DeleteMapping()
+    @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable int id){
         for(Usuario user: listaUser){
             if(user.getId() == id){

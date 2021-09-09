@@ -7,18 +7,18 @@ public class Quadra {
     private Integer id;
     private String nome;
     private String endereco;
-    private List<br.com.joao.c13adsajoaovitorrosa01201126.Partida> partidas = new ArrayList<>();
+    private List<Partida> partidas = new ArrayList<>();
 
-    public Quadra(Integer id, String nome, String endereco) {
-        this.id = id;
+
+    public Quadra(String nome, String endereco) {
         this.nome = nome;
         this.endereco = endereco;
     }
 
-    public void addPartida(br.com.joao.c13adsajoaovitorrosa01201126.Partida p){
+    public void addPartida(Partida p){
         partidas.add(p);
     }
-    public void deletePartida(br.com.joao.c13adsajoaovitorrosa01201126.Partida p){
+    public void deletePartida(Partida p){
         partidas.remove(p);
     }
     public Integer getId() {
@@ -33,7 +33,7 @@ public class Quadra {
         return endereco;
     }
 
-    public List<br.com.joao.c13adsajoaovitorrosa01201126.Partida> getPartidas() {
+    public List<Partida> getPartidas() {
         return partidas;
     }
 
