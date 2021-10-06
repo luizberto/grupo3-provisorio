@@ -24,8 +24,8 @@ a{
     align-items: center;
     padding: 20px;
     flex-wrap: wrap;
-    background-color: black;
-    border-bottom:cornsilk 5px solid ;
+    background-color: rgb(36, 32, 32);
+    border-bottom:cornsilk 2px solid ;
 }
 
 .menu{
@@ -67,7 +67,7 @@ a{
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 59px;
-    background-color: black;
+    background-color: rgb(36, 32, 32)
 }
 
 .sobre h1{
@@ -78,7 +78,7 @@ a{
 }
 
 .image{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(36, 32, 32);
     margin-left: 90px;
 }
 
@@ -92,7 +92,7 @@ a{
     width: 253px;
     height: 200px;
     padding: 80px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(36, 32, 32);
     margin-right: 90px;
 }
 
@@ -106,7 +106,7 @@ a{
 .botaoSobre{
     margin-left: 69px;
     margin-top: 22px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(36, 32, 32);
     color: seashell;
     border-radius: 60px;
     border-color: seashell;
@@ -124,6 +124,7 @@ a{
     background-image: url(/img/fut.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgba(0, 0, 0, 0.281);
     background-blend-mode: darken;
 }
 
@@ -138,7 +139,7 @@ a{
 }
 
 .serv p{
-    font-size: medium;
+    font-size: small;
     text-align: justify;
     color: blanchedalmond;
 
@@ -156,7 +157,10 @@ a{
     align-items: center;  
     width: 300px;
     height: 300px;
+    border-radius: 20%;
+    border: solid rgb(19, 150, 15) 2px;
     background-color: rgba(0, 0, 0, 0.486);
+    padding: 3%;
    
     
 }
@@ -167,7 +171,7 @@ a{
     align-items: center;
     padding: 20px;
     flex-wrap: wrap;
-    background-color: black;
+    background-color: rgb(36, 32, 32);
     border-bottom:cornsilk 5px solid ;
 }
 
