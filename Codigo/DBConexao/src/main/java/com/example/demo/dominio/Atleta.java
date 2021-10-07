@@ -4,14 +4,17 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Table(name = "atleta", indexes = {
-        @Index(name = "fk_Atleta_Endereco1_idx", columnList = "Endereco_cep")
+        @Index(name = "fk_Atleta_Endereco1_idx", columnList = "fkEndereco")
 })
 @Entity
 public class Atleta {
     @Id
-    @Column(name = "cpf", nullable = false)
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idAtleta", nullable = false)
     private Integer id;
+
+    @Column(name = "cpf", length = 11)
+    private String cpf;
 
     @Column(name = "nomeAtleta", length = 45)
     private String nomeAtleta;
@@ -26,15 +29,15 @@ public class Atleta {
     private LocalDate dataNasc;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "Endereco_cep", nullable = false)
-    private Endereco enderecoCep;
+    @JoinColumn(name = "fkEndereco", nullable = false)
+    private Endereco enderecoIdendereco;
 
-    public Endereco getEnderecoCep() {
-        return enderecoCep;
+    public Endereco getFkIdendereco() {
+        return enderecoIdendereco;
     }
 
-    public void setEnderecoCep(Endereco enderecoCep) {
-        this.enderecoCep = enderecoCep;
+    public void setFkIdendereco(Endereco enderecoIdendereco) {
+        this.enderecoIdendereco = enderecoIdendereco;
     }
 
     public LocalDate getDataNasc() {
@@ -67,6 +70,14 @@ public class Atleta {
 
     public void setNomeAtleta(String nomeAtleta) {
         this.nomeAtleta = nomeAtleta;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public Integer getId() {

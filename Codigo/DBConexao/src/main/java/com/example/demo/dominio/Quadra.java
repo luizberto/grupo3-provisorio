@@ -3,13 +3,12 @@ package com.example.demo.dominio;
 import javax.persistence.*;
 
 @Table(name = "quadra", indexes = {
-        @Index(name = "fk_Quadra_Endereco1_idx", columnList = "Endereco_cep")
+        @Index(name = "fk_Quadra_Endereco1_idx", columnList = "Endereco_idEndereco")
 })
 @Entity
 public class Quadra {
     @Id
     @Column(name = "idQuadra", nullable = false)
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "nomeQuadra", length = 45)
@@ -28,15 +27,15 @@ public class Quadra {
     private String complemento;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "Endereco_cep", nullable = false)
-    private Endereco enderecoCep;
+    @JoinColumn(name = "Endereco_idEndereco", nullable = false)
+    private Endereco enderecoIdendereco;
 
-    public Endereco getEnderecoCep() {
-        return enderecoCep;
+    public Endereco getEnderecoIdendereco() {
+        return enderecoIdendereco;
     }
 
-    public void setEnderecoCep(Endereco enderecoCep) {
-        this.enderecoCep = enderecoCep;
+    public void setEnderecoIdendereco(Endereco enderecoIdendereco) {
+        this.enderecoIdendereco = enderecoIdendereco;
     }
 
     public String getComplemento() {

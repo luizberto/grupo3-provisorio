@@ -1,35 +1,31 @@
 package com.example.demo.controller;
 
-import com.example.demo.dominio.Endereco;
 import com.example.demo.dominio.Quadra;
-import com.example.demo.repositorio.EnderecoRepository;
+import com.example.demo.repositorio.QuadraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController // This means that this class is a Controller
-@RequestMapping("/enderecos") // This means URL's start with /demo (after Application path)
-public class EnderecoController {
-    @Autowired
-    EnderecoRepository enderecoRepository;
+public class QuadraController {
+    @Autowired QuadraRepository quadraRepository;
 
     @PostMapping
-    public ResponseEntity postQuadra(@RequestBody Endereco endereco) {
-        enderecoRepository.save(endereco);
+    public ResponseEntity postQuadra(@RequestBody Quadra quadra) {
+        quadraRepository.save(quadra);
         return ResponseEntity.status(201).build();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity getJogo(@PathVariable int id) {
-        return ResponseEntity.of(enderecoRepository.findById(id));
+        return ResponseEntity.of(quadraRepository.findById(id));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity deleteJogo(@PathVariable int id) {
-        if (enderecoRepository.existsById(id)) {
-            enderecoRepository.deleteById(id);
+        if (quadraRepository.existsById(id)) {
+            quadraRepository.deleteById(id);
             return ResponseEntity.status(200).build();
         } else {
             return ResponseEntity.status(404).build();
@@ -38,20 +34,20 @@ public class EnderecoController {
 
     @GetMapping
     public ResponseEntity getQuadras() {
-        List<Endereco> enderecos = enderecoRepository.findAll();
-        if (enderecos.isEmpty()) {
+        List<Quadra> quadras = quadraRepository.findAll();
+        if (quadras.isEmpty()) {
             return ResponseEntity.status(204).build();
         } else {
-            return ResponseEntity.status(200).body(enderecos);
+            return ResponseEntity.status(200).body(quadras);
         }
     }
 
     @PutMapping("/{id}")
     public ResponseEntity putJogo(@PathVariable int id,
-                                  @RequestBody Endereco enderecoAtt) {
-        if (enderecoRepository.existsById(id)) {
-            enderecoAtt.setId(id);
-            enderecoRepository.save(enderecoAtt);
+                                  @RequestBody Quadra quadraAtt) {
+        if (quadraRepository.existsById(id)) {
+            quadraAtt.setId(id);
+            quadraRepository.save(quadraAtt);
             return ResponseEntity.status(200).build();
         } else {
             return ResponseEntity.status(404).build();
@@ -60,7 +56,7 @@ public class EnderecoController {
 
     @GetMapping("/total")
     public ResponseEntity getQuadrasTotal() {
-        Long total = enderecoRepository.count();
+        Long total = quadraRepository.count();
 
         return ResponseEntity.status(200).body(total);
     }
