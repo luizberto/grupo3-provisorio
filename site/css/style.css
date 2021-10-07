@@ -4,6 +4,7 @@ body, ul, li, p{
     list-style: none;
     font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -43,8 +44,30 @@ a{
     padding: 10px;
 }
 
+.menu li a:hover{
+    color: orange;
+    transition: 100ms;
+
+}
+
 
 /*banner com gif*/
+
+
+.titulo{
+    display: flex;
+    flex-direction: row;
+    align-self:flex-start;
+    width: 435px;
+    height: 125px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.titulo h3{
+    
+    text-align: start;
+}
 
 .banner{
     display: flex;
@@ -53,9 +76,10 @@ a{
     background-image: url(../img/gifff.gif);
     background-size: cover;
     background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-color: rgba(29, 24, 24, 0.356);
     background-position: 100%;
-    color:#ffef11;
-    text-align: center;
+    color:#eeede6;
     padding: 20px 10px 10px 20px;
     height: 390px;
 }
@@ -114,6 +138,12 @@ a{
     cursor: pointer;
 }
 
+.botaoSobre:hover{
+    background-color: papayawhip;
+    color: black;
+    transition:1.5s;
+}
+
 .servicos{
     display: flex;
     flex-direction: row;
@@ -128,6 +158,8 @@ a{
     background-blend-mode: darken;
 }
 
+
+
 .servicos h1{
     text-align: center;
     font-size: large;
@@ -136,6 +168,8 @@ a{
     width: 100%;
     margin-bottom: 4%;
     color: blanchedalmond;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 .serv p{
@@ -163,6 +197,11 @@ a{
     padding: 3%;
    
     
+}
+
+.serv:hover{
+    border-color: orange;
+    transition: 2s;
 }
 
 .footer{
