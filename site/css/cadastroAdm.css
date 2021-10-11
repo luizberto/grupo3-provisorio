@@ -10,15 +10,17 @@ main .background {
 
 main .background span {
     width: 80%;
-    height: 8%;
+    height: 7%;
 }
-
 
 main .container {
     border: 1px solid grey;
-    width: 80%;
+    width: 50%;
     height: 85%;
     border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main .borderTop {
@@ -30,78 +32,45 @@ main .borderTop {
 }
 
 main .dadosCadastro {
-    width: 100%;
+    width: 50%;
     height: 60%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 main .dadosCadastro input {
     border-radius: 10px;
+    width: 100%;
+    padding: 3px;
+    color: black;
 }
 
-main .infoPessoal {
-    width: 50%;
-    height: 87%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-main .infoPessoal h2 {
+main .dadosCadastro h2 {
     margin: 0;
 }
 
-main .infoPessoal span {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-}
 
-
-
-main .infoPessoal p {
-    margin: 0;
-}
-
-main .infoEndereco {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-main .infoEndereco h2 {
-    margin: 0;
-}
-
-main .infoEndereco span {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-}
-
-main .infoEndereco p {
-    margin: 0;
-}
-
-main .infoEndereco button {
+main .dadosCadastro button {
     width: 15vh;
     height: 5vh;
     background: grey;
-    color: black;
+    color: whitesmoke;
     font-weight: bold;
     border-radius: 15px;
     cursor: pointer;
     transition: 0.7s;
 }
 
-main .infoEndereco button:hover {
+main .dadosCadastro button:hover {
     background: black;
     color: white;
     border: white 2px solid;
+}
+
+main .dadosCadastro p {
+    margin: 0;
 }
 
 main .borderBottom {
@@ -110,5 +79,4 @@ main .borderBottom {
     border-radius: 0px 0px 50px 50px;
     background: url(../img/border-bottom.png) no-repeat;
     background-size: cover;
-    ;
 }
