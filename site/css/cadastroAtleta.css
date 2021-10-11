@@ -5,7 +5,7 @@ body, a, li, p{
     font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Roboto', sans-serif;
-    color: rgb(233, 247, 240);
+   
 }
 
  .background {
@@ -24,7 +24,7 @@ body, a, li, p{
 }
 
 
- .container {
+ .boxContainer {
     border: 1px solid grey;
     width: 80%;
     height: 85%;
@@ -45,15 +45,15 @@ body, a, li, p{
     display: flex;
 }
 
- .dadosCadastro input {
-     
+ .campo{
+    color: black;
     border-radius: 10px;
     border-color: green;
     border-style: solid;
-}
+ }
 
- .dadosCadastro input:focus{
-     outline: none;
+ .campo:focus{
+    outline: none;
     border-color: rgb(231, 156, 16);
     border-style: solid;
 
@@ -103,12 +103,12 @@ main .infoEndereco p {
 }
 
 main .infoEndereco button {
-    width: 15vh;
-    height: 5vh;
+    width: 18vh;
+    height: 7vh;
+    margin-top: 4%;
     background: rgb(3, 3, 3);
     border-color: rgb(255, 129, 11);
     color: rgb(253, 252, 252);
-    font-weight: bold;
     border-radius: 15px;
     cursor: pointer;
     transition: 0.7s;
@@ -127,5 +127,4 @@ main .borderBottom {
     border-radius: 0px 0px 50px 50px;
     background: url(../img/border-bottom.png) no-repeat;
     background-size: cover;
-    ;
 }
