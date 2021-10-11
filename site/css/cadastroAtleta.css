@@ -1,0 +1,114 @@
+main .background {
+    width: 100%;
+    height: 120vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+main .background span {
+    width: 80%;
+    height: 8%;
+}
+
+
+main .container {
+    border: 1px solid grey;
+    width: 80%;
+    height: 85%;
+    border-radius: 50px;
+}
+
+main .borderTop {
+    width: 100%;
+    height: 20%;
+    border-radius: 50px 50px 0px 0px;
+    background: url(../img/border-top.png) no-repeat;
+    background-size: cover;
+}
+
+main .dadosCadastro {
+    width: 100%;
+    height: 60%;
+    display: flex;
+}
+
+main .dadosCadastro input {
+    border-radius: 10px;
+}
+
+main .infoPessoal {
+    width: 50%;
+    height: 87%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main .infoPessoal h2 {
+    margin: 0;
+}
+
+main .infoPessoal span {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+main .infoPessoal p {
+    margin: 0;
+}
+
+main .infoEndereco {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main .infoEndereco h2 {
+    margin: 0;
+}
+
+main .infoEndereco span {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+main .infoEndereco p {
+    margin: 0;
+}
+
+main .infoEndereco button {
+    width: 15vh;
+    height: 5vh;
+    background: whitesmoke;
+    color: black;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+main .infoEndereco button:hover {
+    background: grey;
+    color: white;
+    border: black 2px solid;
+}
+
+main .borderBottom {
+    width: 100%;
+    height: 20%;
+    border-radius: 0px 0px 50px 50px;
+    background: url(../img/border-bottom.png) no-repeat;
+    background-size: cover;
+    ;
+}

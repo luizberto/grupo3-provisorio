@@ -1,0 +1,195 @@
+main {
+    background: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main .container {
+    width: 70%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main .dadosLogin {
+    width: 40%;
+    height: 100%;
+    border: 1px solid grey;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+main .borderTop {
+    width: 100%;
+    height: 25%;
+    border-radius: 20px;
+    background: url(../img/border-top.png) no-repeat;
+    background-size: cover;
+}
+
+main .borderBottom {
+    width: 100%;
+    height: 25%;
+    border-radius: 20px;
+    background: url(../img/border-bottom.png) no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main .redes {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main .redes img {
+    width: 15%;
+}
+
+main .linkDono {
+    width: 45%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main .linkDono h4 {
+    margin: 0;
+}
+
+main .linkDono a {
+    padding: 8px;
+    background: whitesmoke;
+    color: black;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+main .linkDono a:hover {
+    background: grey;
+    color: white;
+    border: black 2px solid;
+}
+
+main .inputsLogin {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main .inputsLogin input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+main .inputsLogin b {
+    display: flex;
+    flex-direction: column;
+}
+
+main .inputsLogin i {
+    cursor: pointer;
+    font-size: small;
+    text-decoration: underline;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+main .inputsLogin button {
+    width: 45%;
+    height: 15%;
+    background: transparent;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.7s;
+    font-weight: bold;
+    border: 1px solid whitesmoke;
+}
+
+main .inputsLogin button:hover {
+    background: grey;
+    color: black;
+    border: white 2px solid;
+}
+
+main .divCadastro {
+    width: 50%;
+    height: 100%;
+    background: url("../img/backCadastro.jpg") no-repeat;
+    border-radius: 20px;
+    background-size: cover;
+}
+
+main .ofuscarBG {
+    width: 100%;
+    height: 100%;
+    border: 1px solid grey;
+    background: rgba(0, 0, 0, 0.582);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .infoCadastro {
+    background: rgba(0, 0, 0, 0.582);
+    color: white;
+    width: 60%;
+    height: 50%;
+    border-radius: 12%;
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+main .infoCadastro span {
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+main .infoCadastro span h4 {
+    margin: 0;
+}
+
+main .infoCadastro a {
+    padding: 8px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 15px;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+main .infoCadastro a:hover {
+    background: grey;
+    color: white;
+    border: 2px white solid;
+}
