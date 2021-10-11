@@ -5,6 +5,7 @@ body, ul, li, p{
     font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
     font-family: 'Roboto', sans-serif;
+    color: rgb(233, 247, 240);
 
 }
 
@@ -19,14 +20,19 @@ a{
 }
 
 
+
 .header{
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 20px;
     flex-wrap: wrap;
-    background-color: rgb(36, 32, 32);
+    background-color: rgb(14, 12, 12);
     border-bottom:cornsilk 2px solid ;
+}
+
+.titulo{
+    font-style: italic;
 }
 
 .menu{
@@ -87,11 +93,12 @@ a{
 /*sobre do site*/
 
 .sobre{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
     padding: 59px;
-    background-color: rgb(36, 32, 32)
+    background-image: url(../img/gramadinho.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-blend-mode: luminosity;
+    height: 390px;
 }
 
 .sobre h1{
@@ -101,46 +108,34 @@ a{
     margin-bottom: 70px;
 }
 
-.image{
-    background-color: rgb(36, 32, 32);
-    margin-left: 90px;
-}
-
-.boxImage{
-    
-    border: solid green 3px;
-    border-radius: 60px;
-}
-
-.text{
-    width: 253px;
-    height: 200px;
-    padding: 80px;
-    background-color: rgb(36, 32, 32);
-    margin-right: 90px;
-}
-
-.text p {
-    text-align: justify;
+.sobre p{
+    text-align: center;
+    text-align: center;
     color: cornsilk;
     font-size:x-large;
-
 }
 
 .botaoSobre{
-    margin-left: 69px;
-    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
     background-color: rgb(36, 32, 32);
     color: seashell;
     border-radius: 60px;
-    border-color: seashell;
-    padding: 10px;
+    border-color: rgb(19, 150, 15);
+    padding: 1.5%;
     cursor: pointer;
+    margin: auto;
+    margin-top: 10%;
+    align-self: center;
+    font-size: x-large;
 }
 
+
+
 .botaoSobre:hover{
-    background-color: papayawhip;
-    color: black;
+    border-color: rgb(243, 117, 14);
     transition:1.5s;
 }
 
@@ -151,11 +146,9 @@ a{
     align-items: center;
     flex-wrap: wrap;
     padding: 3%;
-    background-image: url(/img/fut.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.281);
-    background-blend-mode: darken;
+    background-color: rgb(36, 32, 32);
 }
 
 
@@ -193,14 +186,14 @@ a{
     height: 300px;
     border-radius: 20%;
     border: solid rgb(19, 150, 15) 2px;
-    background-color: rgba(0, 0, 0, 0.486);
+    background-color: rgba(0, 0, 0, 0.849);
     padding: 3%;
    
     
 }
 
 .serv:hover{
-    border-color: orange;
+    border-color: rgb(243, 117, 14);
     transition: 2s;
 }
 
@@ -210,7 +203,7 @@ a{
     align-items: center;
     padding: 20px;
     flex-wrap: wrap;
-    background-color: rgb(36, 32, 32);
+    background-color: rgb(17, 16, 16);
     border-bottom:cornsilk 5px solid ;
 }
 
@@ -229,6 +222,8 @@ a{
     display: block;
     padding: 10px;
 }
+
+
 
 
 
