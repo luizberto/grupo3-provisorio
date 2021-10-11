@@ -1,3 +1,13 @@
+body, a, li, p{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(233, 247, 240);
+}
+
 main .background {
     width: 100%;
     height: 120vh;
