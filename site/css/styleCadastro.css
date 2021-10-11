@@ -1,0 +1,26 @@
+.telaCadastro{
+    flex: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    
+}
+
+.boxCadastro{
+    width: 400px;
+    height: 70%;
+    justify-content: space-between;
+    border: blanchedalmond;
+    background-color: rgb(185, 11, 11);
+    border-radius: 20%;
+    flex-direction: column;
+    margin: auto;
+
+}
+
+.campo{
+    width: 30%;
+    align-self: center;
+}

@@ -41,7 +41,7 @@ header ul {
     justify-content: space-between;
 }
 
-header .container {
+header .containerHeader {
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -60,7 +60,7 @@ footer a {
     color: white;
 }
 
-footer .container {
+footer .containerFooter {
     width: 80%;
     height: 100%;
     margin: auto;
