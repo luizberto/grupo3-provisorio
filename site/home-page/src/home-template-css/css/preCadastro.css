@@ -1,0 +1,64 @@
+main .background {
+    width: 100%;
+    height: 90vh;
+    background: url(../img/preCadastroBg.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .preCadastro {
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.788);
+    border-radius: 50px;
+}
+
+main .border {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main .conteudoPrincipal {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .conteudoPrincipal span {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+main .conteudoPrincipal a {
+    padding: 8px;
+    width: 18vh;
+    text-align: center;
+    background: transparent;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.7s;
+    font-weight: bold;
+    border: 1px solid whitesmoke;
+}
+
+main .conteudoPrincipal a:hover {
+    background: grey;
+    color: black;
+    border: white 2px solid;
+}

@@ -1,0 +1,85 @@
+main .background {
+    width: 100%;
+    height: 120vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+main .background span {
+    width: 80%;
+    height: 7%;
+    margin-top: 5%;
+}
+
+main .container {
+    border: 1px solid grey;
+    width: 50%;
+    height: 85%;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .borderTop {
+    width: 100%;
+    height: 20%;
+    border-radius: 50px 50px 0px 0px;
+    background: url(../img/border-top.png) no-repeat;
+    background-size: cover;
+}
+
+main .dadosCadastro {
+    width: 50%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main .dadosCadastro input {
+    border-radius: 10px;
+    width: 100%;
+    padding: 3px;
+    color: black;
+}
+
+main .dadosCadastro h2 {
+    margin: 0;
+}
+
+
+main .dadosCadastro button {
+    width: 15vh;
+    height: 5vh;
+    background: transparent;
+    color: #E3F0E2;
+    font-weight: bold;
+    border-radius: 15px;
+    border: solid 2px #207030;
+    cursor: pointer;
+    transition: 0.7s;
+    margin-top: 5%;
+}
+
+main .dadosCadastro button:hover {
+    background: #E3F0E2;
+    color: #130F0F;
+    border: #ff5500 2px solid;
+}
+
+main .dadosCadastro p {
+    margin: 0;
+}
+
+main .borderBottom {
+    width: 100%;
+    height: 20%;
+    border-radius: 0px 0px 50px 50px;
+    background: url(../img/border-bottom.png) no-repeat;
+    background-size: cover;
+}

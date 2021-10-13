@@ -1,0 +1,157 @@
+* {
+    text-decoration: none;
+    list-style: none;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.0rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(233, 247, 240);
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header ul {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header a {
+    color: white;
+    transition: 0.3s;
+}
+
+header a:hover {
+    color: orange;
+}
+
+header .containerHeader {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+footer {
+    height: 45vh;
+    background: black;
+    border-top: 1px solid grey;
+}
+
+footer a {
+    color: white;
+}
+
+footer .containerFooter {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .logo {
+    width: 20%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .logo img {
+    width: 100%;
+}
+
+footer .dadosFooter {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer .help {
+    width: 25%;
+    height: 90%;
+    display: flex;
+}
+
+footer .help ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+footer .newsletter {
+    color: white;
+    width: 30%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer .newsletter b {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .newsletter input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+footer .newsletter button {
+    padding: 8px;
+    border: 2px grey solid;
+    border-radius: 15px;
+    font-weight: bold;
+    background: rgb(43, 42, 42);
+    color: white;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+footer .newsletter button:hover {
+    color: white;
+    background: black;
+    border: 2px solid white;
+}
+
+footer .explorer {
+    width: 30%;
+    height: 90%;
+    display: flex;
+}
+
+footer .explorer ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
