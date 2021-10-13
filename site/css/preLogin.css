@@ -49,16 +49,16 @@ main .conteudoPrincipal a {
     width: 18vh;
     text-align: center;
     background: transparent;
-    color: white;
+    color: #E3F0E2;
     border-radius: 15px;
     cursor: pointer;
     transition: 0.7s;
     font-weight: bold;
-    border: 1px solid whitesmoke;
+    border: 2px solid #207030;
 }
 
 main .conteudoPrincipal a:hover {
-    background: grey;
+    background: #E3F0E2;
     color: black;
-    border: white 2px solid;
+    border: #ff5500 2px solid;
 }
