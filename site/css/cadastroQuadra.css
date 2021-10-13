@@ -40,11 +40,18 @@ main .dadosCadastro {
     justify-content: space-evenly;
 }
 
-main .dadosCadastro input {
+.campo {
     border-radius: 10px;
+    border-color: #207030;
     width: 100%;
     padding: 3px;
     color: black;
+}
+
+.campo:focus{
+    outline: none;
+    border-color: #ff5500;
+    border-style: solid;
 }
 
 main .dadosCadastro h2 {
@@ -55,18 +62,20 @@ main .dadosCadastro h2 {
 main .dadosCadastro button {
     width: 15vh;
     height: 5vh;
-    background: grey;
-    color: whitesmoke;
+    background: transparent;
+    color: #E3F0E2;
     font-weight: bold;
     border-radius: 15px;
+    border: 2px solid #207030;
     cursor: pointer;
     transition: 0.7s;
+    margin-top: 2%;
 }
 
 main .dadosCadastro button:hover {
-    background: black;
-    color: white;
-    border: white 2px solid;
+    background: #E3F0E2;
+    color: #130F0F;
+    border: #ff5500 2px solid;
 }
 
 main .dadosCadastro p {

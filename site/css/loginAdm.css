@@ -71,8 +71,10 @@ main .linkAtleta h4 {
 
 main .linkAtleta a {
     padding: 8px;
-    background: whitesmoke;
-    color: black;
+    background: #130F0F;
+    color: #E3F0E2;
+    border-color: #ff5500;
+    border-style: solid;
     font-weight: bold;
     border-radius: 15px;
     cursor: pointer;
@@ -80,9 +82,9 @@ main .linkAtleta a {
 }
 
 main .linkAtleta a:hover {
-    background: grey;
-    color: white;
-    border: black 2px solid;
+    background: #E3F0E2;
+    color: #130F0F;
+    border: #207030 2px solid;
 }
 
 main .inputsLogin {
@@ -121,13 +123,13 @@ main .inputsLogin button {
     cursor: pointer;
     transition: 0.7s;
     font-weight: bold;
-    border: 1px solid whitesmoke;
+    border: 3px solid #207030;
 }
 
 main .inputsLogin button:hover {
-    background: grey;
+    background: #E3F0E2;
     color: black;
-    border: white 2px solid;
+    border: #ff5500 3px solid;
 }
 
 main .divCadastro {
@@ -179,17 +181,17 @@ main .infoCadastro span h4 {
 
 main .infoCadastro a {
     padding: 8px;
-    background: white;
-    color: black;
+    background: #130F0F;
+    color: #E3F0E2;
     font-weight: bold;
     border-radius: 15px;
-    border: 2px solid black;
+    border: 2px solid #207030;
     cursor: pointer;
     transition: 0.7s;
 }
 
 main .infoCadastro a:hover {
-    background: grey;
-    color: white;
-    border: 2px white solid;
+    background: #E3F0E2;
+    color: #130F0F;
+    border: 2px #ff5500 solid;
 }

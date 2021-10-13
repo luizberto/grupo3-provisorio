@@ -48,13 +48,13 @@ body, a, li, p{
  .campo{
     color: black;
     border-radius: 10px;
-    border-color: green;
+    border-color: #207030;
     border-style: solid;
  }
 
  .campo:focus{
     outline: none;
-    border-color: rgb(231, 156, 16);
+    border-color: #ff5500;
     border-style: solid;
 
 }

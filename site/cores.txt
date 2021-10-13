@@ -1,0 +1,6 @@
+hexadecimal das cores do site:
+
+laranja: #ff5500
+verde: #207030
+preto: #130F0F
+branco: #E3F0E2
