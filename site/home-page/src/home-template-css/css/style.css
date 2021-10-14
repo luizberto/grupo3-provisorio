@@ -194,17 +194,25 @@ a{
 
 .serv:hover{
     border-color: rgb(243, 117, 14);
-    transition: 2s;
+    transition: 0.7s;
 }
 
 .footer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 20px;
     flex-wrap: wrap;
     background-color: rgb(17, 16, 16);
     border-bottom:cornsilk 5px solid ;
+}
+
+.footer ul{
+    margin-left: 5%;
+}
+
+.footer li{
+    padding: 5px;
 }
 
 
