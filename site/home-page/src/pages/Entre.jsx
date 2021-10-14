@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 
 function Entre(){
     return(
@@ -15,6 +16,8 @@ function Entre(){
    Entre já!! 
 </button>
 </section>
+
+<Footer/>
         </>
     );
 }

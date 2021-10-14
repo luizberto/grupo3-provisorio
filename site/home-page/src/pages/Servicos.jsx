@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../components/Footer";
 import figUm from "../home-template-css/img/fluent_sport-soccer-16-regular.png";
 import figDois from "../home-template-css/img/mdi_whistle-outline.png";
 import figTres from "../home-template-css/img/Group.png"
@@ -36,7 +35,7 @@ function Servicos(){
 
 </section>
 
-<Footer/>
+
 
         </>
     );

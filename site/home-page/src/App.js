@@ -9,8 +9,8 @@ function App() {
   return (
   <>
   <Banner/>
-  <Entre/>
   <Servicos/>
+  <Entre/>
   </>
   );
 }

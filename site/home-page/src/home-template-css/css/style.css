@@ -215,6 +215,9 @@ a{
     padding: 5px;
 }
 
+.footer a{
+    margin-left: 7%;
+}
 
 .menu{
     display: flex;
