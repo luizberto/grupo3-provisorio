@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.dominio.Endereco;
-import com.example.demo.dominio.Quadra;
 import com.example.demo.repositorio.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

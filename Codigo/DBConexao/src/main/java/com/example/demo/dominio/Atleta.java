@@ -4,12 +4,12 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Table(name = "atleta", indexes = {
-        @Index(name = "fk_Atleta_Endereco1_idx", columnList = "fkEndereco")
+        @Index(name = "fk_Atleta_Endereco1_idx", columnList = "Endereco_idEndereco")
 })
 @Entity
 public class Atleta {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idAtleta", nullable = false)
     private Integer id;
 
@@ -28,15 +28,14 @@ public class Atleta {
     @Column(name = "dataNasc")
     private LocalDate dataNasc;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "fkEndereco", nullable = false)
-    private Endereco enderecoIdendereco;
+    @Column(name = "Endereco_idEndereco", nullable = false)
+    private Integer enderecoIdendereco;
 
-    public Endereco getFkIdendereco() {
+    public Integer getEnderecoIdendereco() {
         return enderecoIdendereco;
     }
 
-    public void setFkIdendereco(Endereco enderecoIdendereco) {
+    public void setEnderecoIdendereco(Integer enderecoIdendereco) {
         this.enderecoIdendereco = enderecoIdendereco;
     }
 

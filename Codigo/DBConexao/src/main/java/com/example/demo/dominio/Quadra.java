@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Entity
 public class Quadra {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idQuadra", nullable = false)
     private Integer id;
 
@@ -20,21 +21,20 @@ public class Quadra {
     @Column(name = "limitePessoas")
     private Integer limitePessoas;
 
-    @Column(name = "classificacaoQuadrao")
-    private Integer classificacaoQuadrao;
+    @Column(name = "classificacaoQuadra")
+    private Integer classificacaoQuadra;
 
     @Column(name = "complemento", length = 45)
     private String complemento;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "Endereco_idEndereco", nullable = false)
-    private Endereco enderecoIdendereco;
+    @Column(name = "Endereco_idEndereco", nullable = false)
+    private Integer enderecoIdendereco;
 
-    public Endereco getEnderecoIdendereco() {
+    public Integer getEnderecoIdendereco() {
         return enderecoIdendereco;
     }
 
-    public void setEnderecoIdendereco(Endereco enderecoIdendereco) {
+    public void setEnderecoIdendereco(Integer enderecoIdendereco) {
         this.enderecoIdendereco = enderecoIdendereco;
     }
 
@@ -46,12 +46,12 @@ public class Quadra {
         this.complemento = complemento;
     }
 
-    public Integer getClassificacaoQuadrao() {
-        return classificacaoQuadrao;
+    public Integer getClassificacaoQuadra() {
+        return classificacaoQuadra;
     }
 
-    public void setClassificacaoQuadrao(Integer classificacaoQuadrao) {
-        this.classificacaoQuadrao = classificacaoQuadrao;
+    public void setClassificacaoQuadra(Integer classificacaoQuadra) {
+        this.classificacaoQuadra = classificacaoQuadra;
     }
 
     public Integer getLimitePessoas() {

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/quadras")
 public class QuadraController {
     @Autowired QuadraRepository quadraRepository;
 
@@ -18,12 +20,12 @@ public class QuadraController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getJogo(@PathVariable int id) {
+    public ResponseEntity getQuadra(@PathVariable int id) {
         return ResponseEntity.of(quadraRepository.findById(id));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteJogo(@PathVariable int id) {
+    public ResponseEntity deleteQuadra(@PathVariable int id) {
         if (quadraRepository.existsById(id)) {
             quadraRepository.deleteById(id);
             return ResponseEntity.status(200).build();
