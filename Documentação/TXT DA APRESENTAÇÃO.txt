@@ -1,0 +1,27 @@
+
+Ordem de apresentação do trabalho Sprint2
+
+-Contextualização (Dados de Mercado, Estatsticas
+e Justificativa)
+
+- User Story
+
+- Bpmn
+
+- Product Backlog
+
+- Modelagem de dados
+
+- Diagrama de software
+
+- Prototipo de alta resolução
+
+-Site
+
+- 2 cruds (SpringBoot + Orm)
+
+- Login/Logoff com ORM
+
+- Padrão de Projeto
+
+- Implementação da lista e exportação para CSV

@@ -12,7 +12,7 @@ function Navbar(){
         <nav>
             <ul class="menu">
                 <li><a href="../homePage/preLogin.html">Login</a></li>
-                <li><a href="">Contato</a></li>
+                <li><a href="">Cadastro</a></li>
             </ul>
         </nav>
     </header>
