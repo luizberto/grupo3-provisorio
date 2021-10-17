@@ -4,7 +4,6 @@ import bolinha from '../home-template-css/img/fluent_sport-soccer-16-regular.png
 function ServicosDetalhe({image, texto, back}){
     return(
         <>
-        
               <section class="descServicos">
             <div class="container2">
                 <div class="boxImage">
