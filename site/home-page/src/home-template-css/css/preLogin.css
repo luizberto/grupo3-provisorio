@@ -46,7 +46,8 @@ main .conteudoPrincipal span {
 
 main .conteudoPrincipal a {
     padding: 8px;
-    width: 18vh;
+    width: 20vh;
+    height: 5vh;
     text-align: center;
     background: transparent;
     color: #E3F0E2;
