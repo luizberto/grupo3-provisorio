@@ -90,6 +90,19 @@ a{
     height: 390px;
 }
 
+.container{
+    width: 80%;
+    margin: auto;
+    height: auto;
+}
+
+.container2 {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;   
+}
+
 /*sobre do site*/
 
 .sobre{
@@ -196,6 +209,44 @@ a{
     border-color: rgb(243, 117, 14);
     transition: 0.7s;
 }
+
+
+.descServicos{
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    background-image: url(../img/bolaFundo.png);
+    background-size: cover;
+    background-position-y: 85%;
+
+}
+
+.boxImage{
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px green;
+    border-radius: 20%;
+}
+
+.boxImage img{
+    align-self: center;
+}
+
+.boxTexto{
+    width: 53%;
+    height: 30%; 
+}
+
+.boxTexto p{
+    font-size: x-large;
+}
+
 
 .footer{
     display: flex;

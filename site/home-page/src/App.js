@@ -1,6 +1,4 @@
-import Banner from '../src/pages/Banner';
-import Entre from './pages/Entre';
-import Servicos from './pages/Servicos';
+import HomePage from './pages/HomePage';
 import './home-template-css/css/style.css'
 
 
@@ -8,9 +6,7 @@ import './home-template-css/css/style.css'
 function App() {
   return (
   <>
-  <Banner/>
-  <Servicos/>
-  <Entre/>
+ <HomePage/>
   </>
   );
 }

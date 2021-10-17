@@ -8,13 +8,14 @@ function Banner(){
         <Navbar/>
         <section class="banner">
 
-        <div class="titulo">
-              <h1>
-        Encontre quadras para praticar seus esportes favoritos.
-       </h1>
-        </div>
-     
-    </section>
+<div class="container">
+    <div class="titulo">
+        <h1>
+    Encontre quadras para praticar seus esportes favoritos.
+</h1>
+    </div>
+</div>
+</section>
     </>
     );
 }
