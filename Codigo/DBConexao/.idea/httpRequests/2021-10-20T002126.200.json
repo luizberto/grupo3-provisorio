@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nomeQuadra": "quadra 2",
+    "descQuadra": "aaaa",
+    "limitePessoas": 25,
+    "classificacaoQuadra": 10,
+    "complemento": "rua da rua",
+    "fkEndereco": null
+  },
+  {
+    "id": 2,
+    "nomeQuadra": "quadra 2",
+    "descQuadra": "aaaa",
+    "limitePessoas": 25,
+    "classificacaoQuadra": 10,
+    "complemento": "rua da rua",
+    "fkEndereco": 3
+  }
+]

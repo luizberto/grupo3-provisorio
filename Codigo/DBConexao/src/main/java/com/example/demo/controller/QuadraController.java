@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import com.example.demo.dominio.Quadra;
+import com.example.demo.exportacao.GravaLista;
+import com.example.demo.lista.ListaObj;
 import com.example.demo.repositorio.QuadraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -61,5 +63,16 @@ public class QuadraController {
         Long total = quadraRepository.count();
 
         return ResponseEntity.status(200).body(total);
+    }
+
+    @GetMapping("/csv")
+    public ResponseEntity getCsv(){
+        GravaLista g = new GravaLista();
+        ListaObj<Quadra> listaQuadra= new ListaObj<>((int) quadraRepository.count());
+        for(Quadra q: quadraRepository.findAll()){
+            listaQuadra.adiciona(q);
+        }
+        g.gravaLista(listaQuadra, "teste");
+        return ResponseEntity.status(204).build();
     }
 }

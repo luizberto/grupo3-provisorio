@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.dominio.Atleta;
+import com.example.demo.dominio.Login;
 import com.example.demo.repositorio.AtletaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,13 +23,13 @@ public class AtletaController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity postLogin(@RequestPart String email, @RequestPart String senha){
+    public ResponseEntity postLogin(@RequestBody Login login){
         for(Atleta a: atletaRepository.findAll()){
-            if(a.getEmail().equals(email) && a.getSenha().equals(senha)){
-                return ResponseEntity.status(201).build();
+            if(a.getEmail().equals(login.getEmail()) && a.getSenha().equals(login.getSenha())){
+                return ResponseEntity.status(202).build();
             }
         }
-        return ResponseEntity.status(404).build();
+        return ResponseEntity.status(418).build();
     }
 
     @GetMapping("/{id}")

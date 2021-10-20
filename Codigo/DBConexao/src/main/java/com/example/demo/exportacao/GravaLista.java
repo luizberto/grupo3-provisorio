@@ -1,7 +1,7 @@
 package com.example.demo.exportacao;
 
-import com.example.demo.lista.ListaObj;
 import com.example.demo.dominio.Quadra;
+import com.example.demo.lista.ListaObj;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,6 +9,9 @@ import java.util.Formatter;
 import java.util.FormatterClosedException;
 
 public class GravaLista {
+
+    public GravaLista() {
+    }
 
     public void gravaLista(ListaObj<Quadra> lista, String nomeArq) {
         FileWriter arq = null;
@@ -33,7 +36,7 @@ public class GravaLista {
                                                 a.getDescQuadra(),
                                                 a.getLimitePessoas(),
                                                 a.getClassificacaoQuadra(),
-                                                a.getEnderecoIdendereco());
+                                                a.getFkEndereco());
             }
         }
         catch (FormatterClosedException erro) {

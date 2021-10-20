@@ -3,6 +3,7 @@
   <component name="JpbDataSourceConfig">
     <data-sources>
       <data-source id="9b4c2f3e-24dd-4e5a-83c2-6ddb8d6a17c7" name="DBConexao" url="jdbc:mysql://localhost/mydb?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.jdbc.Driver" />
+      <data-source id="7bed3967-a7bc-477d-9c4b-e0043d485cf5" name="DBConexao1" url="jdbc:mysql://localhost/sportybd?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.jdbc.Driver" />
     </data-sources>
   </component>
 </project>

@@ -3,39 +3,39 @@ package com.example.demo.dominio;
 import javax.persistence.*;
 
 @Table(name = "quadra", indexes = {
-        @Index(name = "fk_Quadra_Endereco1_idx", columnList = "Endereco_idEndereco")
+        @Index(name = "fk_Quadra_Endereco1_idx", columnList = "fk_endereco")
 })
 @Entity
 public class Quadra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idQuadra", nullable = false)
+    @Column(name = "id_quadra", nullable = false)
     private Integer id;
 
-    @Column(name = "nomeQuadra", length = 45)
+    @Column(name = "nome_quadra", length = 45)
     private String nomeQuadra;
 
-    @Column(name = "descQuadra", length = 300)
+    @Column(name = "desc_quadra", length = 300)
     private String descQuadra;
 
-    @Column(name = "limitePessoas")
+    @Column(name = "limite_pessoas")
     private Integer limitePessoas;
 
-    @Column(name = "classificacaoQuadra")
+    @Column(name = "classificacao_quadra")
     private Integer classificacaoQuadra;
 
     @Column(name = "complemento", length = 45)
     private String complemento;
 
-    @Column(name = "Endereco_idEndereco", nullable = false)
-    private Integer enderecoIdendereco;
+    @Column(name = "fk_endereco")
+    private Integer fkEndereco;
 
-    public Integer getEnderecoIdendereco() {
-        return enderecoIdendereco;
+    public Integer getFkEndereco() {
+        return fkEndereco;
     }
 
-    public void setEnderecoIdendereco(Integer enderecoIdendereco) {
-        this.enderecoIdendereco = enderecoIdendereco;
+    public void setFkEndereco(Integer fkEndereco) {
+        this.fkEndereco = fkEndereco;
     }
 
     public String getComplemento() {

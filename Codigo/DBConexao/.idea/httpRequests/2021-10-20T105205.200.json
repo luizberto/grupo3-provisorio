@@ -1,0 +1,11 @@
+[
+  {
+    "id": 12,
+    "cpf": "12345678910",
+    "nomeAtleta": "joao vitor",
+    "email": "joaoTeste.com",
+    "senha": "12345",
+    "dataNasc": "2002-10-05",
+    "enderecoIdendereco": 2
+  }
+]

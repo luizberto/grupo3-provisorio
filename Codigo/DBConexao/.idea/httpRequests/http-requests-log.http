@@ -1,0 +1,38 @@
+GET http://localhost:8080/atletas
+
+<> 2021-10-20T105205.200.json
+
+###
+
+GET http://localhost:8080/quadras
+
+<> 2021-10-20T002152.200.json
+
+###
+
+GET http://localhost:8080/quadras
+
+<> 2021-10-20T002126.200.json
+
+###
+
+GET http://localhost:8080/quadras
+
+<> 2021-10-20T002027.200.json
+
+###
+
+GET http://localhost:8080/quadras/total
+
+<> 2021-10-20T002014.200.json
+
+###
+
+GET http://quadras
+
+###
+
+GET http://localhost:8080/quadras/total
+
+###
+
