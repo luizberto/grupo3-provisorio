@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+}
+
+.parte1 a{
+    width: 100px;
+    height: 100px;
+    border-radius: 20%;
+    padding: 3%;
+}
+
+.parte1 input{
+    outline: none;
+    border-radius: 10px;
+    background: #FEFEFF;
+    border: 1px solid #000000;
+    padding: 2%;
+    width: 25%;
+    text-align: center;
+}
+
+.sim{
+    background-color: green;
+    margin-right: 2%;
+}
+
+.nao{
+    background-color: red;
+}

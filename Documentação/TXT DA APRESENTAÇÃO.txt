@@ -2,26 +2,49 @@
 Ordem de apresentação do trabalho Sprint2
 
 -Contextualização (Dados de Mercado, Estatsticas
-e Justificativa)
+e Justificativa) - LUIZ BERTO E JOAO BAPTISTA
 
-- User Story
+- User Story - LUCAS
 
-- Bpmn
+- Bpmn - LUCAS
 
-- Product Backlog
+- Product Backlog - WESLEY
 
-- Modelagem de dados
+- Modelagem de dados - JOÃO VITOR
 
-- Diagrama de software
+- Diagrama de software - WESLEY
 
-- Prototipo de alta resolução
+- Prototipo de alta resolução - WESLEY
 
--Site
+- 2 cruds (SpringBoot + Orm) - JOÃO VITOR 
 
-- 2 cruds (SpringBoot + Orm)
+- Login/Logoff com ORM - JOÃO VITOR
 
-- Login/Logoff com ORM
+- Padrão de Projeto - JOÃO BAPTISTA
 
-- Padrão de Projeto
+- Implementação da lista e exportação para CSV - JOAO BAPTISTA
 
-- Implementação da lista e exportação para CSV
+
+
+
+
+
+
+
+
+
+
+
+Bom, no brasil o esporte mais popular é o futebol,
+segundo levantamentos de pesquisa pelo menos 60%
+da população diz acompanhar ou praticar o esporte,
+só que nós vimos que havia um problema entre as pessoas
+que impactava diretamente na vida delas em relação
+a pratica desse esporte. As pessoas não conseguiam
+se reunir ou marcar um horario, ou ate mesmo tinham
+certa dificuldade em encontrar pessoas para um jogo
+então a partir disso nós pensamos num projeto que poderia
+ajudar todos a garantir sua diversão e uma vida mais saudavel
+por isso criamos a sport.fy que em ingles a abrevição 
+fy significa for you tendo uma tradução para o portugues de
+esporte para voce
