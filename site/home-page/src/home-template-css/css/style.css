@@ -56,6 +56,41 @@ a{
 
 }
 
+.subMenu{
+    display: none;
+}
+
+.subMenu li{
+    font-size: small;
+}
+
+.menu li:hover > .subMenu{
+    display: block;
+    transition: 500ms;
+    
+}
+
+.subMenu{
+    background:rgb(14, 12, 12); border-radius: 0px; 
+    padding: 0;
+    position: absolute; 
+}
+
+.subMenu li{
+    float: none; 
+    position: relative;
+}
+
+.subMenu li a{
+    padding: 5px;
+    color: #fff;
+}
+
+.subMenu li a:hover{
+    color: rgb(56, 247, 56);
+}
+
+
 
 /*banner com gif*/
 

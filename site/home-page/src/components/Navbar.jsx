@@ -11,8 +11,16 @@ function Navbar(){
 
         <nav>
             <ul class="menu">
-                <li><a href="../homePage/preLogin.html">Login</a></li>
-                <li><a href="">Cadastro</a></li>
+                <li>
+                    <a href="../homePage/preLogin.html">Login</a>
+                    <ul className = "subMenu">
+                        <li> <a href="">Atleta</a></li>
+                        <li> <a href=""> Dono de quadra</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Cadastro</a>
+                </li>
             </ul>
         </nav>
     </header>
