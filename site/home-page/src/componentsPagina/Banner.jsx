@@ -5,7 +5,7 @@ function Banner(){
     return(
         <>
 
-        <Navbar/>
+        <Navbar atleta = "/loginAtleta" dnquadra = "/loginAdm" cadAtleta = "/cadastroAtleta" cadAdm = "/cadastroAdm"/>
         <section class="banner">
 
 <div class="container">
