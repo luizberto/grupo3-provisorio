@@ -161,7 +161,7 @@ a{
     padding: 3%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #130F0F;
+    background-color: #EFF2EC;
 }
 
 
@@ -173,7 +173,7 @@ a{
     justify-content: space-around;
     width: 100%;
     margin-bottom: 4%;
-    color: blanchedalmond;
+    color: rgb(19, 18, 18);
     font-family: 'Roboto', sans-serif;
 
 }
@@ -181,13 +181,14 @@ a{
 .serv p{
     font-size: small;
     text-align: justify;
-    color: blanchedalmond;
+    color: rgb(12, 12, 11);
 
 
 }
 
 .serv img{
     margin-bottom: 4%;
+    background-color: black;
 }
 
 
@@ -195,11 +196,11 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;  
-    width: 300px;
-    height: 300px;
+    width: 207px;
+    height: 195px;
     border-radius: 20%;
     border: solid rgb(19, 150, 15) 2px;
-    background-color: rgba(0, 0, 0, 0.849);
+    background-color: EFF2EC;
     padding: 3%;
    
     

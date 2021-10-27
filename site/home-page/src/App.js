@@ -1,10 +1,8 @@
-import HomePage from './pages/HomePage';
-import CadastroAtleta from './pages/CadastroAtleta';
 import './home-template-css/css/style.css'
 import './home-template-css/css/cadastroAtleta.css';
 import './home-template-css/css/preLogin.css'
 import './home-template-css/css/loginAdm.css'
-import { Route } from 'react-router';
+import './home-template-css/css/style-grid.css'
 import Routes from './routes';
 
 
