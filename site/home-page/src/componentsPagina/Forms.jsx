@@ -8,12 +8,12 @@ function Forms(props){
         <>
         <Navbar/>
             <main>
-        <div class="background">
+        <div class="backgroundCadastro">
             <span class="">
                 <h2>{props.titulo}</h2>
             </span>
             <div class="boxContainer">
-                <div class="borderTop">
+                <div class="borderTopCadastro">
                 </div>
                 <form class="dadosCadastro">
                     <div class="infoPessoal">
@@ -43,7 +43,7 @@ function Forms(props){
 
 
                 </form>
-                <div class="borderBottom">
+                <div class="borderBottomCadastro">
                 </div>
             </div>
         </div>

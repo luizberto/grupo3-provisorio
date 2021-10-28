@@ -8,7 +8,7 @@ body, a, li, p{
    
 }
 
- .background {
+ .backgroundCadastro {
     width: 100%;
     height: 120vh;
     background: black;
@@ -31,7 +31,7 @@ body, a, li, p{
     border-radius: 50px;
 }
 
- .borderTop {
+ .borderTopCadastro {
     width: 100%;
     height: 20%;
     border-radius: 50px 50px 0px 0px;
@@ -99,7 +99,7 @@ main .infoPessoal button:hover {
     border: rgb(37, 151, 37) 2px solid;
 }
 
-main .borderBottom {
+main .borderBottomCadastro {
     width: 100%;
     height: 20%;
     border-radius: 0px 0px 50px 50px;
