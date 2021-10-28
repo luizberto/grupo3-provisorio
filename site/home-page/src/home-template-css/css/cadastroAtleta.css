@@ -11,7 +11,7 @@ body, a, li, p{
  .backgroundCadastro {
     width: 100%;
     height: 120vh;
-    background: black;
+    background: #EFF2EC;
     display: flex;
     flex-direction: column;
     align-items: center;

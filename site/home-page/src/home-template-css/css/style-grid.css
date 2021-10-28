@@ -16,13 +16,12 @@ body{
 
 
 .container-grid{
-    height: 100vh;
+    height: 108vh;
     width: 100vw;
     display: grid;
-    grid-template-columns:  20vw 20vw;
-    grid-template-rows:   40vh 40vh;
-    grid-template-areas: 
-    "b b";
+    grid-template-columns: 20vw 20vw;
+    grid-template-rows: 50vh 50vh;
+    grid-template-areas: "b b";
     grid-gap: 20px;
     justify-content: space-evenly;
     align-content: center;
