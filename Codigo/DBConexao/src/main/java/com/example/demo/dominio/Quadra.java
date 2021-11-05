@@ -27,14 +27,15 @@ public class Quadra {
     @Column(name = "complemento", length = 45)
     private String complemento;
 
-    @Column(name = "fk_endereco")
-    private Integer fkEndereco;
+    @ManyToOne
+    @JoinColumn(name = "fk_endereco")
+    private Endereco fkEndereco;
 
-    public Integer getFkEndereco() {
+    public Endereco getFkEndereco() {
         return fkEndereco;
     }
 
-    public void setFkEndereco(Integer fkEndereco) {
+    public void setFkEndereco(Endereco fkEndereco) {
         this.fkEndereco = fkEndereco;
     }
 

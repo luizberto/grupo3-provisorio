@@ -4,19 +4,19 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Table(name = "atleta", indexes = {
-        @Index(name = "fk_Atleta_Endereco1_idx", columnList = "Endereco_idEndereco")
+        @Index(name = "fkEndereco_idx", columnList = "fk_endereco")
 })
 @Entity
 public class Atleta {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idAtleta", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_atleta", nullable = false)
     private Integer id;
 
     @Column(name = "cpf", length = 11)
     private String cpf;
 
-    @Column(name = "nomeAtleta", length = 45)
+    @Column(name = "nome_atleta", length = 45)
     private String nomeAtleta;
 
     @Column(name = "email", length = 45)
@@ -25,18 +25,19 @@ public class Atleta {
     @Column(name = "senha", length = 45)
     private String senha;
 
-    @Column(name = "dataNasc")
+    @Column(name = "data_nasc")
     private LocalDate dataNasc;
 
-    @Column(name = "Endereco_idEndereco", nullable = false)
-    private Integer enderecoIdendereco;
+    @ManyToOne
+    @JoinColumn(name = "fk_endereco")
+    private Endereco fkEndereco;
 
-    public Integer getEnderecoIdendereco() {
-        return enderecoIdendereco;
+    public Endereco getFkEndereco() {
+        return fkEndereco;
     }
 
-    public void setEnderecoIdendereco(Integer enderecoIdendereco) {
-        this.enderecoIdendereco = enderecoIdendereco;
+    public void setFkEndereco(Endereco fkEndereco) {
+        this.fkEndereco = fkEndereco;
     }
 
     public LocalDate getDataNasc() {

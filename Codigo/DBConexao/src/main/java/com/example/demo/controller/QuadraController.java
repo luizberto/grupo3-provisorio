@@ -68,7 +68,7 @@ public class QuadraController {
     @GetMapping("/csv")
     public ResponseEntity getCsv(){
         GravaLista g = new GravaLista();
-        ListaObj<Quadra> listaQuadra= new ListaObj<>((int) quadraRepository.count());
+        ListaObj<Quadra> listaQuadra = new ListaObj<>((int) quadraRepository.count());
         for(Quadra q: quadraRepository.findAll()){
             listaQuadra.adiciona(q);
         }
