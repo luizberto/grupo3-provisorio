@@ -3,13 +3,14 @@ import profile from '../home-template-css/img/profile.png'
 import git from '../home-template-css/img/git.png'
 import insta from '../home-template-css/img/insta.png'
 import linkedn from '../home-template-css/img/linkedin.png'
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import NavbarSecundario from "../components/NavbarSecundario.jsx";
+import ButtonLoginDQ from "../components/ButtonLoginDQ";
 
 function LoginAtleta(){
     return(
         <>
-        <Navbar/>
+        <NavbarSecundario/>
               <main>
         <div class="container">
             <div class="dadosLogin">
@@ -37,10 +38,7 @@ function LoginAtleta(){
                         <img src={linkedn} alt=""/>
                         <img src={insta} alt=""/>
                     </div>
-                    <div class="linkDono">
-                        <h4>Dono de Quadra?</h4>
-                        <a href="./loginAdm.html">Logar aqui!</a>
-                    </div>
+                   <ButtonLoginDQ dnquadra = "/loginAdm"/>
                 </div>
             </div>
             <div class="divCadastro">

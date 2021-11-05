@@ -1,15 +1,17 @@
 import React from "react";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
+
 import profile from '../home-template-css/img/profile.png'
 import git from '../home-template-css/img/git.png'
 import linkedn from '../home-template-css/img/linkedin.png'
 import insta from '../home-template-css/img/insta.png'
+import NavbarSecundario from "../components/NavbarSecundario.jsx";
 
 function LoginAdm(){
     return(
         <>
-        <Navbar/>
+        <NavbarSecundario/>
         <main>
         <div class="container">
 
@@ -53,7 +55,7 @@ function LoginAdm(){
                     </div>
                     <div class="linkAtleta">
                         <h4>É atleta?</h4>
-                        <a href="./loginAtleta.html">Logar aqui!</a>
+                       <Link to = "/loginAtleta"><a>Logar aqui!</a></Link> 
                     </div>
                 </div>
             </div>

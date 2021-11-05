@@ -1,0 +1,77 @@
+.container4{
+    display: flex;
+    height: 100vh;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #EFF2EC;
+}
+
+.tituloContainer{
+    color: black;
+    align-self: start;
+    justify-self: start;
+    text-align: left;
+    margin-left: 0;
+}
+
+.dadosCadastro{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(22, 22, 21);
+    width: 28vw;
+    height: 75vh;
+    border-radius: 4%;
+}
+
+.tituloForm{
+    text-align: center;
+    color: blanchedalmond;
+ 
+
+}
+
+.formClass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.formClass label{
+    display: flex;
+    flex-direction: column;
+    color: rgb(223, 208, 208);
+    margin-top: 2%;
+}
+
+.formClass label input{
+    width: 95%;
+    outline: none;
+    border: none;
+    padding: 2%;
+    border-radius: 5%;
+}
+
+.buttonCadastrar{
+    align-self:flex-end;
+    margin-top: 5%;
+    margin-right: 10%;
+    width: 20%;
+    border: solid 1px white;
+    padding: 2%;
+    background-color: transparent;
+    color: white;
+    border-radius: 10%;
+    cursor: pointer;
+
+}
+
+.buttonCadastrar:hover{
+    background-color: white;
+    color: black;
+    transition: 500ms;
+}

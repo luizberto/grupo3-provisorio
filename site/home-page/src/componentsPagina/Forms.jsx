@@ -1,55 +1,39 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import NavbarSecundario from "../components/NavbarSecundario.jsx";
 
 
 function Forms(props){
     return(
-        <>
-        <Navbar/>
-            <main>
-        <div class="backgroundCadastro">
-            <span class="">
-                <h2>{props.titulo}</h2>
-            </span>
-            <div class="boxContainer">
-                <div class="borderTopCadastro">
-                </div>
-                <form class="dadosCadastro">
-                    <div class="infoPessoal">
-                        <h2>{props.subTitulo}</h2>
-                        <span class="">
-                            <p>{props.campoUm}</p>
-                            <input type="text" class="campo"/>
-                        </span>
-                        <span>
-                            <p>{props.campoDois}</p>
-                            <input type="email" class="campo"/>
-                        </span>
-                        <span>
-                            <p>{props.campoTres}</p>
-                            <input type="password" class="campo"/>
-                        </span>
-                        <span>
-                            <p>{props.campoQuatro}</p>
-                            <input class="campo"/>
-                        </span>
-                        <span>
-                            <p>{props.campoCinco}</p>
-                            <input class="campo"/>
-                        </span>
-                        <button>Cadastrar</button>
-                    </div>
-
-
+    <>
+    <NavbarSecundario/>
+        <div class="container4">
+            <div class="dadosCadastro">
+                <h4 class="tituloForm">{props.titulo}</h4>
+                <form action="" class="formClass">
+                    <label for=""> {props.campoUm}
+                        <input type="text"/>
+                    </label>
+                    <label for="">{props.campoDois}
+                        <input type="text"/>
+                    </label>
+                    <label for=""> {props.campoTres}
+                        <input type="text"/>
+                    </label>
+                    <label for=""> {props.campoQuatro}
+                        <input type="text"/>
+                    </label>
+                    <label for=""> {props.campoCinco}
+                        <input type="text"/>
+                    </label>
                 </form>
-                <div class="borderBottomCadastro">
-                </div>
+
+                <button class="buttonCadastrar">Cadastrar</button>
             </div>
+
         </div>
-    </main>
     <Footer/>
-        </>
+    </>
     );
 }
 export default Forms;
