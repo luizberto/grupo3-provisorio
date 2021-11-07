@@ -1,0 +1,130 @@
+
+
+.containerLogin {
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;   
+}
+
+.containerLogin h5{
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 0;
+}
+
+.containerLogin a{
+    color: rgb(95, 255, 95);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logar{
+    width: 300px;
+    height: 350px;
+    margin: auto;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+    border-radius: 10%;
+    border: none;
+
+}
+.logar h3{
+    text-align: center;
+    font-size: medium;
+    margin: 0;
+}
+
+.formsLogar{
+    display: flex;
+    flex-direction: column;
+}
+
+.formsLogar p{
+    width: 100%;
+}
+
+.formsLogar input{
+    width: 60%;
+    outline: none;
+    margin-top: 5%;
+    border-radius: 5%;
+    padding: 2%;
+    border: solid green 2px;
+}
+
+.formsLogar label{
+    margin-top: 5%;
+}
+
+
+
+.btnLogin{
+    width: 20%;
+    margin-top: 5%;
+    background-color: transparent;
+    border: white solid 2px;
+    color: white;
+    border-radius: 10%;
+    padding: 2%;
+    cursor: pointer;
+
+}
+
+.btnLogin:hover{
+    background-color: white;
+    color: black;
+    transition: 500ms;
+}
+
+.trocar{
+    width: 300px;
+    height: 350px;
+    margin: auto;
+    background-image: url(../img/Group\ 338.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    border-radius: 10%;
+    border: solid 2px black;;
+
+}
+
+.inscrever{
+    margin: auto;
+    height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(14, 13, 13, 0.705);
+    border-radius: 10%;
+    color: white;
+    padding: 4%;
+    
+}
+
+.btnInscrever{
+    width: 35%;
+    background-color: transparent;
+    border: white solid 2px;
+    color: white;
+    border-radius: 10%;
+    padding: 2%;
+    cursor: pointer;
+}
+
+.btnInscrever:hover{
+    background-color: white;
+    color: black;
+    transition: 500ms;
+}
+
