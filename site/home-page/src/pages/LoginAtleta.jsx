@@ -12,7 +12,11 @@ function LoginAtleta(){
     return(
         <>
         <NavbarSecundario/>
-        <FormLogin titulo = "ATLETA" questao = "É dono de quadra?" texto = "Inscreva-se aqui para participar da maior rede de atletas do Brasil" path = "/loginAdm"/> 
+        <FormLogin titulo = "ATLETA" 
+        questao = "É dono de quadra?" 
+        texto = "Inscreva-se aqui para participar da maior rede de atletas do Brasil" 
+        path = "/loginAdm"
+        pathCadastro = "/cadastroAtleta"/> 
     <Footer/>
         </>
     );

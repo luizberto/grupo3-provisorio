@@ -13,7 +13,12 @@ function LoginAdm(){
     return(
         <>
      <NavbarSecundario/>
-           <FormLogin titulo = "ADM" questao = "É atleta?" texto = "Inscreva-se aqui para ampliar seu negócio" path = "/loginAtleta"/> 
+           <FormLogin titulo = "ADM" 
+           questao = "É atleta?" 
+           texto = "Inscreva-se aqui para ampliar seu negócio" 
+           path = "/loginAtleta"
+           pathCadastro = "/cadastroAdm"/> 
+          
     <Footer/>
     </>
     );

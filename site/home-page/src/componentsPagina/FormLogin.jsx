@@ -13,7 +13,7 @@ function FormLogin(props){
                 </label>
 
                 <label for="">
-                  <p>Login</p>
+                  <p>Senha</p>
                     <input type="text"/>
                 </label>
             </form>
@@ -30,7 +30,9 @@ function FormLogin(props){
             <div class="inscrever">
                 <p>{props.texto}</p>
 
-                <button class="btnInscrever">Inscreva-se</button>    
+              <Link to = {props.pathCadastro}>
+                  <button class="btnInscrever">Inscreva-se</button>  
+                  </Link>    
             </div>
            
         </div>

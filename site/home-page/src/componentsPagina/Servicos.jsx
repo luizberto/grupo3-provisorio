@@ -1,7 +1,7 @@
 import React from "react";
-import figUm from "../home-template-css/img/fluent_sport-soccer-16-regular.png";
-import figDois from "../home-template-css/img/mdi_whistle-outline.png";
-import figTres from "../home-template-css/img/Group.png"
+import figUm from "../home-template-css/img/camisetia.png";
+import figDois from "../home-template-css/img/Vector.png";
+import figTres from "../home-template-css/img/apitin.png";
 import CompLinks from "../components/CompLinks";
 
 
@@ -13,13 +13,15 @@ function Servicos(){
                 <h1>Explorar</h1>
                 <div className = "container2">
                         <CompLinks image = {figUm} 
-                        texto = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."/>
+                        texto = "Se reuna com os amigos e jogue nas quadras próximas. Clique aqui para inscrever-se "
+                        link = "/cadastroAleta"/>
 
                         <CompLinks image = {figDois} 
-                        texto = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."/>
+                        texto = "Caso tenha uma quadra, expanda o nome dela e impulsione seu negócio. Clique aqui para inscrever-se"
+                        link = "/cadastroAdm"/>
 
                         <CompLinks image = {figTres} 
-                        texto = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."/>
+                        texto = "Conheça mais vantagens, explore tudo que a sport.fy tem a te oferecer"/>
                 </div>
             </section>
 
