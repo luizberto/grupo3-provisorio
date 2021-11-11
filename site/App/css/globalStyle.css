@@ -1,0 +1,55 @@
+body{
+  margin: 0;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #EFF2EC;
+}
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: black;
+  box-shadow: 0 0 1em black;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  border-left:1px solid green ;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:green;
+}
+
+
+::-webkit-scrollbar {
+  width:10px;
+  }
+   
+  
+  ::-webkit-scrollbar-track {
+  background:#333;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+  background: green;
+  }

@@ -1,0 +1,38 @@
+.box-title{
+    background-color: green;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.box-horarios{
+    background-color: black;
+    color: white;
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.horario{
+    width: 100%;
+    display: grid;
+    text-align: center;
+}
+
+.lista-jogadores{
+    width: 100%;
+    display: grid;
+    text-align: center;
+}
+
+.lista{
+    margin: auto;
+    height: 131px;
+    width: 70%;
+    background-color: green;
+}

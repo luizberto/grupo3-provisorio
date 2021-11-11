@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.container-info-quadra{
+    display: flex;
+    justify-content: space-around;
+}
+.box-info-quadra{
+    margin-top: 10px;
+    width: 400px;
+    height: 350px;    
+    background-color: black;
+}
+.box-horarios-quadra{
+    margin-top: 10px;
+    width: 400px;
+    height: 350px;    
+    background-color: black;
+}

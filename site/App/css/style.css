@@ -1,0 +1,46 @@
+
+.container{ 
+    background-color: black;
+}
+.panel-app{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.panel-app img{
+    padding-top: 20px;
+    padding-left: 30px;
+    width: 1200px;
+}
+.panel-tools{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    background-color: black;
+    border-bottom: 1px solid #9BC848;
+    padding: 5px;
+}
+
+.panel-tools select{
+    color: white;
+    height: 30px;
+    background: #000000;
+    border: 2px solid #9BC848;
+    border-radius: 5px;
+}
+
+
+.panel-court{
+    width: 100%;
+}
+
+.court{
+    width: 320px;
+    height: 320px;
+    border:2px solid #9BC848 ;
+    border-radius: 2px;
+}
