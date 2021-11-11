@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
 import api from '../api';
 
-function CadastroAdm(){
+function CadastroAdm(props){
     const [campo1, setCampo1] = useState("");
     const [campo2, setCampo2] = useState("");
     const [campo3, setCampo3] = useState("");

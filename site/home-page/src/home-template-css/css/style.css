@@ -116,7 +116,7 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(../img/bolaFundo.png);
+    background-image: url(../img/bola-home);
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: darken;
