@@ -1,21 +1,46 @@
-.container{
+.containerDescricao{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    height: auto;
 }
 
-.container-info-quadra{
-    display: flex;
-    justify-content: space-around;
+.box-quadra{
+    margin: auto;
+    width: 35%;
 }
+
+.containerBoxInfos{
+    display: flex;
+    justify-content: space-evenly;
+    height: 450px;
+    padding: 2%;
+}
+
+
+
+
 .box-info-quadra{
     margin-top: 10px;
-    width: 400px;
-    height: 350px;    
+    width: 278px;
+    height: 316px;
     background-color: black;
+    color: blanchedalmond;
 }
+
+.box-info-quadra h1{
+    text-align: center;
+}
+
+
 .box-horarios-quadra{
     margin-top: 10px;
-    width: 400px;
-    height: 350px;    
+    width: 278px;
+    height: 316px;
     background-color: black;
+    color: blanchedalmond;
+}
+
+.box-horarios-quadra h1{
+    text-align: center;
 }
