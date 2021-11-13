@@ -1,35 +1,45 @@
 package com.example.demo.dominio;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
-@Table(name = "atleta", indexes = {
-        @Index(name = "fkEndereco_idx", columnList = "fk_endereco")
-})
 @Entity
 public class Atleta {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_atleta", nullable = false)
     private Integer id;
 
-    @Column(name = "cpf", length = 11)
+    @CPF
+    @Column()
     private String cpf;
 
-    @Column(name = "nome_atleta", length = 45)
+    @Length(min = 3, max = 50, message = "Campo NOME inválido")
+    @NotBlank
+    @Column(name = "nome_atleta")
     private String nomeAtleta;
 
-    @Column(name = "email", length = 45)
+    @Email()
+    @NotBlank(message = "Favor informar email")
+    @Column(name = "email", length = 50)
     private String email;
 
-    @Column(name = "senha", length = 45)
+    @Length(min = 4, max = 35, message = "Informar uma senha entre 4-35 caracteres")
+    @NotBlank(message = "Favor informar senha")
+    @Column(name = "senha", length = 50)
     private String senha;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "data_nasc")
     private LocalDate dataNasc;
 
     @ManyToOne
-    @JoinColumn(name = "fk_endereco")
     private Endereco fkEndereco;
 
     public Endereco getFkEndereco() {
