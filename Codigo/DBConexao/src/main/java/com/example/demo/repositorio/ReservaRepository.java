@@ -2,8 +2,10 @@ package com.example.demo.repositorio;
 
 import com.example.demo.dominio.Reserva;
 import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
-import java.time.LocalDateTime;
+public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
 
-public interface ReservaRepository extends JpaRepository<Reserva, LocalDateTime> {
+    public List<Reserva> findAllByOrderByHoraPartidaAsc();
+
 }

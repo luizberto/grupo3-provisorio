@@ -1,29 +1,46 @@
 package com.example.demo.dominio;
 
 import javax.persistence.*;
-import java.time.Instant;
+import java.time.LocalDateTime;
 
-@Table(name = "reservas", indexes = {
-        @Index(name = "fk_Atleta_has_Quadra_Quadra1_idx", columnList = "Quadra"),
-        @Index(name = "fk_Reservas_Atleta1_idx", columnList = "responsavel")
-})
 @Entity
 public class Reserva {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idReserva")
+    private Integer idReserva;
+
     @Column(name = "horaPartida", nullable = false)
-    private Instant id;
+    private LocalDateTime horaPartida;
 
-    @Column(name = "Quadra", nullable = false)
-    private Integer quadra;
+    @ManyToOne
+    private Quadra quadra;
 
-    @Column(name = "responsavel", nullable = false)
-    private Integer responsavel;
+    @ManyToOne
+    private Atleta responsavel;
 
     @Column(name = "qtdAtletas", length = 45)
     private String qtdAtletas;
 
     @Column(name = "valorReserva", length = 45)
     private String valorReserva;
+
+    public Integer getIdReserva() {
+        return idReserva;
+    }
+
+    public void setIdReserva(Integer idReserva) {
+        this.idReserva = idReserva;
+    }
+
+    public LocalDateTime getHoraPartida() {
+        return horaPartida;
+    }
+
+    public void setHoraPartida(LocalDateTime horaPartida) {
+        this.horaPartida = horaPartida;
+    }
 
     public String getValorReserva() {
         return valorReserva;
@@ -41,27 +58,19 @@ public class Reserva {
         this.qtdAtletas = qtdAtletas;
     }
 
-    public Integer getResponsavel() {
-        return responsavel;
-    }
-
-    public void setResponsavel(Integer responsavel) {
-        this.responsavel = responsavel;
-    }
-
-    public Integer getQuadra() {
+    public Quadra getQuadra() {
         return quadra;
     }
 
-    public void setQuadra(Integer quadra) {
+    public void setQuadra(Quadra quadra) {
         this.quadra = quadra;
     }
 
-    public Instant getId() {
-        return id;
+    public Atleta getResponsavel() {
+        return responsavel;
     }
 
-    public void setId(Instant id) {
-        this.id = id;
+    public void setResponsavel(Atleta responsavel) {
+        this.responsavel = responsavel;
     }
 }
