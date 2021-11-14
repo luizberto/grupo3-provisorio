@@ -21,10 +21,10 @@ public class Reserva {
     private Atleta responsavel;
 
     @Column(name = "qtdAtletas", length = 45)
-    private String qtdAtletas;
+    private Integer qtdAtletas;
 
     @Column(name = "valorReserva", length = 45)
-    private String valorReserva;
+    private Double valorReserva;
 
     public Integer getIdReserva() {
         return idReserva;
@@ -42,19 +42,19 @@ public class Reserva {
         this.horaPartida = horaPartida;
     }
 
-    public String getValorReserva() {
+    public Double getValorReserva() {
         return valorReserva;
     }
 
-    public void setValorReserva(String valorReserva) {
+    public void setValorReserva(Double valorReserva) {
         this.valorReserva = valorReserva;
     }
 
-    public String getQtdAtletas() {
+    public Integer getQtdAtletas() {
         return qtdAtletas;
     }
 
-    public void setQtdAtletas(String qtdAtletas) {
+    public void setQtdAtletas(Integer qtdAtletas) {
         this.qtdAtletas = qtdAtletas;
     }
 

@@ -2,9 +2,6 @@ package com.example.demo.dominio;
 
 import javax.persistence.*;
 
-@Table(name = "quadra", indexes = {
-        @Index(name = "fk_Quadra_Endereco1_idx", columnList = "fk_endereco")
-})
 @Entity
 public class Quadra {
     @Id
