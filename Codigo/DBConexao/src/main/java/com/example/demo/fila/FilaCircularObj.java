@@ -2,6 +2,9 @@ package com.example.demo.fila;
 
 import com.example.demo.pilha.PilhaObj;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FilaCircularObj<T> {
 
     private T[] fila;
@@ -48,14 +51,16 @@ public class FilaCircularObj<T> {
         return null;
     }
 
-    public void exibe() {
+    public Object exibe() {
         if (!this.isEmpty()) {
+            Object[] filaObj = new Object[this.tamanhoFila];
             for (int c = 0, i = this.inicioFila; c < this.tamanhoFila; c++, i = ((i + 1) % fila.length)) {
-                System.out.println(fila[i]);
+//                System.out.println(this.fila[i]);
+                filaObj[c] = this.fila[i];
             }
-        } else {
-            System.out.println("A fila está vazia!");
+            return filaObj;
         }
+        return "Fila Vazia";
     }
 
     public void separaPositivoNegativoEmOrder(int[] array) {

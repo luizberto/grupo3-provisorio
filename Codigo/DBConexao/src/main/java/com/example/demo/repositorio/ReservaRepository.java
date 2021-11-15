@@ -8,6 +8,5 @@ import java.util.List;
 public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
 
     public List<Reserva> findAllByOrderByHoraPartidaAsc();
-    public List<Reserva> findAllByResponsavel(Atleta responsavel);
 
 }
