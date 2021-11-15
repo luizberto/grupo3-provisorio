@@ -1,7 +1,24 @@
 import React from "react";
 import NavbarSecundario from "../components/NavbarSecundario";
+import QuadrasAdm from "../components/QuadrasAdm";
+import { Link } from "react-router-dom";
+import api from "../api";
+import { useEffect, useState } from "react";
 
 function PerfilAdm(){
+
+    function Quadras() {
+        const [quadras, setQuadra] = useState([]);
+      
+        useEffect(() => {
+          async function pegaDados() {
+            const resposta = await api.get("");
+            setQuadra(resposta.data);
+            console.log(resposta.data);
+          } 
+          pegaDados();
+        }, [])
+
     return(
     <>
         <NavbarSecundario/>
@@ -11,25 +28,23 @@ function PerfilAdm(){
         <h1>Suas quadras</h1>
         <button className = "quadraBtn download">Download da lista de alugueis</button>
         </div>
-        
-        <div class="containerQuadras">
-            <div class="quadra">
-                <h1>Quadra 1</h1>
-                <ul>
-                    <li>Rua: </li>
-                    <li>Numero:</li>
-                    <li>Limite de ocupação: </li>
-                </ul>
-                <a href="">Visualizar&gt; </a>
-            </div>
+
+        {quadras.map(quadra => (
             
-        </div>   
+            <QuadrasAdm
+                key = {quadra.id}
+                nome = {quadra.nomeQuadra}
+                descricao = {quadra.descQuadra}
+                ocupacao = {quadra.limitePessoas}
+            />
+          ))}   
+        
         <div class="content-add-quadra">
             <div class="add">
-                <button className = "adcQuadra"><p>+</p></button>
+              <Link to = "/cadastroQuadras"><button className = "adcQuadra"><p>+</p></button></Link> 
             </div>    
         </div>
-             </>
+    </>
     );
-}
+}}
 export default PerfilAdm;
