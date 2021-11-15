@@ -23,6 +23,15 @@
     padding: 2%;
 }
 
+.tituloCard{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+.tituloCard img{ 
+    height: 30px;
+}
 
 
 
@@ -32,6 +41,9 @@
     height: 316px;
     background-color: black;
     color: blanchedalmond;
+    border-radius: 5%;
+    border: 5px solid green;
+    padding: 2%;
 }
 
 .box-info-quadra h1{

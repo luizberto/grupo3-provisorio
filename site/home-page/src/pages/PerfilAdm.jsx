@@ -12,9 +12,6 @@ function PerfilAdm(){
         <button className = "quadraBtn download">Download da lista de alugueis</button>
         </div>
         
-
-
-
         <div class="containerQuadras">
             <div class="quadra">
                 <h1>Quadra 1</h1>
