@@ -2,6 +2,7 @@ import './home-template-css/css/style.css'
 import './home-template-css/css/style-grid.css'
 import './home-template-css/css/cadastro.css'
 import './home-template-css/css/login.css'
+import './home-template-css/App/css/quadras.css'
 import Routes from './routes';
 
 

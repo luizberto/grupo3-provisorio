@@ -37,19 +37,19 @@ function CadastroAdm(props){
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">{props.titulo}</h4>
                     <form onSubmit={props.usuario} class="formClass">
-                        <label for=""> {props.campoUm}
+                    <label for=""> CPF
                             <input type="text" onChange={e => setCampo1(e.target.value)}/>
                         </label>
-                        <label for="">{props.campoDois}
+                        <label for=""> email
                             <input type="text" onChange={e => setCampo2(e.target.value)}/>
                         </label>
-                        <label for=""> {props.campoTres}
+                        <label for=""> senha
                             <input type="text" onChange={e => setCampo3(e.target.value)}/>
                         </label>
-                        <label for=""> {props.campoQuatro}
+                        <label for=""> data de Nascimento
                             <input type="text" onChange={e => setCampo4(e.target.value)}/>
                         </label>
-                        <label for=""> {props.campoCinco}
+                        <label for=""> endereço
                             <input type="text" onChange={e => setCampo5(e.target.value)}/>
                         </label>
                         <button class="buttonCadastrar" type="submit">Cadastrar</button>

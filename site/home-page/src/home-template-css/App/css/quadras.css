@@ -12,18 +12,35 @@
     padding: 2%;
 }
 
-.box-title{
-  
-    height: 50px;
-    width: 100%;
+.titulo{
+    margin: auto;
+    height: auto;
+    width: 80%;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
-.box-upload-quadras{
-    position: relative;
-    left: 100px;
+.titulo h1{
+    color: black;
+    text-align: center;
+    font-style: normal;
+}
+
+.quadraBtn{
+    height: 100px;
+    width: 100px;
+    border-radius: 10%;
+    background-color: rgb(48, 45, 45);
+    color: blanchedalmond;
+    border: 5px solid #3DA441;
+
+}
+
+.quadraBtn:hover{
+    cursor: pointer;
+    background-color: blanchedalmond;
+    color: rgb(43, 42, 41);
+    transition: 500ms;
 }
 
 .content-quadras{
@@ -35,12 +52,13 @@
 
 .quadra{
     border-radius: 20px;
-    width: 20%;
-    height: 150px;
+    width: 230px;
+    height: 190px;
     padding: 2%;
-    margin: 2%;
-    background-color: green;
-    border: 1px solid black;
+    margin-right: 2% ;
+    background-color: #1E1B1B;
+    border: 5px solid #3DA441;
+   
 }
 
 .quadra h1{
@@ -51,6 +69,23 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.quadra a{
+    color: #3DA441;
+    padding: 1%;
+
+}
+
+.adcQuadra{
+    border-radius: 50%;
+    background-color: black;
+    color: blanchedalmond;
+    cursor: pointer;
+}
+
+.adcQuadra p{
+    font-size: xx-large;
 }
 
 .add{

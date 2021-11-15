@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import LoginAdm from "./pages/LoginAdm";
 import LoginAtleta from "./pages/LoginAtleta";
 import CadastroEndereco from "./pages/CadastroEndereco";
+import PerfilAdm from "./pages/PerfilAdm";
 
 
 
@@ -21,6 +22,7 @@ function Routes(){
             <Route path = "/loginAdm" exact component = {LoginAdm}/>
             <Route path = "/loginAtleta" exact component = {LoginAtleta}/>
             <Route path = "/cadastroEndereco" exact component = {CadastroEndereco}/>
+            <Route path = "/perfilAdm" exact component = {PerfilAdm}/>
         </Switch>
     </BrowserRouter>
     );

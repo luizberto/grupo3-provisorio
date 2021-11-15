@@ -12,7 +12,7 @@ function LoginAtleta(){
         texto = "Inscreva-se aqui para participar da maior rede de atletas do Brasil" 
         path = "/loginAdm"
         pathCadastro = "/cadastroAtleta"/> 
-    <Footer/>
+        <Footer/>
         </>
     );
 }
