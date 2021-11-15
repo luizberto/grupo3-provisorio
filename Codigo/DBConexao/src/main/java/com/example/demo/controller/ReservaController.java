@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,7 +18,7 @@ public class ReservaController {
     @Autowired
     private ReservaRepository reservaRepository;
 
-    private FilaCircularObj filaCircularObj;
+    public FilaCircularObj filaCircularObj;
 
     @PostMapping
     public ResponseEntity postReserva(@RequestBody Reserva novaReserva) {
@@ -59,25 +60,40 @@ public class ReservaController {
         return ResponseEntity.status(200).body(reservasQuadra);
     }
 
-    @PostMapping("/lista-horarios-atleta/{idAtleta}")
-    public ResponseEntity postFilaReservasAtleta(@PathVariable Integer idAtleta) {
-        List<Reserva> reservasAtleta = this.reservaRepository.findAll().stream().filter(reserva -> reserva.getResponsavel().getId().equals(idAtleta)).collect(Collectors.toList());
+    //    @PostMapping("/lista-horarios-atleta/{idAtleta}")
+    public Object postFilaReservasAtleta(Integer idAtleta) {
+        List<Reserva> reservasAtleta = this.reservaRepository.findAllByOrderByHoraPartidaAsc().stream().filter(reserva -> reserva.getResponsavel().getId().equals(idAtleta)).collect(Collectors.toList());
         if (!reservasAtleta.isEmpty()) {
             this.filaCircularObj = new FilaCircularObj<Object>(reservasAtleta.size());
             for (int i = 0; i < reservasAtleta.size(); i++) {
-                filaCircularObj.insert(reservasAtleta.get(i));
+                if (reservasAtleta.get(i).getHoraPartida().isAfter(LocalDateTime.now())) {
+                    filaCircularObj.insert(reservasAtleta.get(i));
+                }
             }
-            return ResponseEntity.status(200).build();
         }
-        return ResponseEntity.status(204).build();
+        return filaCircularObj.exibe();
     }
 
     @GetMapping("/lista-horarios-atleta/{idAtleta}")
     public ResponseEntity getFilaReservasAtleta(@PathVariable Integer idAtleta) {
-        if (!this.filaCircularObj.isEmpty()) {
-            return ResponseEntity.status(200).body(this.filaCircularObj.exibe());
+        return ResponseEntity.status(200).body(postFilaReservasAtleta(idAtleta));
+    }
+
+    @GetMapping("/peek-horarios-atleta")
+    public ResponseEntity peekFilaReservasAtleta() {
+        if (this.filaCircularObj.isEmpty()) {
+            return ResponseEntity.status(204).build();
         }
-        return ResponseEntity.status(404).build();
+        return ResponseEntity.status(200).body(this.filaCircularObj.peek());
+    }
+
+    @DeleteMapping("/poll-horarios-atleta")
+    public ResponseEntity pollFilaReservasAtleta() {
+        if (this.filaCircularObj.isEmpty()) {
+            return ResponseEntity.status(204).build();
+        }
+        Reserva reserva = (Reserva) this.filaCircularObj.poll();
+        return ResponseEntity.status(200).body(reserva);
     }
 
     @DeleteMapping("/{idReserva}")

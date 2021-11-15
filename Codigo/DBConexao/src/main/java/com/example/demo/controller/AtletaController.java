@@ -22,9 +22,13 @@ public class AtletaController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity postLogin(@RequestBody Login login){
-        for(Atleta a: atletaRepository.findAll()){
-            if(a.getEmail().equals(login.getEmail()) && a.getSenha().equals(login.getSenha())){
+    public ResponseEntity postLogin(@RequestBody Login login) {
+        for (Atleta a : atletaRepository.findAll()) {
+            if (a.getEmail().equals(login.getEmail()) && a.getSenha().equals(login.getSenha())) {
+//                ReservaController reservaController = new ReservaController();
+//                while (!reservaController.filaCircularObj.isEmpty()) {
+//                    reservaController.filaCircularObj.poll();
+//                }
                 return ResponseEntity.status(202).build();
             }
         }
@@ -58,7 +62,7 @@ public class AtletaController {
 
     @PutMapping("/{id}")
     public ResponseEntity putAtletas(@PathVariable int id,
-                                  @RequestBody Atleta atletaAtt) {
+                                     @RequestBody Atleta atletaAtt) {
         if (atletaRepository.existsById(id)) {
             atletaAtt.setId(id);
             atletaRepository.save(atletaAtt);
