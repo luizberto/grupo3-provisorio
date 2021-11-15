@@ -6,6 +6,7 @@ import CadastroQuadras from "./pages/CadastroQuadras";
 import HomePage from "./pages/HomePage";
 import LoginAdm from "./pages/LoginAdm";
 import LoginAtleta from "./pages/LoginAtleta";
+import CadastroEndereco from "./pages/CadastroEndereco";
 
 
 
@@ -19,6 +20,7 @@ function Routes(){
             <Route path = "/cadastroQuadras" exact component = {CadastroQuadras}/>
             <Route path = "/loginAdm" exact component = {LoginAdm}/>
             <Route path = "/loginAtleta" exact component = {LoginAtleta}/>
+            <Route path = "/cadastroEndereco" exact component = {CadastroEndereco}/>
         </Switch>
     </BrowserRouter>
     );

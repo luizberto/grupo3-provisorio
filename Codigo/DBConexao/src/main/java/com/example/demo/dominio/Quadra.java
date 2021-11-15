@@ -24,6 +24,8 @@ public class Quadra {
     @Column(name = "complemento", length = 45)
     private String complemento;
 
+
+
     @ManyToOne
     @JoinColumn(name = "fk_endereco")
     private Endereco fkEndereco;

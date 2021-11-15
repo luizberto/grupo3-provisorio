@@ -39,10 +39,16 @@ body, a, li, p{
     background-size: cover;
 }
 
- .dadosCadastro {
+ .dadosCadastro1 {
     width: 100%;
     height: 60%;
     display: flex;
+}
+
+.dadosCadastro2{
+    display: none;
+    width: 100%;
+    height: 60%;
 }
 
  .campo{

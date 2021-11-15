@@ -6,8 +6,14 @@
 }
 
 .box-quadra{
-    margin: auto;
-    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.box-quadra img{
+    width: 50vw;
 }
 
 .containerBoxInfos{

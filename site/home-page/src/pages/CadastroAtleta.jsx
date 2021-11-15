@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import Footer from "../components/Footer";
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
+import { Link } from "react-router-dom";
 import api from '../api';
 
 function CadastroAtleta(props){
+
     const [campo1, setCampo1] = useState("");
     const [campo2, setCampo2] = useState("");
     const [campo3, setCampo3] = useState("");
@@ -35,29 +37,28 @@ function CadastroAtleta(props){
             <NavbarSecundario />
             <div class="container4">
                 <div class="dadosCadastro">
-                    <h4 class="tituloForm">{props.titulo}</h4>
+                    <h4 class="tituloForm">Atletas</h4>
                     <form onSubmit={props.usuario} class="formClass">
-                        <label for=""> {props.campoUm}
+                        <label for=""> CPF
                             <input type="text" onChange={e => setCampo1(e.target.value)}/>
                         </label>
-                        <label for="">{props.campoDois}
+                        <label for=""> email
                             <input type="text" onChange={e => setCampo2(e.target.value)}/>
                         </label>
-                        <label for=""> {props.campoTres}
+                        <label for=""> senha
                             <input type="text" onChange={e => setCampo3(e.target.value)}/>
                         </label>
-                        <label for=""> {props.campoQuatro}
+                        <label for=""> data de Nascimento
                             <input type="text" onChange={e => setCampo4(e.target.value)}/>
                         </label>
-                        <label for=""> {props.campoCinco}
+                        <label for=""> endereço
                             <input type="text" onChange={e => setCampo5(e.target.value)}/>
                         </label>
-                        <button class="buttonCadastrar" type="submit">Cadastrar</button>
-                    </form>
-
-                    
+                    <Link to = "/cadastroEndereco">
+                        <button class="buttonCadastrar" type = "submit">Proximo</button>
+                        </Link> 
+                    </form>   
                 </div>
-
             </div>
             <Footer />
         </>

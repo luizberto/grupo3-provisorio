@@ -29,8 +29,6 @@
 .tituloForm{
     text-align: center;
     color: blanchedalmond;
- 
-
 }
 
 .formClass{
@@ -40,6 +38,7 @@
     align-content: center;
     flex-wrap: wrap;
 }
+
 
 .formClass label{
     display: flex;
