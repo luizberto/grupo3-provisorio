@@ -16,6 +16,9 @@ public class DonoQuadra {
     @Column(name = "nome_dono", length = 100)
     private String nomeDono;
 
+    @Column(name = "cpf", length = 11)
+    private String cpf;
+
     @Column(name = "dataNasc")
     private LocalDate dataNasc;
 
@@ -63,5 +66,13 @@ public class DonoQuadra {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }

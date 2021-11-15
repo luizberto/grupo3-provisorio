@@ -27,7 +27,7 @@ public class Quadra {
 
 
     @ManyToOne
-    @JoinColumn(name = "fk_endereco")
+    @JoinColumn(name = "idEndereco")
     private Endereco fkEndereco;
 
     public Endereco getFkEndereco() {
