@@ -11,15 +11,47 @@ import FormLogin from "../componentsPagina/FormLogin";
 
 function LoginAdm(){
     return(
+
         <>
-     <NavbarSecundario/>
-           <FormLogin titulo = "ADM" 
-           questao = "É atleta?" 
-           texto = "Inscreva-se aqui para ampliar seu negócio" 
-           path = "/loginAtleta"
-           pathCadastro = "/cadastroAdm"/> 
-          
+        <NavbarSecundario/>
+        <div class="containerLogin">
+        <div class="logar">
+            <h3>LOGIN Administrador</h3>
+            <form class="formsLogar" action="">
+                <label for="">
+                   <p>Email</p> 
+                    <input type="text"/>
+                    
+                </label>
+
+                <label for="">
+                  <p>Senha</p>
+                    <input type="text"/>
+                </label>
+            </form>
+
+            <button class="btnLogin">Login</button>
+
+            <h5>É atleta?</h5>
+                <Link to = "/loginAtleta"><a>clique aqui</a></Link>   
+        </div>
+
+
+        <div class="trocar">
+
+            <div class="inscrever">
+                <p>Se não tem cadastro no site, increva-se ja e amplie seu negócio</p>
+
+              <Link to = "/cadastroAdm">
+                  <button class="btnInscrever">Inscreva-se</button>  
+                  </Link>    
+            </div>
+           
+        </div>
+    </div>
+
     <Footer/>
+
     </>
     );
 }
