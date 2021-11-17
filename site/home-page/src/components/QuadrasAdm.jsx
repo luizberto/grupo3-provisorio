@@ -11,7 +11,7 @@ function QuadrasAdm(props){
                         <li>Descrição da quadra:{props.descricao}</li>
                         <li>Limite de ocupação:{props.ocupacao}</li>
                     </ul>
-                    <a href="">Visualizar&gt; </a>
+                    <a href="">vizualizar&gt; </a>
                 </div>
             </div>    
 

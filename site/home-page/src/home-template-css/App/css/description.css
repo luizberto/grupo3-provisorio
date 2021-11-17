@@ -3,6 +3,7 @@
     flex-direction: column;
     margin: auto;
     height: auto;
+  
 }
 
 .box-quadra{
@@ -19,8 +20,10 @@
 .containerBoxInfos{
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
     height: 450px;
     padding: 2%;
+    margin: auto;
 }
 
 .tituloCard{
@@ -61,4 +64,21 @@
 
 .box-horarios-quadra h1{
     text-align: center;
+}
+
+.botaoAcao{
+    background-color: black;
+    color: blanchedalmond;
+    border: 3px solid green;
+    border-radius: 4%;
+    width: 10%;
+    align-self: center;
+    justify-self: center;
+
+}
+
+.botaoAcao:hover{
+    background-color: honeydew;
+    color: black;
+    transition: 500ms;
 }
