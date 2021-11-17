@@ -9,7 +9,7 @@ function Banner(){
         <section class="banner">
 
 <div class="container">
-    <div class="titulo">
+    <div class="tituloBanner">
         <h1>
     Encontre quadras para praticar seus esportes favoritos.
 </h1>

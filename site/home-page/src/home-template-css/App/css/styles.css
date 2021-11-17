@@ -1,6 +1,10 @@
-.container{
+.containeCard{
   border-bottom: 1px solid black;
   width: 100%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .box-menu{
@@ -11,21 +15,30 @@
   justify-content: space-around;
 }
 
-.box-apresentation{
-  height: 500px;
-  width: 100%;
-  box-shadow: 0 0 1em black;
-  background-image: url(/img/football-g5e95e97ec_1920.jpg);
+.box-menu select{
+  outline: none;
+  background-color: black;
+  color: aliceblue;
+  border: 2px solid green;
+  border-radius: 3%;
+  padding: 5px;
 }
 
-.container-content{
+.box-menu input{
+  outline: none;
+  border: 2px solid green;
+  border-radius: 4%;
+  padding: 5px;
+}
+
+.contentCard{
   margin-top: 30px;
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.box-content{
+.boxCard{
   display: flex;
   height: 400px;
   margin:10px ;
@@ -34,20 +47,40 @@
   box-shadow: 0 0 1em black;
 }
 
-.content-clube-img{
+.cardImg{
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.content-clube-img img{
+.cardImg img{
   width: 100%;
   padding-left: 20px;
 }
 
 .content-clube-descricao{
   width: 50%;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  color: aliceblue;
+}
+
+.clubeButton{
+  background-color: transparent;
+  color: aliceblue;
+  border: 3px solid green;
+  border-radius: 5%;
+  cursor: pointer;
+  padding: 2%;
+  margin-top: 4%;
+}
+
+.clubeButton:hover{
+  background-color: white;
+  color: black;
+  transition: 500ms;
 }

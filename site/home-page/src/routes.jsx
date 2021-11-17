@@ -9,6 +9,7 @@ import LoginAtleta from "./pages/LoginAtleta";
 import CadastroEndereco from "./pages/CadastroEndereco";
 import PerfilAdm from "./pages/PerfilAdm";
 import EdicaodeQuadra from "./pages/EdicaodeQuadra";
+import BuscaQuadra from "./pages/BuscaQuadra";
 
 
 
@@ -25,6 +26,7 @@ function Routes(){
             <Route path = "/cadastroEndereco" exact component = {CadastroEndereco}/>
             <Route path = "/perfilAdm" exact component = {PerfilAdm}/>
             <Route path = "/edicaoQuadra" exact component = {EdicaodeQuadra}/>
+            <Route path = "/buscaQuadra" exact component = {BuscaQuadra}/>
         </Switch>
     </BrowserRouter>
     );

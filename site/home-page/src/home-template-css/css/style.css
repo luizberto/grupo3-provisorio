@@ -97,7 +97,7 @@ a{
 /*banner com gif*/
 
 
-.titulo{
+.tituloBanner{
     display: flex;
     flex-direction: row;
     align-self:flex-start;
@@ -107,7 +107,7 @@ a{
     
 }
 
-.titulo h3{
+.tituloBanner h3{
     
     text-align: start;
 }
