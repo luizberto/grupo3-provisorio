@@ -9,14 +9,14 @@ import insta from '../home-template-css/img/insta.png'
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
 import FormLogin from "../componentsPagina/FormLogin";
 import api from "../api";
+import { useHistory } from 'react-router-dom';
 
 function LoginAdm() {
 
     const [campo1, setCampo1] = useState("");
     const [campo2, setCampo2] = useState("");
-
+    const history = useHistory();
     function login(e) {
-        alert(campo2)
         e.preventDefault();
         api.post("/adm/login", {
             email: campo1,
@@ -24,7 +24,7 @@ function LoginAdm() {
         }).then((resposta) => {
             if (resposta.status === 201) {
                 alert("logado com sucesso");
-                // history.push('/atletas');
+                history.push('/perfilAdm');
             }
         }).catch((erro) => {
             alert("logado erro");
