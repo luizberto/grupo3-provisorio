@@ -1,3 +1,7 @@
+GET http://localhost:8080/quadras
+
+###
+
 GET http://localhost:8080/atletas
 
 <> 2021-10-20T105205.200.json

@@ -7,12 +7,11 @@ import { useEffect, useState } from "react";
 
 function PerfilAdm(){
 
-    function Quadras() {
         const [quadras, setQuadra] = useState([]);
       
         useEffect(() => {
           async function pegaDados() {
-            const resposta = await api.get("");
+            const resposta = await api.get("/quadras");
             setQuadra(resposta.data);
             console.log(resposta.data);
           } 
@@ -28,17 +27,18 @@ function PerfilAdm(){
         <h1>Suas quadras</h1>
         <button className = "quadraBtn download">Download da lista de alugueis</button>
         </div>
-
+        <div className="containerQuadras">
         {quadras.map(quadra => (
-            
+
+
             <QuadrasAdm
-                key = {quadra.id}
+                key = {quadra.id_quadra}
                 nome = {quadra.nomeQuadra}
                 descricao = {quadra.descQuadra}
                 ocupacao = {quadra.limitePessoas}
             />
           ))}   
-        
+        </div>
         <div class="content-add-quadra">
             <div class="add">
               <Link to = "/cadastroQuadras"><button className = "adcQuadra"><p>+</p></button></Link> 
@@ -46,5 +46,5 @@ function PerfilAdm(){
         </div>
     </>
     );
-}}
+}
 export default PerfilAdm;

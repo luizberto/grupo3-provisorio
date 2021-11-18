@@ -1,13 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 import Footer from "../components/Footer";
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
-import { Link } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
+import api from "../api";
 
 
 
 
 function LoginAtleta() {
 
+    const [campo1, setCampo1] = useState("");
+    const [campo2, setCampo2] = useState("");
+    const history = useHistory();
+    function login(e) {
+        e.preventDefault();
+        api.post("/atletas/login", {
+            email: campo1,
+            senha: campo2,
+        }).then((resposta) => {
+            if (resposta.status === 201) {
+                alert("logado com sucesso");
+                history.push('/buscaQuadra');
+            }
+        }).catch((erro) => {
+            alert("logado erro");
+            console.log(erro);
+        })
+    }
     return (
 
         <>
@@ -16,7 +35,7 @@ function LoginAtleta() {
             <div class="containerLogin">
                 <div class="logar">
                     <h3>LOGIN Atleta</h3>
-                    <form class="formsLogar" action="">
+                    <form class="formsLogar" onSubmit={login} action="">
                         <label for="">
                             <p>Email</p>
                             <input type="text" />
@@ -27,9 +46,10 @@ function LoginAtleta() {
                             <p>Senha</p>
                             <input type="text" />
                         </label>
+                        <button type="submit" className="btnLogin">Login</button>
                     </form>
 
-                    <button class="btnLogin">Login</button>
+
 
                     <h5>É administrador de alguma quadra?</h5>
                     <Link to="/loginAdm"><a>clique aqui</a></Link>

@@ -7,7 +7,7 @@ public class Quadra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_quadra", nullable = false)
-    private Integer id;
+    private Integer idQuadra;
 
     @Column(name = "nome_quadra", length = 45)
     private String nomeQuadra;
@@ -79,10 +79,10 @@ public class Quadra {
     }
 
     public Integer getId() {
-        return id;
+        return idQuadra;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.idQuadra = id;
     }
 }

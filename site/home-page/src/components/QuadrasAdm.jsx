@@ -3,9 +3,9 @@ import React from "react";
 function QuadrasAdm(props){
     return(
         <>
-            <div class="containerQuadras">
+
                 <div class="quadra">
-                    <h1>Quadra 1</h1>
+                    <h1>Quadra {props.key}</h1>
                     <ul>
                         <li>Nome da quadra:{props.nome}</li>
                         <li>Descrição da quadra:{props.descricao}</li>
@@ -13,7 +13,7 @@ function QuadrasAdm(props){
                     </ul>
                     <a href="">vizualizar&gt; </a>
                 </div>
-            </div>    
+
 
         </>
     );

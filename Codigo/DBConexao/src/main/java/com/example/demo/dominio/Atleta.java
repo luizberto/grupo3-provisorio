@@ -15,9 +15,8 @@ public class Atleta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_atleta", nullable = false)
     private Integer id;
-
-    @CPF
-    @Column()
+    
+    @Column(name = "cpf", length = 14)
     private String cpf;
 
     @Length(min = 3, max = 50, message = "Campo NOME inválido")
