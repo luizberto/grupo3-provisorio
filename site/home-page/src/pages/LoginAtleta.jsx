@@ -1,8 +1,10 @@
 import React from "react";
 import Footer from "../components/Footer";
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
-import FormLogin from "../componentsPagina/FormLogin";
 import { Link } from "react-router-dom";
+
+
+
 
 function LoginAtleta() {
 
