@@ -10,7 +10,7 @@ function QuadrasAdm(props){
                         <li>Nome da quadra:{props.nome}</li>
                         <li>Descrição da quadra:{props.descricao}</li>
                         <li>Limite de ocupação:{props.ocupacao}</li>
-                    </ul>
+                    </ul>  
                     <a href="">vizualizar&gt; </a>
                 </div>
 
