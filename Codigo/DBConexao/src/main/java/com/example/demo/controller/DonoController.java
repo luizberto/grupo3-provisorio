@@ -27,7 +27,7 @@ public class DonoController {
     public ResponseEntity postLogin(@RequestBody Login login){
         for(DonoQuadra d: donoRepository.findAll()){
             if(d.getEmail().equals(login.getEmail()) && d.getSenha().equals(login.getSenha())){
-                return ResponseEntity.status(202).build();
+                return ResponseEntity.status(201).build();
             }
         }
         return ResponseEntity.status(418).build();

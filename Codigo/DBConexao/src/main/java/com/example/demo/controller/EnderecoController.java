@@ -15,7 +15,7 @@ public class EnderecoController {
     EnderecoRepository enderecoRepository;
 
     @PostMapping
-    public ResponseEntity postQuadra(@RequestBody Endereco endereco) {
+    public ResponseEntity postEndereco(@RequestBody Endereco endereco) {
         enderecoRepository.save(endereco);
         return ResponseEntity.status(201).build();
     }
@@ -36,7 +36,7 @@ public class EnderecoController {
     }
 
     @GetMapping
-    public ResponseEntity getQuadras() {
+    public ResponseEntity getEnderecos() {
         List<Endereco> enderecos = enderecoRepository.findAll();
         if (enderecos.isEmpty()) {
             return ResponseEntity.status(204).build();
@@ -46,7 +46,7 @@ public class EnderecoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity putJogo(@PathVariable int id,
+    public ResponseEntity putEnderecos(@PathVariable int id,
                                   @RequestBody Endereco enderecoAtt) {
         if (enderecoRepository.existsById(id)) {
             enderecoAtt.setId(id);
@@ -58,7 +58,7 @@ public class EnderecoController {
     }
 
     @GetMapping("/total")
-    public ResponseEntity getQuadrasTotal() {
+    public ResponseEntity getEnderecosTotal() {
         Long total = enderecoRepository.count();
 
         return ResponseEntity.status(200).body(total);

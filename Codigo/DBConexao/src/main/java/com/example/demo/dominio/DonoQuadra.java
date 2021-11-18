@@ -1,22 +1,21 @@
 package com.example.demo.dominio;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Table(name = "dono_quadra")
 @Entity
 public class DonoQuadra {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
     @Column(name = "id_dono", nullable = false)
     private Integer id;
 
     @Column(name = "nome_dono", length = 100)
     private String nomeDono;
 
-    @Column(name = "cpf", length = 11)
+    @Column(name = "cpf", length = 14)
     private String cpf;
 
     @Column(name = "dataNasc")

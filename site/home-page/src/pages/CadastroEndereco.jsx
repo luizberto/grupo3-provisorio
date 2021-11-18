@@ -14,25 +14,10 @@ function CadastroEndereco(props){
         function atleta(e) {
             e.preventDefault();
         
-            api.post("/atletas", {
-              cpf: campo5,
-              nomeAtleta: campo1,
-              email: campo2,
-              senha: campo3,
-              dataNasc: campo4,
-             
-            }).then((resposta) => {
-              if (resposta.status === 201) {
-                alert("aperte enter para se redirecionar");
-                // history.push('/atletas');
-              }
-            }).catch((erro) => {
-              console.log(erro);
-            })
+            
           }
     
     return(
-
         <>
         <NavbarSecundario/>
         <div class="container4">

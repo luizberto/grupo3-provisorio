@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
@@ -8,51 +8,73 @@ import linkedn from '../home-template-css/img/linkedin.png'
 import insta from '../home-template-css/img/insta.png'
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
 import FormLogin from "../componentsPagina/FormLogin";
+import api from "../api";
 
-function LoginAdm(){
-    return(
+function LoginAdm() {
+
+    const [campo1, setCampo1] = useState("");
+    const [campo2, setCampo2] = useState("");
+
+    function login(e) {
+        alert(campo2)
+        e.preventDefault();
+        api.post("/adm/login", {
+            email: campo1,
+            senha: campo2,
+        }).then((resposta) => {
+            if (resposta.status === 201) {
+                alert("logado com sucesso");
+                // history.push('/atletas');
+            }
+        }).catch((erro) => {
+            alert("logado erro");
+            console.log(erro);
+        })
+    }
+    return (
 
         <>
-        <NavbarSecundario/>
-        <div class="containerLogin">
-        <div class="logar">
-            <h3>LOGIN Administrador</h3>
-            <form class="formsLogar" action="">
-                <label for="">
-                   <p>Email</p> 
-                    <input type="text"/>
-                    
-                </label>
+            <NavbarSecundario />
+            <div class="containerLogin">
+                <div class="logar">
+                    <h3>LOGIN Administrador</h3>
+                    <form class="formsLogar" onSubmit={login} action="">
+                        <label for="">
+                            <p>Email</p>
+                            <input type="text" onChange={e => setCampo1(e.target.value)} />
 
-                <label for="">
-                  <p>Senha</p>
-                    <input type="text"/>
-                </label>
-            </form>
+                        </label>
 
-            <button class="btnLogin">Login</button>
-
-            <h5>É atleta?</h5>
-                <Link to = "/loginAtleta"><a>clique aqui</a></Link>   
-        </div>
+                        <label for="">
+                            <p>Senha</p>
+                            <input type="password" onChange={e => setCampo2(e.target.value)} />
+                        </label>
+                        <button type="submit" class="btnLogin">Login</button>
+                    </form>
 
 
-        <div class="trocar">
 
-            <div class="inscrever">
-                <p>Se não tem cadastro no site, increva-se ja e amplie seu negócio</p>
+                    <h5>É atleta?</h5>
+                    <Link to="/loginAtleta"><a>clique aqui</a></Link>
+                </div>
 
-              <Link to = "/cadastroAdm">
-                  <button class="btnInscrever">Inscreva-se</button>  
-                  </Link>    
+
+                <div class="trocar">
+
+                    <div class="inscrever">
+                        <p>Se não tem cadastro no site, increva-se ja e amplie seu negócio</p>
+
+                        <Link to="/cadastroAdm">
+                            <button class="btnInscrever">Inscreva-se</button>
+                        </Link>
+                    </div>
+
+                </div>
             </div>
-           
-        </div>
-    </div>
 
-    <Footer/>
+            <Footer />
 
-    </>
+        </>
     );
 }
 export default LoginAdm;

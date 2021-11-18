@@ -2,6 +2,9 @@ import React, {useState} from "react";
 import Footer from "../components/Footer";
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
 import api from '../api';
+import InputMask from 'react-input-mask';
+import { Link } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 function CadastroAdm(props){
     const [campo1, setCampo1] = useState("");
@@ -9,21 +12,21 @@ function CadastroAdm(props){
     const [campo3, setCampo3] = useState("");
     const [campo4, setCampo4] = useState("");
     const [campo5, setCampo5] = useState("");
+    const history = useHistory();
 
     function adm(e) {
         e.preventDefault();
-    
+        alert(campo4);
         api.post("/adm", {
-          cpf: campo5,
-          nomeAdm: campo1,
+          nomeDono: campo1,
           email: campo2,
           senha: campo3,
           dataNasc: campo4,
-         
+          cpf: campo5
         }).then((resposta) => {
           if (resposta.status === 201) {
             alert("aperte enter para se redirecionar");
-            // history.push('/atletas');
+            
           }
         }).catch((erro) => {
           console.log(erro);
@@ -36,23 +39,23 @@ function CadastroAdm(props){
             <div class="container4">
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">{props.titulo}</h4>
-                    <form onSubmit={props.usuario} class="formClass">
-                    <label for=""> CPF
+                    <form onSubmit={adm} class="formClass">
+                        <label for=""> {props.campoUm}nome 
                             <input type="text" onChange={e => setCampo1(e.target.value)}/>
                         </label>
-                        <label for=""> email
-                            <input type="text" onChange={e => setCampo2(e.target.value)}/>
+                        <label for="">{props.campoDois}email
+                            <input type="email" onChange={e => setCampo2(e.target.value)}/>
                         </label>
-                        <label for=""> senha
-                            <input type="text" onChange={e => setCampo3(e.target.value)}/>
+                        <label for=""> {props.campoTres}senha
+                            <input type="password" onChange={e => setCampo3(e.target.value)}/>
                         </label>
-                        <label for=""> data de Nascimento
-                            <input type="text" onChange={e => setCampo4(e.target.value)}/>
+                        <label for=""> {props.campoQuatro}data de nascimento
+                            <input type="date" onInput={e => setCampo4(e.target.value)}/>
                         </label>
-                        <label for=""> endereço
-                            <input type="text" onChange={e => setCampo5(e.target.value)}/>
+                        <label for=""> {props.campoCinco}cpf
+                            <InputMask type="text" mask='999.999.999-99'  onChange={e => setCampo5(e.target.value)}/>
                         </label>
-                        <button class="buttonCadastrar" type="submit">Cadastrar</button>
+                            <button class="buttonCadastrar" type="submit">Cadastrar</button>
                     </form>
 
                     
