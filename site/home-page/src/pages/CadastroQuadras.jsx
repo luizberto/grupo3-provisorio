@@ -25,7 +25,7 @@ function CadastroQuadras(props){
         }).then((resposta) => {
           if (resposta.status === 201) {
             alert("aperte enter para se redirecionar");
-            history.push('/atletas');
+            history.push('/perfilAdm');
           }
         }).catch((erro) => {
           console.log(erro);
@@ -37,7 +37,7 @@ function CadastroQuadras(props){
             <NavbarSecundario />
             <div class="container4">
                 <div class="dadosCadastro">
-                    <h4 class="tituloForm">{props.titulo}</h4>
+                    <h4 class="tituloForm">Cadastro Quadra</h4>
                     <form onSubmit={quadra} class="formClass">
                         <label for=""> {props.campoUm}nome
                             <input type="text" onChange={e => setCampo1(e.target.value)}/>

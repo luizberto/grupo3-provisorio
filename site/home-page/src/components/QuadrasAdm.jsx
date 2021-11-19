@@ -8,7 +8,7 @@ function QuadrasAdm(props){
                     <h1>Quadra {props.key}</h1>
                     <ul>
                         <li>Nome da quadra:{props.nome}</li>
-                        <li>Descrição da quadra:{props.descricao}</li>
+                        <li>Descrição da quadra: <p>{props.descricao}</p></li>
                         <li>Limite de ocupação:{props.ocupacao}</li>
                     </ul>  
                     <a href="">vizualizar&gt; </a>

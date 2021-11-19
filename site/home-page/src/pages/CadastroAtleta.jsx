@@ -37,7 +37,7 @@ function CadastroAtleta(props) {
                 sessionStorage.setItem("senha", campo3);
                 sessionStorage.setItem("user", "adm")
 
-                history.push('/cadastroEndereco');
+                history.push('/loginAtleta');
             }
         }).catch((erro) => {
             console.log(erro);
@@ -49,7 +49,7 @@ function CadastroAtleta(props) {
             <NavbarSecundario />
             <div class="container4">
                 <div class="dadosCadastro">
-                    <h4 class="tituloForm">{props.titulo}</h4>
+                    <h4 class="tituloForm">Cadastro atleta</h4>
                     <form onSubmit={atleta} class="formClass">
                         <label for=""> {props.campoUm}nome
                             <input type="text" onChange={e => setCampo1(e.target.value)} />
@@ -66,7 +66,7 @@ function CadastroAtleta(props) {
                         <label for=""> {props.campoCinco}CPF
                             <InputMask type="text" mask='999.999.999-99' onChange={e => setCampo5(e.target.value)} />
                         </label>
-                            <button class="buttonCadastrar" type="submit">Proximo</button>
+                            <button class="buttonCadastrar" type="submit">Cadastrar</button>
                     </form>
                 </div>
             </div>
