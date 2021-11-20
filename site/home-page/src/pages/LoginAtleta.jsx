@@ -38,13 +38,13 @@ function LoginAtleta() {
                     <form class="formsLogar" onSubmit={login} action="">
                         <label for="">
                             <p>Email</p>
-                            <input type="text" />
+                            <input type="text" onChange={e => setCampo1(e.target.value)}/>
 
                         </label>
 
                         <label for="">
                             <p>Senha</p>
-                            <input type="text" />
+                            <input type="password" onChange={e => setCampo2(e.target.value)} />
                         </label>
                         <button type="submit" className="btnLogin">Login</button>
                     </form>

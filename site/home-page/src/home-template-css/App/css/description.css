@@ -1,3 +1,4 @@
+
 .containerDescricao{
     display: flex;
     flex-direction: column;
@@ -20,7 +21,7 @@
 .containerBoxInfos{
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    width: 95%;
     height: 450px;
     padding: 2%;
     margin: auto;
@@ -47,6 +48,13 @@
     border-radius: 5%;
     border: 5px solid green;
     padding: 2%;
+
+}
+
+.box-info-quadra p{
+    font-size: small;
+    padding: 2%;
+    font-weight: bold;
 }
 
 .box-info-quadra h1{
@@ -71,10 +79,11 @@
     color: blanchedalmond;
     border: 3px solid green;
     border-radius: 4%;
-    width: 10%;
+    width: 20%;
+    margin: 2%;
     align-self: center;
     justify-self: center;
-
+    cursor: pointer;
 }
 
 .botaoAcao:hover{
