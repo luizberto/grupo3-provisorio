@@ -1,24 +1,34 @@
 import React from "react";
-import img from '../home-template-css/App/img/camp-nou-5798015_640 1 (1).png'
-import {Link} from 'react-router-dom';
+import img from "../home-template-css/App/img/camp-nou-5798015_640 1 (1).png";
+import { Link, useHistory } from "react-router-dom";
 
-function CardQuadras(){
-    return(
-        <>
-             <div class="contentCard">
+function CardQuadras(props) {
+
+  const history = useHistory();
+
+  function quadra(e){
+    sessionStorage.setItem('idQuadra', props.id)
+    sessionStorage.setItem('descricao', props.descricao)
+    sessionStorage.setItem('nome', props.nome)
+    history.push('/visualizacaoAtleta');
+
+  }
+  return (
+    <>
+      <div class="contentCard">
         <div class="boxCard">
           <div class="cardImg">
-            <img src={img} alt=""/>
+            <img src={img} alt="" />
           </div>
 
           <div class="content-clube-descricao">
-            <h1>get Nome da quadra</h1>
-            <p>Get descrição de quadra</p>
-           <Link to = "/visualizacaoAtleta"><button class="clubeButton">conhecer</button> </Link> 
+            <h1>{props.nome}</h1>
+            <p>{props.descricao}</p>
+              <button onClick={quadra} class="clubeButton">conhecer</button>
           </div>
         </div>
       </div>
-        </>
-    );
+    </>
+  );
 }
 export default CardQuadras;

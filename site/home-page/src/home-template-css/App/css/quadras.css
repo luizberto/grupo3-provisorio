@@ -73,9 +73,19 @@
     justify-content: center;
 }
 
+.quadra li{
+    font-size: small;
+    margin-bottom: 1%;
+}
+
+.quadra li p{
+    font-size: small;
+}
+
 .quadra a{
     color: #3DA441;
     padding: 1%;
+    font-size: medium;
 
 }
 

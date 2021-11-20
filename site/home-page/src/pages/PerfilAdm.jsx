@@ -5,46 +5,54 @@ import { Link } from "react-router-dom";
 import api from "../api";
 import { useEffect, useState } from "react";
 
-function PerfilAdm(){
+function PerfilAdm() {
+  const [quadra, setQuadra] = useState([]);
 
-        const [quadras, setQuadra] = useState([]);
+  useEffect(() => {
+    async function pegaDados() {
+      const resposta = await api.get("/quadras");
+      if(resposta.status === 200){
+        setQuadra(resposta.data);
+      }
       
-        useEffect(() => {
-          async function pegaDados() {
-            const resposta = await api.get("/quadras");
-            setQuadra(resposta.data);
-            console.log(resposta.data);
-          } 
-          pegaDados();
-        }, [])
+      console.log(resposta.data);
+    }
+    pegaDados();
+  }, []);
 
-    return(
+  return (
     <>
-        <NavbarSecundario/>
+      <NavbarSecundario />
 
-        <div className = "titulo">
-        <button className = "quadraBtn upload">Upload da lista de alugueis</button>    
+      <div className="titulo">
+        <button className="quadraBtn upload">
+          Upload da lista de alugueis
+        </button>
         <h1>Suas quadras</h1>
-        <button className = "quadraBtn download">Download da lista de alugueis</button>
+        <button className="quadraBtn download">
+          Download da lista de alugueis
+        </button>
+      </div>
+      <div className="containerQuadras">
+        {quadra.map((quadra) => (
+          <QuadrasAdm
+            key={quadra.id_quadra}
+            nome={quadra.nomeQuadra}
+            descricao={quadra.descQuadra}
+            ocupacao={quadra.limitePessoas}
+          />
+        ))}
+      </div>
+      <div class="content-add-quadra">
+        <div class="add">
+          <Link to="/cadastroQuadras">
+            <button className="adcQuadra">
+              <p>+</p>
+            </button>
+          </Link>
         </div>
-        <div className="containerQuadras">
-        {quadras.map(quadra => (
-
-
-            <QuadrasAdm
-                key = {quadra.id_quadra}
-                nome = {quadra.nomeQuadra}
-                descricao = {quadra.descQuadra}
-                ocupacao = {quadra.limitePessoas}
-            />
-          ))}   
-        </div>
-        <div class="content-add-quadra">
-            <div class="add">
-              <Link to = "/cadastroQuadras"><button className = "adcQuadra"><p>+</p></button></Link> 
-            </div>    
-        </div>
+      </div>
     </>
-    );
+  );
 }
 export default PerfilAdm;
