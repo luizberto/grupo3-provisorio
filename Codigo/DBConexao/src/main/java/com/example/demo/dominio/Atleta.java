@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class Atleta {
@@ -36,7 +37,7 @@ public class Atleta {
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "data_nasc")
-    private LocalDate dataNasc;
+    private LocalDateTime dataNasc;
 
     @ManyToOne
     private Endereco fkEndereco;
@@ -49,11 +50,11 @@ public class Atleta {
         this.fkEndereco = fkEndereco;
     }
 
-    public LocalDate getDataNasc() {
+    public LocalDateTime getDataNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(LocalDate dataNasc) {
+    public void setDataNasc(LocalDateTime dataNasc) {
         this.dataNasc = dataNasc;
     }
 

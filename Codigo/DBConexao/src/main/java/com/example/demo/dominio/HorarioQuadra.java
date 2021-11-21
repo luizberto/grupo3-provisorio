@@ -3,6 +3,7 @@ package com.example.demo.dominio;
 import org.apache.tomcat.jni.Local;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.Instant;
 import java.time.LocalDateTime;
 
@@ -17,7 +18,7 @@ public class HorarioQuadra {
     private Integer id;
 
     @Column(name = "dataQuadra")
-    private LocalDateTime data;
+    private Date data;
 
     @Column(name = "fk_quadra")
     private Integer fkQuadra;
@@ -30,11 +31,11 @@ public class HorarioQuadra {
         this.fkQuadra = fkQuadra;
     }
 
-    public LocalDateTime getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(LocalDateTime data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
