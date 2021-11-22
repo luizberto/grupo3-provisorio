@@ -91,3 +91,11 @@
     color: black;
     transition: 500ms;
 }
+
+.botaoReserva{
+    background-color: transparent;
+    border: solid 2px green;
+    border-radius: 5%;
+    padding: 2%;
+    margin-bottom: 1%;
+}

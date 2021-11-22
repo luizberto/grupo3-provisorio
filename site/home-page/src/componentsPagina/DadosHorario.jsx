@@ -26,7 +26,7 @@ function DadosHorario(){
           <h1>horarios</h1>
         </span>
         {horario.map((horario) => (
-            <button onClick={pegaHorario(horario.id)}>{horario.data}</button>
+            <button className = "botaoReserva" onClick={pegaHorario(horario.id)}>{horario.data}</button>
         ))}
       </>
   );
