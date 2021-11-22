@@ -98,4 +98,6 @@
     border-radius: 5%;
     padding: 2%;
     margin-bottom: 1%;
+    cursor: pointer;
+    color: white;
 }

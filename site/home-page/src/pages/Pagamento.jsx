@@ -15,6 +15,7 @@ function Pagamento(){
     }
 
     const chekcedClass = chekced ? 'checked':'';
+    
 
   
 
