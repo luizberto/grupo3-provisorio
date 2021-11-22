@@ -38,6 +38,7 @@ function BuscaQuadra() {
               id={quadra.id}
               nome={quadra.nomeQuadra}
               descricao={quadra.descQuadra}
+              limite={quadra.limitePessoas}
             />
           ))}
         </div>

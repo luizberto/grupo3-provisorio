@@ -17,8 +17,11 @@ public class HorarioQuadra {
     @Column(name = "id_horario", nullable = false)
     private Integer id;
 
-    @Column(name = "dataQuadra")
-    private LocalDateTime data_quadra;
+    @Column(name = "data_quadra")
+    private LocalDateTime dataQuadra;
+
+    @Column(name = "reservado")
+    private String reserva;
 
     @Column(name = "fk_quadra")
     private Integer fkQuadra;
@@ -32,11 +35,11 @@ public class HorarioQuadra {
     }
 
     public LocalDateTime getData() {
-        return data_quadra;
+        return dataQuadra;
     }
 
     public void setData(LocalDateTime data) {
-        this.data_quadra = data;
+        this.dataQuadra = data;
     }
 
     public Integer getId() {
@@ -45,5 +48,14 @@ public class HorarioQuadra {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+
+    public String getReserva() {
+        return reserva;
+    }
+
+    public void setReserva(String reserva) {
+        this.reserva = reserva;
     }
 }

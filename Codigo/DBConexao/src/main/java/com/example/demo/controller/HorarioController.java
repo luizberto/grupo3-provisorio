@@ -24,6 +24,17 @@ public class HorarioController {
         return ResponseEntity.status(201).build();
     }
 
+    @PostMapping("/{id}")
+    public ResponseEntity postReservar(@RequestBody HorarioQuadra horarioAtt, @PathVariable int id) {
+        if (repository.existsById(id)) {
+            horarioAtt.setId(id);
+            repository.save(horarioAtt);
+            return ResponseEntity.status(201).build();
+        } else {
+            return ResponseEntity.status(404).build();
+        }
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity getHorario(@PathVariable int id) {
         List<HorarioQuadra> listaHora = new ArrayList<>();

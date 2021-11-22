@@ -4,7 +4,7 @@ import api from "../api";
 function DadosQuadra(props) {
   return(
     <>
-        <p>Limite de pessoas:</p>
+        <p>Limite de pessoas:{sessionStorage.getItem('limitePessoas')}</p>
         <p>Materiais esportivos:</p>
         <p>Telefone:</p>
         <p>Endereço:</p>

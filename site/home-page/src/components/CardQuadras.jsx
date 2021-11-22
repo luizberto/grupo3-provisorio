@@ -10,6 +10,7 @@ function CardQuadras(props) {
     sessionStorage.setItem('idQuadra', props.id)
     sessionStorage.setItem('descricao', props.descricao)
     sessionStorage.setItem('nome', props.nome)
+    sessionStorage.setItem('limitePessoas', props.limite)
     history.push('/visualizacaoAtleta');
 
   }
