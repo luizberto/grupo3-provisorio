@@ -16,15 +16,18 @@ function DadosHorario(){
       }
       pegaDados();
     }, []);
-  
+    function pegaHorario(idHorario){
+        sessionStorage.setItem("idHorario", idHorario)
+
+    }
   return (
     <>
         <span class="tituloCard">
           <h1>horarios</h1>
-          {horario.map((quadra) => (
-            <div>{quadra.fkQuadra}</div>
-          ))}
         </span>
+        {horario.map((horario) => (
+            <button onClick={pegaHorario(horario.id)}>{horario.data}</button>
+        ))}
       </>
   );
 }

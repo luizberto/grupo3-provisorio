@@ -1,3 +1,21 @@
+GET http://localhost:8080/horarios/1
+
+<> 2021-11-21T214426.201.json
+
+###
+
+GET http://localhost:8080/horarios/1
+
+<> 2021-11-21T214303.201.json
+
+###
+
+GET http://localhost:8080/horarios/1
+
+<> 2021-11-21T214154.201.json
+
+###
+
 GET http://localhost:8080/atletas
 
 <> 2021-11-21T212810.200.json

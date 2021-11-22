@@ -18,7 +18,7 @@ public class HorarioQuadra {
     private Integer id;
 
     @Column(name = "dataQuadra")
-    private Date data;
+    private LocalDateTime data_quadra;
 
     @Column(name = "fk_quadra")
     private Integer fkQuadra;
@@ -31,12 +31,12 @@ public class HorarioQuadra {
         this.fkQuadra = fkQuadra;
     }
 
-    public Date getData() {
-        return data;
+    public LocalDateTime getData() {
+        return data_quadra;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setData(LocalDateTime data) {
+        this.data_quadra = data;
     }
 
     public Integer getId() {
