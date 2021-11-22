@@ -37,7 +37,7 @@ public class Atleta {
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "data_nasc")
-    private LocalDateTime dataNasc;
+    private LocalDate dataNasc;
 
     @ManyToOne
     private Endereco fkEndereco;
@@ -50,11 +50,11 @@ public class Atleta {
         this.fkEndereco = fkEndereco;
     }
 
-    public LocalDateTime getDataNasc() {
+    public LocalDate getDataNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(LocalDateTime dataNasc) {
+    public void setDataNasc(LocalDate dataNasc) {
         this.dataNasc = dataNasc;
     }
 

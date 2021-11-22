@@ -16,7 +16,6 @@ function CadastroAtleta(props) {
     const history = useHistory();
 
     function atleta(e) {
-        alert(campo5)
         e.preventDefault();
 
         api.post("/atletas", {
@@ -24,11 +23,7 @@ function CadastroAtleta(props) {
             email: campo2,
             senha: campo3,
             dataNasc: campo4,
-            cpf: campo5,
-            endereco:{
-                cep:'09710180',
-                logradouro:"rua doutor flaquer"
-            }
+            cpf: campo5
 
         }).then((resposta) => {
             if (resposta.status === 201) {
@@ -51,16 +46,16 @@ function CadastroAtleta(props) {
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">Cadastro atleta</h4>
                     <form onSubmit={atleta} class="formClass">
-                        <label for=""> {props.campoUm}nome
+                        <label for=""> {props.campoUm}Nome
                             <input type="text" onChange={e => setCampo1(e.target.value)} />
                         </label>
-                        <label for="">{props.campoDois}email
+                        <label for="">{props.campoDois}Email
                             <input type="email" onChange={e => setCampo2(e.target.value)} />
                         </label>
-                        <label for=""> {props.campoTres}senha
+                        <label for=""> {props.campoTres}Senha
                             <input type="password" onChange={e => setCampo3(e.target.value)} />
                         </label>
-                        <label for=""> {props.campoQuatro}data de nascimento
+                        <label for=""> {props.campoQuatro}Data de nascimento
                             <input type="date" onChange={e => setCampo4(e.target.value)} />
                         </label>
                         <label for=""> {props.campoCinco}CPF

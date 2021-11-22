@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "cpf": "123.123.131-23",
+    "nomeAtleta": "aaa",
+    "email": "aaa@aaa.com",
+    "senha": "12345",
+    "dataNasc": "2021-11-01",
+    "fkEndereco": null
+  }
+]
