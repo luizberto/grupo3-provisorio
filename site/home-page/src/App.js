@@ -5,6 +5,7 @@ import './home-template-css/css/login.css'
 import './home-template-css/App/css/quadras.css'
 import './home-template-css/App/css/description.css'
 import './home-template-css/App/css/styles.css'
+import './home-template-css/App/css/pagamento.css'
 import Routes from './routes';
 
 

@@ -11,6 +11,7 @@ import PerfilAdm from "./pages/PerfilAdm";
 import EdicaodeQuadra from "./pages/EdicaodeQuadra";
 import BuscaQuadra from "./pages/BuscaQuadra";
 import VislualizacaoAtleta from "./pages/VisualizacaoAtleta";
+import Pagamento from "./pages/Pagamento";
 
 
 
@@ -29,6 +30,7 @@ function Routes(){
             <Route path = "/edicaoQuadra" exact component = {EdicaodeQuadra}/>
             <Route path = "/buscaQuadra" exact component = {BuscaQuadra}/>
             <Route path = "/visualizacaoAtleta" exact component = {VislualizacaoAtleta}/>
+            <Route path = "/pagamento" exact component = {Pagamento}/>
         </Switch>
     </BrowserRouter>
     );

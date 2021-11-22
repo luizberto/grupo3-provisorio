@@ -17,22 +17,19 @@ function EdicaodeQuadra(){
 
 <div class="containerBoxInfos">
 
-<div class="box-info-quadra">
+    <div class="box-info-quadra">
 
-<span class="tituloCard">
-    <h1>descrição</h1>
- </span>
-<DadosQuadra/>
-<ButtonEdit acao = "Editar"/>
-</div>
+        <span class="tituloCard">
+            <h1>descrição</h1>
+        </span>
+        <DadosQuadra/>
+        <ButtonEdit acao = "Editar"/>
+    </div>
 
-<div class="box-info-quadra">
-    <DadosHorario/>
-</div>
-
- 
-  
-   
+    <div class="box-info-quadra">
+        <DadosHorario/>
+    </div>
+    
 </div>
 
 </section>
