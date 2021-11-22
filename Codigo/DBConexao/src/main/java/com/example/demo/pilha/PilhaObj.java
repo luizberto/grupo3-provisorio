@@ -24,6 +24,7 @@ public class PilhaObj<T> {
     public void push(T info) {
         if (!isFull()) {
             this.pilha[++topo] = info;
+            this.numeroElementos++;
         } else {
             System.out.println("Pilha está cheia");
         }
@@ -34,6 +35,7 @@ public class PilhaObj<T> {
             System.out.println("Lista vazia");
             return null;
         } else {
+            this.numeroElementos--;
             return this.pilha[topo--];
         }
     }
@@ -46,13 +48,15 @@ public class PilhaObj<T> {
         }
     }
 
-    public void exibe() {
+    public Object exibe() {
         if (isEmpty()) {
-            System.out.println("Pilha vazia!");
+            return "Pilha vazia!";
         } else {
+            Object[] pilhaObj = new Object[this.numeroElementos];
             for (int i = topo; i >= 0; i--) {
-                System.out.println(this.pilha[i]);
+                pilhaObj[i] = this.pilha[i];
             }
+            return pilhaObj;
         }
     }
 

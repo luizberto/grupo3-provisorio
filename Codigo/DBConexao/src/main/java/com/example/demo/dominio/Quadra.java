@@ -24,7 +24,8 @@ public class Quadra {
     @Column(name = "complemento", length = 45)
     private String complemento;
 
-
+    @Column(name = "numero", length = 6)
+    private Integer numero;
 
     @ManyToOne
     @JoinColumn(name = "idEndereco")
@@ -84,5 +85,13 @@ public class Quadra {
 
     public void setId(Integer id) {
         this.idQuadra = id;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
     }
 }

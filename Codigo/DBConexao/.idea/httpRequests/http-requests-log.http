@@ -1,3 +1,15 @@
+GET http://localhost:8080/atletas
+
+<> 2021-11-21T212810.200.json
+
+###
+
+GET http://localhost:8080/adm
+
+<> 2021-11-21T212044.200.json
+
+###
+
 GET http://localhost:8080/quadras
 
 ###
