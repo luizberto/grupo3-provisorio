@@ -10,18 +10,12 @@ body, ul, li, p{
 
 }
 
-
-
-
-
 /*navbar do site*/
 
 a{
     text-decoration: none;
     color: blanchedalmond;
 }
-
-
 
 .header{
     display: flex;
@@ -92,10 +86,7 @@ a{
     color: rgb(56, 247, 56);
 }
 
-
-
 /*banner com gif*/
-
 
 .tituloBanner{
     display: flex;

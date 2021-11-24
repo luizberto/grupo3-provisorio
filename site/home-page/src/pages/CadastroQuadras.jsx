@@ -26,7 +26,7 @@ function CadastroQuadras(props){
         }).then((resposta) => {
           if (resposta.status === 201) {
             alert("aperte enter para se redirecionar");
-            history.push('/perfilAdm');
+            history.push('/cadastroEndereco');
           }
         }).catch((erro) => {
           console.log(erro);

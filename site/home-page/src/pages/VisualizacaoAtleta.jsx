@@ -15,12 +15,11 @@ function VislualizacaoAtleta() {
     <h1>descrição</h1>
 </span>
 <DadosQuadra/>
-<ButtonEdit acao = "Editar"/>
 </div>
 
 <div class="box-info-quadra">
-        <DadosHorario/>
-    </div>
+<DadosHorario/>
+</div>
 
             
 
