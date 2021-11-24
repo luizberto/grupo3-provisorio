@@ -1,0 +1,88 @@
+.container-pagamento{
+    width: 80%;
+    margin: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dados-pagamento{
+    width: 70%;
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #1E1B1B;
+    border: #3DA441 solid 4px;
+    border-radius: 5%;
+    padding: 4%;
+    
+}
+
+.dados-pagamento h1{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.tela-pagamento{
+    color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    justify-self: flex-start;
+    height: 100%;
+    width: 50%;
+    
+    
+} 
+
+.tela-pagamento input[type = text]{
+    width: 15%;
+    margin: 2%;
+}
+
+.tela-pagamento label{
+    margin-top: 5%;
+}
+
+.parte-pagamento{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 85%;
+    height: 50%;
+    align-content: flex-start;
+}
+
+.parte-pagamento label{
+    width: 20%;
+}
+
+.parte-pagamento label h6{
+    margin: 0;
+}
+
+.pagamento-removivel{
+    color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-end;
+    height: 100%;
+    width: 50%;
+    
+    
+}
+
+.pagamento-removivel input{
+    width: 10%;
+}
+
+.buttonStyle{
+    height: 4vh;
+    align-self: flex-end;
+
+}

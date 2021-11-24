@@ -5,91 +5,87 @@ import ListItem from '../components/ListItem'
 import NewTaskInput from '../components/NewTaskInput'
 import api from "../api";
 import {useHistory} from "react-router-dom";
+import Footer from "../components/Footer";
 
 function Pagamento(){
 
-    const [tasks, setTasks] = useState([]);
-    const history = useHistory();
+    const [formaPagamento, setFormaPagamento] = useState("");
 
-    function addNewTask(task) {
-        const itensCopy = Array.from(tasks);
-        itensCopy.push({id: tasks.length, value: task});
-        setTasks(itensCopy);
-    }
+    function contextPagamento() {
+        var formaPagChecked = document.getElementsByName("FormaPagamento");
+        for (var i = 0; i < formaPagChecked.length; i++) {
+          if (formaPagChecked[i].checked) {
+            if (formaPagChecked[i].value === "pix") {
+              setFormaPagamento("pix");
+            } else if (formaPagChecked[i].value === "presencial") {
+              setFormaPagamento("presencial");
+            } 
+          }
+        } 
+      }
 
-    function updateTask({target}, index) {
-        const itensCopy = Array.from(tasks);
-        itensCopy.splice(index, 1, { id: index, value: target.value });
-        setTasks(itensCopy);
-    }
+   return(
+       <>
+       <NavbarSecundario/>
+            <div class="container-pagamento">
+<div class="dados-pagamento">
 
-    function deleteTask(index) {
-        const itensCopy = Array.from(tasks);
-        itensCopy.splice(index, 1);
-        setTasks(itensCopy);
-    }
+    <h1>Pagamento</h1>
+    <div class="tela-pagamento">
+        <label for="">Selecione quantas <br/> pessoas vão:
+            <input type="text"/> 
+        </label>
 
-    function pagar(e){
-        e.preventDefault()
-        api.post("/horarios/"+sessionStorage.getItem("idHorario"), {
-            data_quadra: sessionStorage.getItem("dataQuadra"),
-            reserva: "SIM",
-            fkQuadra: sessionStorage.getItem("fkQuadra")
-
-
-        }).then((resposta) => {
-            if (resposta.status === 201) {
-                alert("aperte enter para se redirecionar");
-                history.push('/visualizacaoAtleta');
-            }
-        }).catch((erro) => {
-            console.log(erro);
-        })
-    }
-
-    return(
-        <>
-        <NavbarSecundario/>
- <div class="container-pagamento">
-      
-      <div class="box-content" >
-          <div class="content-list" id="content-list"> 
-
-            <h1>Lista de participantes</h1>
-              <NewTaskInput onSubmit={addNewTask} />
-              {tasks.map(({id, value}, index) => (
-                  <ListItem
-                      key={id}
-                      value={value}
-                      onChange={(event) => updateTask(event, index)}
-                      onDelete={() => deleteTask(index)}
-                  />
-              ))}
-          </div>
-          <div className="Array-preview">
-          </div>
-      </div>
-
- <div class="content-pagamento" id="content-pagamento">
-       
-        <h3>Formas de pagamento</h3>
-
-
-    <form onSubmit={pagar} name="formulario" class = "formPagamento">
-
+        <label for="">Valor:
+            <input type="text"/>
+        </label>
+    <div class="parte-pagamento">
         <label for="">
-          Valor: <input type="text" id="valor" name="campo"/>
+           <h6>pix</h6> 
+            <input type="radio" name="FormaPagamento" onClick = {contextPagamento} value="pix"/>
         </label>
         <label for="">
-          Pagar: <input type="text"/>
+           <h6>Presencial</h6> 
+            <input type="radio" name="FormaPagamento" onClick = {contextPagamento} value="presencial"/>
         </label>
-        <button className="avisin" type="submit">confirmar</button>
-    </form>
-
     </div>
+    </div>
+
+    { formaPagamento === 'pix' ?
+                    <div className="pagamento-removivel">
+                      <h6>Chave Pix para o pagamento: <br/>A5YYYTWW28882JJJ27712</h6>
+                      <p>Chave Aleatória : iPet</p>
+                      <img src="" alt="" />
+                      <p>Valor da compra: R$ 120,00</p>
+                      <button className = "buttonStyle">Pagar</button>
+                    </div>
+  : formaPagamento === 'presencial' ?
+                     <div className="pagamento-removivel">
+                      <h3>Pagamento Dinheiro</h3>
+                      <p>Valor da compra: R$ 120,00</p>
+                      <label htmlFor="">Troco para: </label>
+                      <input type="text" placeholder="Troco para R$"/>
+                      <button className = "buttonStyle">Pagar</button>
+                    </div>
+                    :
+                    <div className="pagamento-removivel">
+                      <h6>Escolha uma forma de pagamento acima</h6>
+                    </div>
+
+    }
+    
+
    
+    
 </div>
-        </>
-    );
-}
+</div>
+<Footer/>
+       </>
+   );
+   }
+    
 export default Pagamento;
+
+
+
+

@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/horario.css">
+    <link rel="stylesheet" href="../css/pagamento2.css">
     <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');</style>
     <title>Sport.Fy</title>
+    <script>
+        
+    </script>
 </head>
 <body>
     <header class="header">
@@ -16,15 +19,43 @@
         </nav>
     </header>
 
-   <div class="container6">
-       <h1 class="titulo-horario">Horarios</h1>
-       <div class="box-horario">
-        <div class="horario"><h4>Reserva</h4></div>
-        <div class="horario"><h4>Reserva</h4></div>
-        <div class="horario"><h4>Reserva</h4></div>
-        <div class="horario"><h4>Reserva</h4></div>
-       </div>
-   </div>
+    const [tasks, setTasks] = useState([]);
+    const history = useHistory();
+
+    function addNewTask(task) {
+        const itensCopy = Array.from(tasks);
+        itensCopy.push({id: tasks.length, value: task});
+        setTasks(itensCopy);
+    }
+
+    function updateTask({target}, index) {
+        const itensCopy = Array.from(tasks);
+        itensCopy.splice(index, 1, { id: index, value: target.value });
+        setTasks(itensCopy);
+    }
+
+    function deleteTask(index) {
+        const itensCopy = Array.from(tasks);
+        itensCopy.splice(index, 1);
+        setTasks(itensCopy);
+    }
+
+    function pagar(e){
+        e.preventDefault()
+        api.post("/horarios/"+sessionStorage.getItem("idHorario"), {
+            data_quadra: sessionStorage.getItem("dataQuadra"),
+            reserva: "SIM",
+            fkQuadra: sessionStorage.getItem("fkQuadra")
+
+
+        }).then((resposta) => {
+            if (resposta.status === 201) {
+                alert("aperte enter para se redirecionar");
+                history.push('/visualizacaoAtleta');
+            }
+        }).catch((erro) => {
+            console.log(erro);
+        })
 
     <footer class="footer">
         <a class="logo" href="/"><img src="../img/image 22.png" height="40px" alt=""></a>
