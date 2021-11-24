@@ -1,9 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.dominio.Atleta;
 import com.example.demo.dominio.HorarioQuadra;
-import com.example.demo.dominio.Login;
-
 import com.example.demo.repositorio.HorarioQuadraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

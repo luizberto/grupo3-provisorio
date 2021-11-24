@@ -4,13 +4,13 @@ import com.example.demo.dominio.Endereco;
 import com.example.demo.dominio.Quadra;
 import com.example.demo.exportacao.GravaLista;
 import com.example.demo.exportacao.GravaTxt;
-import com.example.demo.importacao.ImportTxt;
 import com.example.demo.lista.ListaObj;
 import com.example.demo.repositorio.EnderecoRepository;
 import com.example.demo.repositorio.QuadraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -59,8 +59,8 @@ public class QuadraController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity putJogo(@PathVariable int id,
-                                  @RequestBody Quadra quadraAtt) {
+    public ResponseEntity putQuadra(@PathVariable int id,
+                                    @RequestBody Quadra quadraAtt) {
         if (quadraRepository.existsById(id)) {
             quadraAtt.setId(id);
             quadraRepository.save(quadraAtt);
@@ -75,6 +75,26 @@ public class QuadraController {
         Long total = quadraRepository.count();
 
         return ResponseEntity.status(200).body(total);
+    }
+
+    @PatchMapping("/foto/{id}")
+    public ResponseEntity patchFoto(@PathVariable Integer id,
+                                    @org.jetbrains.annotations.NotNull @RequestParam MultipartFile foto) throws IOException {
+
+        Quadra quadra = quadraRepository.findById(id).get();
+
+        byte[] novaFoto = foto.getBytes();
+
+        long tamanho = foto.getSize();
+
+        if (tamanho > 15_728_640.0) {
+            return ResponseEntity.status(413).build();
+        }
+
+        quadra.setFoto(novaFoto);
+
+        quadraRepository.save(quadra);
+        return ResponseEntity.status(200).build();
     }
 
     @GetMapping("/csv")
@@ -104,9 +124,10 @@ public class QuadraController {
         BufferedReader entrada = null;
         String registro, tipoRegistro;
         String nomeQuadra, descQuadra, cep, logradouro, complemento, bairro, cidade, estado;
-        int limitePessoas, classificacaoQuadra, numero;
+        int limitePessoas,  numero;
         int contaRegDados = 0;
         int qtdRegGravados;
+        Double classificacaoQuadra;
 
         List<Quadra> listaLida = new ArrayList();
 
@@ -155,7 +176,7 @@ public class QuadraController {
                     nomeQuadra = registro.substring(2, 32).trim();
                     descQuadra = registro.substring(32, 132).trim();
                     limitePessoas = Integer.valueOf(registro.substring(132, 134));
-                    classificacaoQuadra = Integer.valueOf(registro.substring(134, 136));
+                    classificacaoQuadra = Double.valueOf(registro.substring(134, 136));
                     cep = registro.substring(136, 144).trim();
                     logradouro = registro.substring(144, 174).trim();
                     complemento = registro.substring(174, 194).trim();

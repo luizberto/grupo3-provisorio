@@ -21,12 +21,12 @@ public class EnderecoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getJogo(@PathVariable int id) {
+    public ResponseEntity getEndereco(@PathVariable int id) {
         return ResponseEntity.of(enderecoRepository.findById(id));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteJogo(@PathVariable int id) {
+    public ResponseEntity deleteEndereco(@PathVariable int id) {
         if (enderecoRepository.existsById(id)) {
             enderecoRepository.deleteById(id);
             return ResponseEntity.status(200).build();

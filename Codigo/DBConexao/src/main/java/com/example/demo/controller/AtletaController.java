@@ -16,7 +16,7 @@ public class AtletaController {
     private AtletaRepository atletaRepository;
 
     @PostMapping
-    public ResponseEntity postQuadra(@RequestBody Atleta a) {
+    public ResponseEntity postAtleta(@RequestBody Atleta a) {
         atletaRepository.save(a);
         return ResponseEntity.status(201).build();
     }

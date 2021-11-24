@@ -19,13 +19,16 @@ public class Quadra {
     private Integer limitePessoas;
 
     @Column(name = "classificacao_quadra")
-    private Integer classificacaoQuadra;
+    private Double classificacaoQuadra;
 
     @Column(name = "complemento", length = 45)
     private String complemento;
 
     @Column(name = "numero", length = 6)
     private Integer numero;
+
+    @Column(name = "foto", length = 15_728_640)
+    private byte[] foto;
 
     @ManyToOne
     @JoinColumn(name = "idEndereco")
@@ -47,11 +50,11 @@ public class Quadra {
         this.complemento = complemento;
     }
 
-    public Integer getClassificacaoQuadra() {
+    public Double getClassificacaoQuadra() {
         return classificacaoQuadra;
     }
 
-    public void setClassificacaoQuadra(Integer classificacaoQuadra) {
+    public void setClassificacaoQuadra(Double classificacaoQuadra) {
         this.classificacaoQuadra = classificacaoQuadra;
     }
 
@@ -93,5 +96,21 @@ public class Quadra {
 
     public void setNumero(Integer numero) {
         this.numero = numero;
+    }
+
+    public Integer getIdQuadra() {
+        return idQuadra;
+    }
+
+    public void setIdQuadra(Integer idQuadra) {
+        this.idQuadra = idQuadra;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
     }
 }

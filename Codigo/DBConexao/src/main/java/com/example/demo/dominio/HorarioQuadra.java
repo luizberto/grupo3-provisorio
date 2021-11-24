@@ -1,10 +1,6 @@
 package com.example.demo.dominio;
 
-import org.apache.tomcat.jni.Local;
-
 import javax.persistence.*;
-import java.sql.Date;
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Table(name = "horario_quadra", indexes = {
