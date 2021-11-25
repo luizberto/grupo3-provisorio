@@ -38,7 +38,7 @@ function CadastroAdm(props){
             <NavbarSecundario />
             <div class="container4">
                 <div class="dadosCadastro">
-                    <h4 class="tituloForm">{props.titulo}</h4>
+                    <h4 class="tituloForm">Cadastro Administração</h4>
                     <form onSubmit={adm} class="formClass">
                         <label for=""> {props.campoUm}nome 
                             <input type="text" onChange={e => setCampo1(e.target.value)}/>
