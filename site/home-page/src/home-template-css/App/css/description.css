@@ -43,9 +43,8 @@
     margin-top: 10px;
     width: 278px;
     height: 316px;
-    background-color: black;
-    color: blanchedalmond;
-    border-radius: 5%;
+    background-color: #EFF2EC;
+    color: black;
     border: 5px solid green;
     padding: 2%;
 
@@ -55,6 +54,7 @@
     font-size: small;
     padding: 2%;
     font-weight: bold;
+    color: black;
 }
 
 .box-info-quadra h1{
@@ -100,4 +100,15 @@
     margin-bottom: 1%;
     cursor: pointer;
     color: white;
+}
+
+.botaoTrocar{
+    width: 10%;
+    justify-self: center;
+    align-self: center;
+    margin-top: 2%;
+    cursor: pointer;
+    background-color: white;
+    border: solid 2px green;
+    padding: 1%;
 }

@@ -35,7 +35,7 @@ function DadosHorario(){
   return (
     <>
         <span class="tituloCard">
-          <h1>horarios</h1>
+          <h1>Horarios</h1>
         </span>
         {horario.map((horario)=>(
             <div className = "botaoReserva" onClick={e => hora(horario.id, horario.fkQuadra, format(new Date(horario.data), 'yyyy-MM-dd hh:mm:ss'))}>{

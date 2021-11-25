@@ -14,13 +14,13 @@ function EdicaodeQuadra(){
         <NavbarSecundario/>
 <section class="containerDescricao"> 
  <ImageQuadra/> 
-<button class = "botaoAcao">trocar imagem</button>
+<button class = "botaoTrocar">trocar imagem</button>
 <div class="containerBoxInfos">
 
     <div class="box-info-quadra">
 
         <span class="tituloCard">
-            <h1>descrição</h1>
+            <h1>Descrição</h1>
         </span>
         <DadosQuadra/>
         <ButtonEdit acao = "Editar"/>

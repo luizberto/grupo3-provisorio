@@ -26,11 +26,11 @@ function PerfilAdm() {
 
       <div className="titulo">
         <button className="quadraBtn upload">
-          Upload da lista de alugueis
+          Upload lista
         </button>
         <h1>Suas quadras</h1>
         <button className="quadraBtn download">
-          Download da lista de alugueis
+          Download lista
         </button>
       </div>
       <div className="containerQuadras">

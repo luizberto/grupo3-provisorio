@@ -27,7 +27,7 @@ function Pagamento(){
    return(
        <>
        <NavbarSecundario/>
-            <div class="container-pagamento">
+ <div class="container-pagamento">
 <div class="dados-pagamento">
 
     <h1>Pagamento</h1>
@@ -37,7 +37,6 @@ function Pagamento(){
         </label>
 
         <label for="">Valor:
-            <input type="text"/>
         </label>
     <div class="parte-pagamento">
         <label for="">
@@ -53,19 +52,16 @@ function Pagamento(){
 
     { formaPagamento === 'pix' ?
                     <div className="pagamento-removivel">
-                      <h6>Chave Pix para o pagamento: <br/>A5YYYTWW28882JJJ27712</h6>
-                      <p>Chave Aleatória : iPet</p>
-                      <img src="" alt="" />
+                      <h4>Tipo de Chave Pix: email</h4>
+                      <p>Chave de pagamento: teste@teste.com </p>
                       <p>Valor da compra: R$ 120,00</p>
                       <button className = "buttonStyle">Pagar</button>
                     </div>
   : formaPagamento === 'presencial' ?
                      <div className="pagamento-removivel">
-                      <h3>Pagamento Dinheiro</h3>
-                      <p>Valor da compra: R$ 120,00</p>
-                      <label htmlFor="">Troco para: </label>
-                      <input type="text" placeholder="Troco para R$"/>
-                      <button className = "buttonStyle">Pagar</button>
+                      <h5>Pagamento Dinheiro</h5>
+                      <p>Valor da compra:</p>
+                      <button className = "buttonStyle">Finalizar</button>
                     </div>
                     :
                     <div className="pagamento-removivel">

@@ -6,7 +6,7 @@ function DadosQuadra(props) {
     <>
         <p>Limite de pessoas:{sessionStorage.getItem('limitePessoas')}</p>
         <p>Materiais esportivos:</p>
-        <p>Telefone:</p>
+        <p>Valor:</p>
         <p>Endereço:</p>
         <p>Cep:</p>
         <p>Descrição: {sessionStorage.getItem('descricao')}</p>    

@@ -8,16 +8,15 @@
     align-items: center;
 }
 .dados-pagamento{
-    width: 70%;
+    width: 73%;
     height: 60vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     background-color: #1E1B1B;
     border: #3DA441 solid 4px;
-    border-radius: 5%;
     padding: 4%;
-    
+    margin: 3%;
 }
 
 .dados-pagamento h1{
@@ -69,12 +68,10 @@
     color: blanchedalmond;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-content: flex-end;
     height: 100%;
-    width: 50%;
-    
-    
+    width: 30%;
+
 }
 
 .pagamento-removivel input{
@@ -83,6 +80,9 @@
 
 .buttonStyle{
     height: 4vh;
-    align-self: flex-end;
-
+    width: 30%;
+    margin-top: 2%;
+    background-color: blanchedalmond;
+    color: black;
+    border: solid 2px green;
 }
