@@ -49,10 +49,10 @@ function CadastroQuadras(props){
                         <label for=""> {props.campoTres}limite pessoas
                             <input type="text" onChange={e => setCampo3(e.target.value)}/>
                         </label>
-                        <label for=""> {props.campoQuatro}classificacao
+                        <label for=""> {props.campoQuatro}Valor aluguel
                             <input type="text" onChange={e => setCampo4(e.target.value)}/>
                         </label>
-                        <label for=""> {props.campoCinco}complemento
+                        <label for=""> {props.campoCinco}materiais esportivos
                             <input type="text" onChange={e => setCampo5(e.target.value)}/>
                         </label>
                         <button class="buttonCadastrar" type="submit">Cadastrar</button>

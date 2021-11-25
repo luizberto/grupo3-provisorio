@@ -7,6 +7,7 @@ import './home-template-css/App/css/description.css'
 import './home-template-css/App/css/styles.css'
 import './home-template-css/css/pagamento2.css'
 import './home-template-css/css/horario.css'
+import './home-template-css/css/foto.css'
 import Routes from './routes';
 
 

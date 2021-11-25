@@ -27,7 +27,7 @@ function CadastroEndereco(props){
                 <label for=""> CEP
                     <input type="text" onChange={e => setCampo1(e.target.value)}/>
                 </label>
-                <label for=""> Logradouro
+                <label for=""> Rua
                     <input type="text" onChange={e => setCampo2(e.target.value)}/>
                 </label>
                 <label for=""> Bairro

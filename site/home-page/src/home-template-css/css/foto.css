@@ -1,0 +1,49 @@
+.container-foto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+    margin: auto;
+    width: 80%;
+}
+
+.container-foto h3{
+    text-align: center;
+    color: black;
+}
+
+.foto{
+    width: 30%;
+    height:43vh;
+    background-color: rgb(5, 5, 5);
+    background-image: url('../img/bola-home');
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+
+}
+
+.input-foto{
+    background-color: blanchedalmond;
+    color: black;
+    border: solid 2px green;
+    cursor: pointer;
+    padding: 1%;
+    border-radius: 2%;
+    margin-bottom: 3%;
+}
+
+#file-upload-button{
+   
+}
+
+.troca-foto{
+  
+    padding: 1%;
+    border-radius: 2%;
+    background-color: blanchedalmond;
+    color: black;
+    border: solid 2px green ;
+    cursor: pointer;
+}

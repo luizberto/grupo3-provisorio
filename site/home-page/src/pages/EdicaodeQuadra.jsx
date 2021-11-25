@@ -14,7 +14,7 @@ function EdicaodeQuadra(){
         <NavbarSecundario/>
 <section class="containerDescricao"> 
  <ImageQuadra/> 
-
+<button class = "botaoAcao">trocar imagem</button>
 <div class="containerBoxInfos">
 
     <div class="box-info-quadra">

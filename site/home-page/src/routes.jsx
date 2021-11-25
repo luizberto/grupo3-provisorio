@@ -13,6 +13,7 @@ import BuscaQuadra from "./pages/BuscaQuadra";
 import VislualizacaoAtleta from "./pages/VisualizacaoAtleta";
 import Pagamento from "./pages/Pagamento";
 import Reservas from "./pages/Reservas";
+import Foto from "./pages/Foto";
 
 
 
@@ -33,6 +34,7 @@ function Routes(){
             <Route path = "/visualizacaoAtleta" exact component = {VislualizacaoAtleta}/>
             <Route path = "/pagamento" exact component = {Pagamento}/>
             <Route path = "/reservas" exact component = {Reservas}/>
+            <Route path = "/foto" exact component = {Foto}/>
         </Switch>
     </BrowserRouter>
     );
