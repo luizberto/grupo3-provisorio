@@ -20,7 +20,7 @@ body{
     width: 100vw;
     display: grid;
     grid-template-columns: 20vw 20vw;
-    grid-template-rows: 68vh 68vh;
+    grid-template-rows: 57vh 57vh;
     grid-template-areas: "b b";
     grid-gap: 20px;
     justify-content: space-evenly;
@@ -35,6 +35,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
+    padding: 2%;
 
 }
 

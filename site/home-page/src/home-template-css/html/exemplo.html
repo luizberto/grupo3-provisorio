@@ -4,18 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/foto.css">
-    <link rel="stylesheet" 
+    <link rel="stylesheet" href="../css/foto2.css">
+    <link rel="stylesheet" .
     <title>Document</title>
+
+    <script>
+        	const $ = document.querySelector.bind(document);
+
+const previewImg = $('.imagem');
+const fileChooser = $('.input-file');
+
+fileChooser.onchange = e => {
+    const fileToUpload = e.target.files.item(0);
+    const reader = new FileReader();
+    reader.onload = e => previewImg.src = e.target.result;
+    reader.readAsDataURL(fileToUpload);
+};
+    </script>
 </head>
 <body>
 
-    <div class="container-foto">
-        <div class="foto">
-        </div>
-        <h3>Aplique sua foto</h3>
-        <input class="input-foto" type="image" name="" id="input-foto" value="enviar foto">
-        <button class="troca-foto">Finalizar troca</button>
-    </div>
+    <form class="form-upload">
+        <label class="input-personalizado">
+          <span class="botao-selecionar">Selecione uma imagem</span>
+          <img class="imagem" />
+          <input type="file" class="input-file" accept="image/*">
+        </label>
+      </form>
 </body>
 </html>

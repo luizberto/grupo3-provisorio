@@ -77,7 +77,7 @@
 .botaoAcao{
     background-color: black;
     color: blanchedalmond;
-    border: 3px solid green;
+    border: 2/px solid green;
     border-radius: 4%;
     width: 20%;
     margin: 2%;
@@ -102,7 +102,14 @@
     color: white;
 }
 
-.botaoTrocar{
+.link-troca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.botaoTrocar {
     width: 10%;
     justify-self: center;
     align-self: center;

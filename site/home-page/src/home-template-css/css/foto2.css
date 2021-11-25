@@ -1,0 +1,27 @@
+body{
+    font-family: sans-serif;
+    box-sizing:border-box;
+    color:rgb(20, 19, 19);
+  }
+  
+  .form-upload{
+    background:rgb(245, 240, 240);
+    border: green 2px solid;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    width: 350px;
+  }
+  
+  .input-personalizado{
+    cursor: pointer;
+  }
+  
+  .imagem{
+    max-width: 100%;
+  }
+  
+  .input-file{
+    display:none;
+  }

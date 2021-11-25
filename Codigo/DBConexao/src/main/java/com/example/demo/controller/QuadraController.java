@@ -79,7 +79,7 @@ public class QuadraController {
 
     @PatchMapping("/foto/{id}")
     public ResponseEntity patchFoto(@PathVariable Integer id,
-                                    @org.jetbrains.annotations.NotNull @RequestParam MultipartFile foto) throws IOException {
+                                    @RequestParam MultipartFile foto) throws IOException {
 
         Quadra quadra = quadraRepository.findById(id).get();
 

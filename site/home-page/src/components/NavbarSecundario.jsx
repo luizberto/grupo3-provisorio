@@ -3,7 +3,7 @@ import logo from "../home-template-css/img/image 22.png";
 import { Link } from "react-router-dom";
 
 
-function NavbarSecundario(){
+function NavbarSecundario(props){
     return(
   <>
    <header class="header">
@@ -11,6 +11,7 @@ function NavbarSecundario(){
 
         <nav>
            <Link to = "/"><a>Home</a></Link>
+           <Link to = {props.voltar}><a>{props.anterior}</a></Link>
         </nav>
     </header>
  </>

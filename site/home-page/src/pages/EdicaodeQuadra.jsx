@@ -5,16 +5,19 @@ import ImageQuadra from "../components/ImageQuadra";
 import NavbarSecundario from "../components/NavbarSecundario";
 import DadosHorario from "../componentsPagina/DadosHorario";
 import DadosQuadra from "../componentsPagina/DadosQuadra";
-import fundoperfil from '../home-template-css/App/img/camp-nou-5798015_640 1 (1).png'
-import edite from '../home-template-css/App/img/edite.png'
+import { Link } from "react-router-dom";
 
 function EdicaodeQuadra(){
     return(
         <>
-        <NavbarSecundario/>
+        <NavbarSecundario voltar = "/perfilAdm" anterior = "Sair"/>
 <section class="containerDescricao"> 
  <ImageQuadra/> 
-<button class = "botaoTrocar">trocar imagem</button>
+
+    <Link to = "/foto" className = "link-troca">
+       <button class = "botaoTrocar">trocar imagem</button>
+    </Link>
+
 <div class="containerBoxInfos">
 
     <div class="box-info-quadra">
