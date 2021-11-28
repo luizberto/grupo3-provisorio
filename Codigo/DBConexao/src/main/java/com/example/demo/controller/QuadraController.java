@@ -113,7 +113,7 @@ public class QuadraController {
         List<Quadra> listaQuadras = this.quadraRepository.findAll();
         if (listaQuadras.size() > 0) {
             GravaTxt gravarTxt = new GravaTxt();
-            gravarTxt.gravaArquivoTxt(listaQuadras, "quadras.txt");
+            gravarTxt.gravaQuadraTxt(listaQuadras, "quadras.txt");
             return ResponseEntity.status(201).build();
         }
         return ResponseEntity.status(404).build();
