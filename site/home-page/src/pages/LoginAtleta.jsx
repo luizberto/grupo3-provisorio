@@ -3,8 +3,7 @@ import Footer from "../components/Footer";
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
 import {Link, useHistory} from "react-router-dom";
 import api from "../api";
-
-
+import {Form, Button} from "react-bootstrap";
 
 
 function LoginAtleta() {
@@ -34,20 +33,23 @@ function LoginAtleta() {
             <NavbarSecundario />
             <div class="containerLogin">
                 <div class="logar">
-                    <h3>LOGIN Atleta</h3>
-                    <form class="formsLogar" onSubmit={login} action="">
-                        <label for="">
-                            <p>Email</p>
-                            <input type="text" onChange={e => setCampo1(e.target.value)}/>
+                    <Form onSubmit={login}>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control onChange={e => setCampo1(e.target.value)}  type="email" placeholder="Enter email" />
+                        </Form.Group>
 
-                        </label>
-
-                        <label for="">
-                            <p>Senha</p>
-                            <input type="password" onChange={e => setCampo2(e.target.value)} />
-                        </label>
-                        <button type="submit" className="btnLogin">Login</button>
-                    </form>
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control onChange={e => setCampo2(e.target.value)} type="password" placeholder="Password" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                            <Form.Check type="checkbox" label="Check me out" />
+                        </Form.Group>
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                    </Form>
 
 
 
@@ -56,17 +58,7 @@ function LoginAtleta() {
                 </div>
 
 
-                <div class="trocar">
 
-                    <div class="inscrever">
-                        <p>seja um dos nossos atletas e participe de um dos maiores sites esportivos do Brasil</p>
-
-                        <Link to="/cadastroAtleta">
-                            <button class="btnInscrever">Inscreva-se</button>
-                        </Link>
-                    </div>
-
-                </div>
             </div>
 
             <Footer />

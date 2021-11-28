@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import logo from "../home-template-css/img/image 22.png";
 import {Link} from "react-router-dom";
+import {DropdownButton, Dropdown} from "react-bootstrap";
+import {useHistory} from "react-router-dom";
 
 function Navbar({atleta, dnquadra, cadAtleta, cadAdm }){
+
     return(
         <>
         <header class="header">
@@ -11,22 +14,23 @@ function Navbar({atleta, dnquadra, cadAtleta, cadAdm }){
             </a>
 
         <nav>
-            <ul class="menu">
-                <li>
-                    <a href="">Login</a>
-                    <ul className = "subMenu">
-                       <Link to = {atleta}><li><a>Atleta</a></li></Link> 
-                       <Link to = {dnquadra}><li><a> Dono de quadra</a></li></Link> 
-                    </ul>
-                </li>
-                <li>
-                    <a href="">Cadastro</a>
-                    <ul className = "subMenu">
-                        <Link to = {cadAtleta}><li> <a href="">Atleta</a></li> </Link>
-                        <Link to = {cadAdm}><li> <a href=""> Dono de quadra</a></li></Link> 
-                    </ul>
-                </li>
-            </ul>
+
+            <DropdownButton
+                size="lg"
+                title="Login"
+                variant="secondary"
+            >
+                <Dropdown.Item href={atleta} eventKey="1">Atleta</Dropdown.Item>
+                <Dropdown.Item href={dnquadra} eventKey="2">Administrador</Dropdown.Item>
+            </DropdownButton>
+            <DropdownButton
+                size="lg"
+                title="Cadastro"
+                variant="secondary"
+            >
+                <Dropdown.Item href={cadAtleta} eventKey="1">Atleta</Dropdown.Item>
+                <Dropdown.Item href={cadAdm} eventKey="2">Administrador</Dropdown.Item>
+            </DropdownButton>
         </nav>
     </header>
     </>

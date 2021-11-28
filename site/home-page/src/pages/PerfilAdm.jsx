@@ -4,6 +4,7 @@ import QuadrasAdm from "../components/QuadrasAdm";
 import { Link } from "react-router-dom";
 import api from "../api";
 import { useEffect, useState } from "react";
+import  { Card, Button } from "react-bootstrap";
 
 function PerfilAdm() {
   const [quadra, setQuadra] = useState([]);
@@ -35,12 +36,24 @@ function PerfilAdm() {
       </div>
       <div className="containerQuadras">
         {quadra.map((quadra) => (
-          <QuadrasAdm
-            key={quadra.id_quadra}
-            nome={quadra.nomeQuadra}
-            descricao={quadra.descQuadra}
-            ocupacao={quadra.limitePessoas}
-          />
+          //<QuadrasAdm
+           // key={quadra.id_quadra}
+            //nome={quadra.nomeQuadra}
+            //descricao={quadra.descQuadra}
+            //ocupacao={quadra.limitePessoas}
+          ///>
+
+            <Card style={{ width: '18rem', color:"black" }}>
+                <Card.Img variant="top" src={"http://localhost:8080/quadras/foto/"+quadra.idQuadra} />
+                <Card.Body>
+                    <Card.Title>{quadra.nomeQuadra}</Card.Title>
+                    <Card.Text style={{ color:"black" }}>
+                        Limite de pessoas: {quadra.limitePessoas}<br></br>
+                        Descrição:{quadra.complemento}
+                    </Card.Text>
+                    <Button variant="primary">Detalhe</Button>
+                </Card.Body>
+            </Card>
         ))}
       </div>
       <div class="content-add-quadra">

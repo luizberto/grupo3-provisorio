@@ -97,6 +97,18 @@ public class QuadraController {
         return ResponseEntity.status(200).build();
     }
 
+    @GetMapping("/foto/{id}")
+    public ResponseEntity getFoto(@PathVariable int id) {
+        // não vamos validar se o carro existe
+        Quadra quadra = quadraRepository.findById(id).get();
+        byte[] foto = quadra.getFoto();
+
+        return ResponseEntity
+                .status(200)
+                .header("content-type", "image/jpeg")
+                .body(foto);
+    }
+
     @GetMapping("/csv")
     public ResponseEntity getCsv() {
         GravaLista g = new GravaLista();

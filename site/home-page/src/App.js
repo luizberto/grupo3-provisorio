@@ -10,6 +10,7 @@ import './home-template-css/css/horario.css'
 import './home-template-css/css/foto.css'
 import './home-template-css/css/foto2.css'
 import Routes from './routes';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
