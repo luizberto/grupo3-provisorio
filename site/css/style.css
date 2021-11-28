@@ -20,9 +20,7 @@ a{
 
 .header{
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    padding: 20px;
     flex-wrap: wrap;
     background-color: rgb(14, 12, 12);
     border-bottom:cornsilk 2px solid ;

@@ -7,8 +7,8 @@ import CompLinks from "../components/CompLinks";
 
 function Servicos(){
     return(
-        <>
-      
+        <>  
+
             <section className="servicos">
                 <h1>Explorar</h1>
                 <div className = "container2">
