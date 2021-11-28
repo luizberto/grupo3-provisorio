@@ -34,13 +34,16 @@ public class HorarioController {
 
     @GetMapping("/{id}")
     public ResponseEntity getHorario(@PathVariable int id) {
-        List<HorarioQuadra> listaHora = new ArrayList<>();
-        for(HorarioQuadra h: repository.findAll()){
-            if(h.getFkQuadra() == id){
-                listaHora.add(h);
+        if (this.repository.existsById(id)) {
+            List<HorarioQuadra> listaHora = new ArrayList<>();
+            for (HorarioQuadra h : repository.findAll()) {
+                if (h.getFkQuadra() == id) {
+                    listaHora.add(h);
+                }
             }
-        };
-        return ResponseEntity.status(201).body(listaHora);
+            return ResponseEntity.status(201).body(listaHora);
+        }
+        return ResponseEntity.status(404).build();
     }
 
     @DeleteMapping("/{id}")
