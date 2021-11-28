@@ -4,7 +4,7 @@ import QuadrasAdm from "../components/QuadrasAdm";
 import { Link } from "react-router-dom";
 import api from "../api";
 import { useEffect, useState } from "react";
-import  { Card, Button } from "react-bootstrap";
+import {Card, Button, Form} from "react-bootstrap";
 
 function PerfilAdm() {
   const [quadra, setQuadra] = useState([]);
@@ -20,15 +20,24 @@ function PerfilAdm() {
     }
     pegaDados();
   }, []);
+    function enviaArquivo(e){
+        e.preventDefault();
 
+    }
   return (
     <>
       <NavbarSecundario />
 
       <div className="titulo">
-        <button className="quadraBtn upload">
-          Upload lista
-        </button>
+          <Form onSubmit={enviaArquivo}>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Upload de lista</Form.Label>
+                  <Form.Control type="File" placeholder="" />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                  Submit
+              </Button>
+          </Form>
         <h1>Suas quadras</h1>
         <button className="quadraBtn download">
           Download lista

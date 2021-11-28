@@ -45,7 +45,6 @@ function CadastroAtleta(props) {
             <NavbarSecundario />
             <div class="container4">
                 <div class="dadosCadastro">
-                    <h4 class="tituloForm">Cadastro atleta</h4>
                     <Form onSubmit={atleta}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Nome</Form.Label>
