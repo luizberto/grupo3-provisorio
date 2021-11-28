@@ -54,7 +54,7 @@ public class GravaTxt {
             corpo += String.format("%-30.30s", quadra.getNomeQuadra());
             corpo += String.format("%-100.100s", quadra.getDescQuadra());
             corpo += String.format("%02d", quadra.getLimitePessoas());
-            corpo += String.format("%02d", quadra.getClassificacaoQuadra());
+            corpo += String.format("%.2f", quadra.getClassificacaoQuadra());
             corpo += String.format("%-8.8s", quadra.getFkEndereco().getCep());
             corpo += String.format("%-30.30s", quadra.getFkEndereco().getLogradouro());
             corpo += String.format("%-20.20s", quadra.getComplemento());
