@@ -4,10 +4,14 @@ import QuadrasAdm from "../components/QuadrasAdm";
 import { Link } from "react-router-dom";
 import api from "../api";
 import { useEffect, useState } from "react";
-import {Card, Button, Form} from "react-bootstrap";
+import {Card, Button, Form, Offcanvas, Container, Row, Col} from "react-bootstrap";
 
 function PerfilAdm() {
   const [quadra, setQuadra] = useState([]);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
   useEffect(() => {
     async function pegaDados() {
@@ -28,7 +32,7 @@ function PerfilAdm() {
     <>
       <NavbarSecundario />
 
-      <div className="titulo">
+      <Container className="titulo">
           <Form onSubmit={enviaArquivo}>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Upload de lista</Form.Label>
@@ -42,16 +46,19 @@ function PerfilAdm() {
         <button className="quadraBtn download">
           Download lista
         </button>
-      </div>
-      <div className="containerQuadras">
+      </Container>
+      <Container className="containerQuadras">
         {quadra.map((quadra) => (
-          //<QuadrasAdm
-           // key={quadra.id_quadra}
-            //nome={quadra.nomeQuadra}
-            //descricao={quadra.descQuadra}
-            //ocupacao={quadra.limitePessoas}
-          ///>
+            <>
+            <Offcanvas show={show} onHide={handleClose}>
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    {quadra.limitePessoas}
+                </Offcanvas.Body>
 
+            </Offcanvas>
             <Card style={{ width: '18rem', color:"black" }}>
                 <Card.Img variant="top" src={"http://localhost:8080/quadras/foto/"+quadra.idQuadra} />
                 <Card.Body>
@@ -60,20 +67,24 @@ function PerfilAdm() {
                         Limite de pessoas: {quadra.limitePessoas}<br></br>
                         Descrição:{quadra.complemento}
                     </Card.Text>
-                    <Button variant="primary">Detalhe</Button>
+                    <Button variant="primary" onClick={handleShow}>Detalhe</Button>
                 </Card.Body>
+
             </Card>
+
+            </>
         ))}
-      </div>
-      <div class="content-add-quadra">
-        <div class="add">
+
+      </Container>
+      <Container class="content-add-quadra">
+        <Container class="add">
           <Link to="/cadastroQuadras">
-            <button className="adcQuadra">
+            <Button>
               <p>+</p>
-            </button>
+            </Button>
           </Link>
-        </div>
-      </div>
+        </Container>
+      </Container>
     </>
   );
 }

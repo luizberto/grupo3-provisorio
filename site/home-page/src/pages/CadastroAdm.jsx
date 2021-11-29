@@ -5,6 +5,7 @@ import api from '../api';
 import InputMask from 'react-input-mask';
 import { Link } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
+import {Button, Form} from "react-bootstrap";
 
 function CadastroAdm(props){
     const [campo1, setCampo1] = useState("");
@@ -12,6 +13,8 @@ function CadastroAdm(props){
     const [campo3, setCampo3] = useState("");
     const [campo4, setCampo4] = useState("");
     const [campo5, setCampo5] = useState("");
+
+
     const history = useHistory();
 
     function adm(e) {
@@ -39,24 +42,35 @@ function CadastroAdm(props){
             <div class="container4">
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">Cadastro Administração</h4>
-                    <form onSubmit={adm} class="formClass">
-                        <label for=""> {props.campoUm}nome 
-                            <input type="text" onChange={e => setCampo1(e.target.value)}/>
-                        </label>
-                        <label for="">{props.campoDois}email
-                            <input type="email" onChange={e => setCampo2(e.target.value)}/>
-                        </label>
-                        <label for=""> {props.campoTres}senha
-                            <input type="password" onChange={e => setCampo3(e.target.value)}/>
-                        </label>
-                        <label for=""> {props.campoQuatro}data de nascimento
-                            <input type="date" onInput={e => setCampo4(e.target.value)}/>
-                        </label>
-                        <label for=""> {props.campoCinco}cpf
-                            <InputMask type="text" mask='999.999.999-99'  onChange={e => setCampo5(e.target.value)}/>
-                        </label>
-                            <button class="buttonCadastrar" type="submit">Cadastrar</button>
-                    </form>
+                    <Form onSubmit={adm}>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Nome</Form.Label>
+                            <Form.Control onChange={e => setCampo1(e.target.value)}  type="String" placeholder="Nome" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control onChange={e => setCampo2(e.target.value)} type="email" placeholder="Email" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Senha</Form.Label>
+                            <Form.Control onChange={e => setCampo3(e.target.value)} type="password" placeholder="Senha" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Data Nascimento</Form.Label>
+                            <Form.Control onChange={e => setCampo4(e.target.value)} type="date" placeholder="" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>CPF</Form.Label>
+                            <Form.Control onChange={e => setCampo5(e.target.value)} type="String" placeholder="" />
+                        </Form.Group>
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                    </Form>
 
                     
                 </div>

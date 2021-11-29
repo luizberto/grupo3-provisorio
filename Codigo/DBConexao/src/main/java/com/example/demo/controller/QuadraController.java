@@ -156,32 +156,13 @@ public class QuadraController {
         try {
             registro = entrada.readLine();  // Lê o primeiro registro do arquivo
 
-            while (registro != null) {      // Enquanto não chegou ao final do arquivo
-                // obtém o tipo do registro - primeiros 2 caracteres do registro
-                // substring devolve um "pedaço da String",
-                // que começa na posição 0 e termina na posição 1 (como num vetor)
-                //    0123456
-                //    00NOTA
+            while (registro != null) {
                 tipoRegistro = registro.substring(0, 2);
 
-                // Verifica se o tipoRegistro é "00" (header), ou "01" (trailer) ou "02" (corpo)
                 if (tipoRegistro.equals("00")) {
-//                    System.out.println("Eh um header");
-//                    System.out.println("Tipo do arquivo: " + registro.substring(2, 6));
-//                    System.out.println("Ano/semestre: " + registro.substring(6, 11));
-//                    System.out.println("Data e hora de gravação: " + registro.substring(11, 30));
-//                    System.out.println("Versão do documento: " + registro.substring(30, 32));
+//
                 } else if (tipoRegistro.equals("01")) {
-//                    System.out.println("Eh um trailer");
-//                    // Lê a quantidade de registros gravados que está no trailer
-//                    qtdRegGravados = Integer.valueOf(registro.substring(2, 12));
-//                    // Valida se a quantidade lida é igual a quantidade gravada
-//                    if (qtdRegGravados == contaRegDados) {
-//                        System.out.println("Quantidade de registros lidos compatível com quantidade de registros gravados");
-//                    } else {
-//                        System.out.println("Quantidade de registros lidos incompatível com quantidade de registros gravados");
-//                    }
-//                 tipoRegistro = registro.substring(0, 2);
+//
                 } else if (tipoRegistro.equals("02")) {
                     System.out.println("Eh um registro de corpo");
                     // Lê os dados do registro de corpo
@@ -244,4 +225,4 @@ public class QuadraController {
 
         return ResponseEntity.status(201).body(this.quadraRepository.findAll());
     }
-}
+        }
