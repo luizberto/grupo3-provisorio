@@ -19,7 +19,7 @@ function PerfilAdm() {
       if(resposta.status === 200){
         setQuadra(resposta.data);
       }
-      
+
       console.log(resposta.data);
     }
     pegaDados();
@@ -48,6 +48,7 @@ function PerfilAdm() {
         </button>
       </Container>
       <Container className="containerQuadras">
+          <Row xs={1} md={3} className="g-4">
         {quadra.map((quadra) => (
             <>
             <Offcanvas show={show} onHide={handleClose}>
@@ -59,7 +60,8 @@ function PerfilAdm() {
                 </Offcanvas.Body>
 
             </Offcanvas>
-            <Card style={{ width: '18rem', color:"black" }}>
+            <Col>
+            <Card border="success" style={{ width: '18rem', color:"black" }}>
                 <Card.Img variant="top" src={"http://localhost:8080/quadras/foto/"+quadra.idQuadra} />
                 <Card.Body>
                     <Card.Title>{quadra.nomeQuadra}</Card.Title>
@@ -71,10 +73,10 @@ function PerfilAdm() {
                 </Card.Body>
 
             </Card>
-
+            </Col>
             </>
         ))}
-
+          </Row>
       </Container>
       <Container class="content-add-quadra">
         <Container class="add">

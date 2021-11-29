@@ -3,18 +3,18 @@ import BoxHorarioReserva from "../components/BoxHorarioReserva";
 import Footer from "../components/Footer";
 import NavbarSecundario from "../components/NavbarSecundario";
 
-function Reservas(){
-    return(
+function Reservas() {
+    return (
         <>
-        <NavbarSecundario/>
+            <NavbarSecundario/>
             <div class="container6">
-       <h1 class="titulo-horario">Horarios</h1>
-       <div class="box-horario">
-        <BoxHorarioReserva/>
-       </div>
-   </div>
+                <h1 class="titulo-horario">Horarios</h1>
+                <div class="box-horario">
+                    <BoxHorarioReserva/>
+                </div>
+            </div>
 
-   <Footer/>
+            <Footer/>
         </>
     );
 }
