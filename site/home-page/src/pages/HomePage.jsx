@@ -7,9 +7,8 @@ function HomePage(){
     return(
         <>
         <Banner/>
-        <Servicos/>
+        <Servicos/>             
         <ServicosDetalhe/>
-        <Entre/>
         </>
     );
 }

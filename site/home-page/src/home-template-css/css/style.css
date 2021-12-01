@@ -245,12 +245,16 @@ a{
 .boxImage{
     width: 200px;
     height: 200px;
-    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     border: solid 2px green;
     border-radius: 20%;
+    color: black;
+}
+
+.boxImage p{
+    color: black;
 }
 
 .boxImage img{
