@@ -1,6 +1,5 @@
 .container4{
     display: flex;
-    height: 100vh;
     margin: auto;
     justify-content: center;
     align-items: center;
@@ -17,13 +16,31 @@
 }
 
 .dadosCadastro{
+    margin-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.61) 0px 19px 38px, rgba(0, 0, 0, 0.521) 0px 15px 12px;
+    width: 450px;
+    background-color: black;
+    color: white;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    background-color: rgb(22, 22, 21);
-    width: 28vw;
-    height: 75vh;
-    border-radius: 4%;
+    justify-content: center;
+    padding: 2%;
+    border-radius: 15px;
+}
+
+.dadosCadastro button{
+    margin-bottom: 20px;
+    background-color: black;
+    position:relative;
+    top:50%; 
+    left:35%;
+    border: solid 2px rgb(7, 68, 7);
+}
+
+.dadosCadastro button:hover{
+    background-color: rgb(7, 68, 7);
+    border: solid 2px black;
+    
 }
 
 .tituloForm{
@@ -53,24 +70,4 @@
     border: none;
     padding: 2%;
     border-radius: 5%;
-}
-
-.buttonCadastrar{
-    align-self:flex-end;
-    margin-top: 5%;
-    margin-right: 10%;
-    width: 20%;
-    border: solid 1px white;
-    padding: 2%;
-    background-color: transparent;
-    color: white;
-    border-radius: 10%;
-    cursor: pointer;
-
-}
-
-.buttonCadastrar:hover{
-    background-color: white;
-    color: black;
-    transition: 500ms;
 }

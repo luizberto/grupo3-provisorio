@@ -38,22 +38,22 @@ function LoginAdm() {
             <NavbarSecundario />
             <div class="containerLogin">
                 <div class="logar">
-                    <h3>LOGIN Administrador</h3>
+                    <h3>Administrador</h3>
                     <Form onSubmit={login}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label>Email</Form.Label>
                             <Form.Control onChange={e => setCampo1(e.target.value)}  type="email" placeholder="Enter email" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label>Senha</Form.Label>
                             <Form.Control onChange={e => setCampo2(e.target.value)} type="password" placeholder="Password" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Check me out" />
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Submit
+                            Entrar
                         </Button>
                     </Form>
 

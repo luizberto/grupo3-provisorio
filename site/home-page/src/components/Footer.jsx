@@ -9,7 +9,7 @@ function Footer(){
         <ul class="menu">
             <a href=""><li>Ajuda</li></a> 
             <a href=""><li>Contato</li></a> 
-            <a href="">  <li>FAQ</li></a>
+            <a href=""><li>FAQ</li></a>
             <a href=""><li>Politica de Privacidade</li></a> 
         </ul>
     </footer>
