@@ -30,11 +30,11 @@ public class FavoritoController {
 
     @PostMapping
     public ResponseEntity postFavorito(@RequestBody Favorito favorito) {
-        List<Favorito> favoritos = this.favoritoRepository.findAll().stream().filter(favorito1 -> favorito1.getQuadra().getId().equals(favorito.getQuadra().getId())).collect(Collectors.toList());
+        List<Favorito> favoritos = this.favoritoRepository.findAll().stream().filter(favorito1 -> favorito1.getQuadra().getIdQuadra().equals(favorito.getQuadra().getIdQuadra())).collect(Collectors.toList());
 
         if (favoritos.isEmpty()) {
             this.favoritoRepository.save(favorito);
-            List<Quadra> quadraFavorita = this.quadraRepository.findAll().stream().filter(quadra -> quadra.getId().equals(favorito.getQuadra().getId())).collect(Collectors.toList());
+            List<Quadra> quadraFavorita = this.quadraRepository.findAll().stream().filter(quadra -> quadra.getIdQuadra().equals(favorito.getQuadra().getIdQuadra())).collect(Collectors.toList());
             pilhaObj.push(quadraFavorita);
             return ResponseEntity.status(201).body(pilhaObj.peek());
         }
@@ -55,10 +55,10 @@ public class FavoritoController {
             List<Quadra> pop = pilhaObj.peek();
             Integer idQuadra = null;
             for (Quadra quadra : pop) {
-                idQuadra = quadra.getId();
+                idQuadra = quadra.getIdQuadra();
             }
             Integer idRemove = idQuadra;
-            List<Favorito> favoritoId = this.favoritoRepository.findAll().stream().filter(favorito -> favorito.getQuadra().getId().equals(idRemove)).collect(Collectors.toList());
+            List<Favorito> favoritoId = this.favoritoRepository.findAll().stream().filter(favorito -> favorito.getQuadra().getIdQuadra().equals(idRemove)).collect(Collectors.toList());
             this.favoritoRepository.deleteById(favoritoId.stream().findAny().get().getIdFavorito());
             pilhaObj.pop();
             return ResponseEntity.status(200).build();

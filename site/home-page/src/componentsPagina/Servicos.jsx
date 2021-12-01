@@ -24,9 +24,6 @@ function Servicos(){
                         texto = "Conheça mais vantagens, explore tudo que a sport.fy tem a te oferecer"/>
                 </div>
             </section>
-
-       
-
         </>
     );
 }

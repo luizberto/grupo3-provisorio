@@ -1,11 +1,14 @@
 
 
 .containerLogin {
-    width: 80%;
+    width: 100%;
     margin: auto;
     height: 100vh;
     display: flex;
     justify-content: space-around;
+    background-image: url(../img/the-soccer-field-5357418_1920.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
     align-items: center;   
 }
 
@@ -21,8 +24,8 @@
 }
 
 .logar{
-    width: 300px;
-    height: 350px;
+    box-shadow: rgba(0, 0, 0, 0.61) 0px 19px 38px, rgba(0, 0, 0, 0.521) 0px 15px 12px;
+    width: 450px;
     margin: auto;
     background-color: black;
     color: white;
@@ -30,11 +33,32 @@
     flex-direction: column;
     justify-content: center;
     padding: 2%;
-    border-radius: 10%;
-    border: solid 2px green;
+    border-radius: 15px;
 
 }
+
 .logar h3{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logar button{
+    margin-bottom: 20px;
+    background-color: black;
+    position:relative;
+    top:50%; 
+    left:35%;
+    border: solid 2px rgb(7, 68, 7);
+}
+
+
+.logar button:hover{
+    background-color: rgb(7, 68, 7);
+    border: solid 2px black;
+    
+}
+
+.logar p{
     text-align: center;
     font-size: medium;
     margin: 0;
@@ -50,10 +74,10 @@
 }
 
 .formsLogar input{
-    width: 60%;
+    width: 80%;
     outline: none;
     margin-top: 5%;
-    border-radius: 10%;
+    border-radius: 15%;
     padding: 2%;
     border: solid green 2px;
 }

@@ -21,6 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/quadras")
 public class QuadraController {
+
     @Autowired
     private QuadraRepository quadraRepository;
 
@@ -62,7 +63,7 @@ public class QuadraController {
     public ResponseEntity putQuadra(@PathVariable int id,
                                     @RequestBody Quadra quadraAtt) {
         if (quadraRepository.existsById(id)) {
-            quadraAtt.setId(id);
+            quadraAtt.setIdQuadra(id);
             quadraRepository.save(quadraAtt);
             return ResponseEntity.status(200).build();
         } else {
@@ -97,18 +98,6 @@ public class QuadraController {
         return ResponseEntity.status(200).build();
     }
 
-    @GetMapping("/foto/{id}")
-    public ResponseEntity getFoto(@PathVariable int id) {
-        // não vamos validar se o carro existe
-        Quadra quadra = quadraRepository.findById(id).get();
-        byte[] foto = quadra.getFoto();
-
-        return ResponseEntity
-                .status(200)
-                .header("content-type", "image/jpeg")
-                .body(foto);
-    }
-
     @GetMapping("/csv")
     public ResponseEntity getCsv() {
         GravaLista g = new GravaLista();
@@ -119,110 +108,4 @@ public class QuadraController {
         g.gravaLista(listaQuadra, "teste");
         return ResponseEntity.status(204).build();
     }
-
-    @GetMapping("/export-txt")
-    public ResponseEntity getTxt() {
-        List<Quadra> listaQuadras = this.quadraRepository.findAll();
-        if (listaQuadras.size() > 0) {
-            GravaTxt gravarTxt = new GravaTxt();
-            gravarTxt.gravaQuadraTxt(listaQuadras, "quadras.txt");
-            return ResponseEntity.status(201).build();
-        }
-        return ResponseEntity.status(404).build();
-    }
-
-    @PostMapping("/import-txt/{nomeArq}")
-    public ResponseEntity importTxt(@PathVariable String nomeArq) {
-        BufferedReader entrada = null;
-        String registro, tipoRegistro;
-        String nomeQuadra, descQuadra, cep, logradouro, complemento, bairro, cidade, estado;
-        int limitePessoas,  numero;
-        int contaRegDados = 0;
-        int qtdRegGravados;
-        Double classificacaoQuadra;
-
-        List<Quadra> listaLida = new ArrayList();
-
-        // Abre o arquivo para leitura
-        try {
-            entrada = new BufferedReader(new FileReader(nomeArq));
-            System.out.println("Arquivo Aberto");
-        } catch (IOException erro) {
-            System.out.println("Erro na abertura do arquivo: " +
-                    erro.getMessage());
-        }
-
-        // Leitura do arquivo
-        try {
-            registro = entrada.readLine();  // Lê o primeiro registro do arquivo
-
-            while (registro != null) {
-                tipoRegistro = registro.substring(0, 2);
-
-                if (tipoRegistro.equals("00")) {
-//
-                } else if (tipoRegistro.equals("01")) {
-//
-                } else if (tipoRegistro.equals("02")) {
-                    System.out.println("Eh um registro de corpo");
-                    // Lê os dados do registro de corpo
-                    nomeQuadra = registro.substring(2, 32).trim();
-                    descQuadra = registro.substring(32, 132).trim();
-                    limitePessoas = Integer.valueOf(registro.substring(132, 134));
-                    classificacaoQuadra = Double.valueOf(registro.substring(134, 136));
-                    cep = registro.substring(136, 144).trim();
-                    logradouro = registro.substring(144, 174).trim();
-                    complemento = registro.substring(174, 194).trim();
-                    numero = Integer.valueOf(registro.substring(194, 200));
-                    bairro = registro.substring(200, 230).trim();
-                    cidade = registro.substring(230, 260).trim();
-                    estado = registro.substring(260, 262).trim();
-
-                    // Cria um objeto Quadra com os dados lidos do registro
-                    Quadra quadra = new Quadra();
-                    quadra.setNomeQuadra(nomeQuadra);
-                    quadra.setDescQuadra(descQuadra);
-                    quadra.setLimitePessoas(limitePessoas);
-                    quadra.setClassificacaoQuadra(classificacaoQuadra);
-                    quadra.setComplemento(complemento);
-                    quadra.setNumero(numero);
-
-                    // Cria um objeto Endereco com os dados lidos do registro
-                    Endereco endereco = new Endereco();
-                    endereco.setCep(cep);
-                    endereco.setLogradouro(logradouro);
-                    endereco.setBairro(bairro);
-                    endereco.setCidade(cidade);
-                    endereco.setEstado(estado);
-
-                    this.enderecoRepository.save(endereco);
-                    quadra.setFkEndereco(endereco);
-                    this.quadraRepository.save(quadra);
-
-                    // Adiciona esse objeto à listaLida
-                    listaLida.add(quadra);
-                    // Incrementa o contador de registros de dados lidos
-//                    contaRegDados++;
-                } else {
-                    System.out.println("Tipo de registro inválido");
-                }
-
-                // lê o próximo registro
-                registro = entrada.readLine();
-            }
-
-            // Fecha o arquivo
-            entrada.close();
-        } catch (IOException erro) {
-            System.out.println("Erro ao ler arquivo: " + erro.getMessage());
-        }
-
-        // Exibe a listaLida
-        System.out.println("\nConteúdo lido do arquivo:");
-        for (Quadra q : listaLida) {
-            System.out.println(q);
-        }
-
-        return ResponseEntity.status(201).body(this.quadraRepository.findAll());
-    }
-        }
+}

@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import Footer from "../components/Footer";
-import NavbarSecundario from "../components/NavbarSecundario.jsx";
+import Navbar from "../components/Navbar.jsx";
 import api from '../api';
 import InputMask from 'react-input-mask';
 import { Link } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
 import {Button, Form} from "react-bootstrap";
+import NavbarSecundario from "../components/NavbarSecundario";
 
 function CadastroAdm(props){
     const [campo1, setCampo1] = useState("");
@@ -38,10 +39,10 @@ function CadastroAdm(props){
       
     return (
         <>
-            <NavbarSecundario />
+            <Navbar/>
             <div class="container4">
                 <div class="dadosCadastro">
-                    <h4 class="tituloForm">Cadastro Administração</h4>
+                    <h4 class="tituloForm">Administrador</h4>
                     <Form onSubmit={adm}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Nome</Form.Label>
@@ -68,11 +69,12 @@ function CadastroAdm(props){
                             <Form.Control onChange={e => setCampo5(e.target.value)} type="String" placeholder="" />
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Submit
+                            Entrar
                         </Button>
                     </Form>
 
-                    
+                    <h5>É atleta?</h5>
+                    <Link to="/loginAtleta"><a>clique aqui</a></Link>
                 </div>
 
             </div>

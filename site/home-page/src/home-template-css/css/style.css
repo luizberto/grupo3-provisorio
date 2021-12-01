@@ -271,12 +271,10 @@ a{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    height: 100;
     flex-wrap: wrap;
-    background-color: rgb(17, 16, 16);
-    border-bottom:cornsilk 5px solid ;
-
-
+    background-color:black;
+    text-decoration: none;
 }
 
 .footer ul{
@@ -284,6 +282,7 @@ a{
 }
 
 .footer li{
+    text-decoration: none;
     padding: 5px;
 }
 
@@ -299,9 +298,11 @@ a{
 
 .menu li{
     margin-left: 10px;
+    text-decoration: none;
 }
 
 .menu li a{
+    text-decoration: none;
     display: block;
     padding: 10px;
 }

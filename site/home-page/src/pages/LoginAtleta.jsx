@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Footer from "../components/Footer";
-import NavbarSecundario from "../components/NavbarSecundario.jsx";
+import Navbar from "../components/Navbar.jsx";
 import {Link, useHistory} from "react-router-dom";
 import api from "../api";
 import {Form, Button} from "react-bootstrap";
@@ -30,30 +30,31 @@ function LoginAtleta() {
 
         <>
 
-            <NavbarSecundario />
+            <Navbar/>
             <div class="containerLogin">
                 <div class="logar">
+                <h3>Atleta</h3>
                     <Form onSubmit={login}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
+                            <Form.Label>Email</Form.Label>
                             <Form.Control onChange={e => setCampo1(e.target.value)}  type="email" placeholder="Enter email" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label>Senha</Form.Label>
                             <Form.Control onChange={e => setCampo2(e.target.value)} type="password" placeholder="Password" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Check me out" />
+                            <Form.Check type="checkbox" label="Salvar" />
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Submit
+                            Entrar
                         </Button>
                     </Form>
 
 
 
-                    <h5>É administrador de alguma quadra?</h5>
+                    <b>É administrador de alguma quadra?</b>
                     <Link to="/loginAdm"><a>clique aqui</a></Link>
                 </div>
 
