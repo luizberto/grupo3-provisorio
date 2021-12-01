@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import NavbarSecundario from "../components/NavbarSecundario";
 import api from "../api";
+import {Button, Form} from "react-bootstrap";
+
 function Foto() {
     const [foto, setFoto] = useState("");
     const FormData = require('form-data');
     const formData = new FormData();
+
     function fotoPatch(e) {
         formData.append("foto", foto);
         api.patch("/quadras/foto/" + sessionStorage.get("idQuadra"), formData)
@@ -14,21 +17,26 @@ function Foto() {
 
                 }
             }).catch((erro) => {
-                console.log(erro);
-            })
+            console.log(erro);
+        })
     }
+
     return (
         <>
-            <NavbarSecundario voltar="/edicaoQuadra" anterior="voltar" />
+            <NavbarSecundario voltar="/edicaoQuadra" anterior="voltar"/>
             <div class="container-foto">
                 <h3>Edição de foto</h3>
                 <div class="foto">
-                </div>
+            </div>
                 <h3>Aplique sua foto</h3>
-                <input class="input-foto" type="file" onChange={e => setFoto(e.target.value)} name="" id="input-foto" />
-                <button onClick={fotoPatch} class="troca-foto">Finalizar troca</button>
+                <Form onSubmit={fotoPatch}>
+                    <Form.Control type="file" onChange={e => setFoto(e.target.value)}/>
+                    <Button  type="submit">Finalizar troca</Button>
+                </Form>
+
             </div>
         </>
     );
 }
+
 export default Foto;
