@@ -2,17 +2,14 @@
     display: flex;
     margin: auto;
     justify-content: center;
+    height: 110vh;
     align-items: center;
+    background-image: url(../img/lawn-1335365_1920.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
     flex-wrap: wrap;
     background-color: #EFF2EC;
-}
-
-.tituloContainer{
-    color: black;
-    align-self: start;
-    justify-self: start;
-    text-align: left;
-    margin-left: 0;
 }
 
 .dadosCadastro{
@@ -26,14 +23,15 @@
     justify-content: center;
     padding: 2%;
     border-radius: 15px;
+    margin-bottom: 40px;
 }
 
+
 .dadosCadastro button{
-    margin-bottom: 20px;
+    margin-top: 20px;
     background-color: black;
-    position:relative;
-    top:50%; 
-    left:35%;
+    color: white;
+    border-radius: 5px;
     border: solid 2px rgb(7, 68, 7);
 }
 
@@ -65,7 +63,7 @@
 }
 
 .formClass label input{
-    width: 95%;
+    width: 100%;
     outline: none;
     border: none;
     padding: 2%;

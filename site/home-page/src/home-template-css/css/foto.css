@@ -1,26 +1,58 @@
+
 .container-foto{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 600px;
-    margin: auto;
-    width: 80%;
+    height: 100vh;
+    width: auto;
+}
+
+.container-foto form{
+    display: flex;
+    color: white;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.container-foto input{
+    margin-bottom: 10px;
+}
+
+.container-foto button{
+    background-color: black;
+    color: whitesmoke;
+    border: green 1px solid;
+}
+
+.container-foto button:hover{
+    background-color: black;
+    color: whitesmoke;
+    border: green 1px solid;
 }
 
 .container-foto h3{
+    color: white;
     text-align: center;
+    font-size: 42px;
     color: black;
 }
 
+.box-content-formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
 .foto{
-    width: 30%;
+    width: 400px;
     height:43vh;
     background-color: rgb(5, 5, 5);
     background-image: url('../img/bola-home');
     background-size: cover;
     background-position: center;
-    border-radius: 100%;
+    border: 2px black solid;
 
 }
 

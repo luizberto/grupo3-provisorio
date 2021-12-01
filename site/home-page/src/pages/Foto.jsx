@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import NavbarSecundario from "../components/NavbarSecundario";
+import Navbar from "../components/Navbar";
 import api from "../api";
 import {Button, Form} from "react-bootstrap";
+import Footer from "../components/Footer";
 
 function Foto() {
     const [foto, setFoto] = useState("");
@@ -23,18 +24,19 @@ function Foto() {
 
     return (
         <>
-            <NavbarSecundario voltar="/edicaoQuadra" anterior="voltar"/>
+            <Navbar voltar="/edicaoQuadra" anterior="voltar"/>
+            <div class="container">
             <div class="container-foto">
-                <h3>Edição de foto</h3>
-                <div class="foto">
+                <h3>Insira sua foto</h3>
+            <div class="foto">
             </div>
-                <h3>Aplique sua foto</h3>
                 <Form onSubmit={fotoPatch}>
                     <Form.Control type="file" onChange={e => setFoto(e.target.value)}/>
-                    <Button  type="submit">Finalizar troca</Button>
+                    <Button  type="submit">Finalizar</Button>
                 </Form>
-
             </div>
+            </div>
+            <Footer/>
         </>
     );
 }
