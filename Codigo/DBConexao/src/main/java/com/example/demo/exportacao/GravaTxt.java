@@ -1,5 +1,6 @@
 package com.example.demo.exportacao;
 
+import com.example.demo.dominio.Atleta;
 import com.example.demo.dominio.Quadra;
 
 import java.io.BufferedWriter;
@@ -32,7 +33,7 @@ public class GravaTxt {
 
     }
 
-    public void gravaQuadraTxt(List<Quadra> lista, String nomeArq) {
+    public void gravaArquivoTxt(List<Quadra> lista, String nomeArq) {
 
         int contaRegistro = 0;
 
@@ -54,7 +55,7 @@ public class GravaTxt {
             corpo += String.format("%-30.30s", quadra.getNomeQuadra());
             corpo += String.format("%-100.100s", quadra.getDescQuadra());
             corpo += String.format("%02d", quadra.getLimitePessoas());
-            corpo += String.format("%.2f", quadra.getClassificacaoQuadra());
+            corpo += String.format("%5.2f", quadra.getClassificacaoQuadra()).replace(',', '.');
             corpo += String.format("%-8.8s", quadra.getFkEndereco().getCep());
             corpo += String.format("%-30.30s", quadra.getFkEndereco().getLogradouro());
             corpo += String.format("%-20.20s", quadra.getComplemento());
@@ -71,47 +72,48 @@ public class GravaTxt {
         trailer += String.format("%010d", contaRegistro);
         gravaRegistro(nomeArq, trailer);
 
-    }
-
-    public void gravaAtletaTxt(List<Quadra> lista, String nomeArq) {
-
-        int contaRegistro = 0;
-
-        // Monta o registro de header
-        String header = "00QUADRAS";
-        Date dataDeHoje = new Date();
-        SimpleDateFormat formataData =
-                new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-        header += formataData.format(dataDeHoje);
-        header += "01";
-
-        // Grava o registro do header
-        gravaRegistro(nomeArq, header);
-
-        // Monta e grava o corpo
-        String corpo;
-        for (Quadra quadra : lista) {
-            corpo = "02";
-            corpo += String.format("%-30.30s", quadra.getNomeQuadra());
-            corpo += String.format("%-100.100s", quadra.getDescQuadra());
-            corpo += String.format("%02d", quadra.getLimitePessoas());
-            corpo += String.format("%02d", quadra.getClassificacaoQuadra());
-            corpo += String.format("%-8.8s", quadra.getFkEndereco().getCep());
-            corpo += String.format("%-30.30s", quadra.getFkEndereco().getLogradouro());
-            corpo += String.format("%-20.20s", quadra.getComplemento());
-            corpo += String.format("%06d", quadra.getNumero());
-            corpo += String.format("%-30.30s", quadra.getFkEndereco().getBairro());
-            corpo += String.format("%-30.30s", quadra.getFkEndereco().getCidade());
-            corpo += String.format("%-2.2s", quadra.getFkEndereco().getEstado());
-            gravaRegistro(nomeArq, corpo);
-            contaRegistro++;
-        }
-
-        // Monta e grava o trailer
-        String trailer = "01";
-        trailer += String.format("%010d", contaRegistro);
-        gravaRegistro(nomeArq, trailer);
 
     }
+
+//    public void gravaAtletaTxt(List<Atleta> lista, String nomeArq) {
+//
+//        int contaRegistro = 0;
+//
+//        // Monta o registro de header
+//        String header = "00ATLETAS";
+//        Date dataDeHoje = new Date();
+//        SimpleDateFormat formataData =
+//                new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+//        header += formataData.format(dataDeHoje);
+//        header += "01";
+//
+//        // Grava o registro do header
+//        gravaRegistro(nomeArq, header);
+//
+//        // Monta e grava o corpo
+//        String corpo;
+//        for (Atleta quadra : lista) {
+//            corpo = "03";
+//            corpo += String.format("%-11.11s", quadra.getCpf());
+//            corpo += String.format("%-30.30s", quadra.getNomeAtleta());
+//            corpo += String.format("%-40.40s", quadra.getEmail());
+//            corpo += String.format("%-20.20s", quadra.getSenha());
+//            corpo += String.format("%-10.10s", quadra.getDataNasc());
+//            corpo += String.format("%-8.8s", quadra.getFkEndereco().getCep());
+//            corpo += String.format("%-30.30s", quadra.getFkEndereco().getLogradouro());
+//            corpo += String.format("%-20.20s", quadra.getComplemento());
+//            corpo += String.format("%06d", quadra.getNumero());
+//            corpo += String.format("%-30.30s", quadra.getFkEndereco().getBairro());
+//            corpo += String.format("%-30.30s", quadra.getFkEndereco().getCidade());
+//            corpo += String.format("%-2.2s", quadra.getFkEndereco().getEstado());
+//            gravaRegistro(nomeArq, corpo);
+//            contaRegistro++;
+//        }
+//
+//        // Monta e grava o trailer
+//        String trailer = "01";
+//        trailer += String.format("%010d", contaRegistro);
+//        gravaRegistro(nomeArq, trailer);
+//
+//    }
 }
-

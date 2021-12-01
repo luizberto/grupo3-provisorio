@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar.jsx";
 import {Link, useHistory} from "react-router-dom";
 import api from "../api";
 import {Form, Button} from "react-bootstrap";
+import NavbarSecundario from "../components/NavbarSecundario";
 
 
 function LoginAtleta() {
@@ -30,7 +31,7 @@ function LoginAtleta() {
 
         <>
 
-            <Navbar/>
+            <NavbarSecundario/>
             <div class="containerLogin">
                 <div class="logar">
                 <h3>Atleta</h3>

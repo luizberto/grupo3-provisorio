@@ -10,7 +10,6 @@ import {Carousel } from "react-bootstrap";
 function ServicosDetalhe({image, texto}){
     return(
         <>
-<div class="container3">
     <div class="container" >
         <Carousel >
             <Carousel.Item>
@@ -27,7 +26,6 @@ function ServicosDetalhe({image, texto}){
                 </Carousel.Item>
         </Carousel>
     </div>
-</div>
 
         </>
     );

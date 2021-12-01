@@ -31,47 +31,15 @@ public class Quadra {
     private byte[] foto;
 
     @ManyToOne
-    @JoinColumn(name = "fkEndereco")
+    @JoinColumn(name = "idEndereco")
     private Endereco fkEndereco;
 
-    public Endereco getFkEndereco() {
-        return fkEndereco;
+    public Integer getIdQuadra() {
+        return idQuadra;
     }
 
-    public void setFkEndereco(Endereco fkEndereco) {
-        this.fkEndereco = fkEndereco;
-    }
-
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public Double getClassificacaoQuadra() {
-        return classificacaoQuadra;
-    }
-
-    public void setClassificacaoQuadra(Double classificacaoQuadra) {
-        this.classificacaoQuadra = classificacaoQuadra;
-    }
-
-    public Integer getLimitePessoas() {
-        return limitePessoas;
-    }
-
-    public void setLimitePessoas(Integer limitePessoas) {
-        this.limitePessoas = limitePessoas;
-    }
-
-    public String getDescQuadra() {
-        return descQuadra;
-    }
-
-    public void setDescQuadra(String descQuadra) {
-        this.descQuadra = descQuadra;
+    public void setIdQuadra(Integer idQuadra) {
+        this.idQuadra = idQuadra;
     }
 
     public String getNomeQuadra() {
@@ -82,12 +50,36 @@ public class Quadra {
         this.nomeQuadra = nomeQuadra;
     }
 
-    public Integer getId() {
-        return idQuadra;
+    public String getDescQuadra() {
+        return descQuadra;
     }
 
-    public void setId(Integer id) {
-        this.idQuadra = id;
+    public void setDescQuadra(String descQuadra) {
+        this.descQuadra = descQuadra;
+    }
+
+    public Integer getLimitePessoas() {
+        return limitePessoas;
+    }
+
+    public void setLimitePessoas(Integer limitePessoas) {
+        this.limitePessoas = limitePessoas;
+    }
+
+    public Double getClassificacaoQuadra() {
+        return classificacaoQuadra;
+    }
+
+    public void setClassificacaoQuadra(Double classificacaoQuadra) {
+        this.classificacaoQuadra = classificacaoQuadra;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 
     public Integer getNumero() {
@@ -98,19 +90,19 @@ public class Quadra {
         this.numero = numero;
     }
 
-    public Integer getIdQuadra() {
-        return idQuadra;
-    }
-
-    public void setIdQuadra(Integer idQuadra) {
-        this.idQuadra = idQuadra;
-    }
-
     public byte[] getFoto() {
         return foto;
     }
 
     public void setFoto(byte[] foto) {
         this.foto = foto;
+    }
+
+    public Endereco getFkEndereco() {
+        return fkEndereco;
+    }
+
+    public void setFkEndereco(Endereco fkEndereco) {
+        this.fkEndereco = fkEndereco;
     }
 }

@@ -15,7 +15,7 @@ public class Atleta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_atleta", nullable = false)
     private Integer id;
-    
+
     @Column(name = "cpf", length = 14)
     private String cpf;
 
@@ -33,6 +33,12 @@ public class Atleta {
     @NotBlank(message = "Favor informar senha")
     @Column(name = "senha", length = 50)
     private String senha;
+
+    @Column(name = "complemento", length = 45)
+    private String complemento;
+
+    @Column(name = "numero", length = 6)
+    private Integer numero;
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "data_nasc")
@@ -95,5 +101,21 @@ public class Atleta {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
     }
 }

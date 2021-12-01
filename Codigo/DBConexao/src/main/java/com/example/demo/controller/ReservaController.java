@@ -53,7 +53,7 @@ public class ReservaController {
 
     @GetMapping("/reservas-quadra/{idQuadra}")
     public ResponseEntity getReservaByQuadra(@PathVariable Integer idQuadra) {
-        List<Reserva> reservasQuadra = this.reservaRepository.findAll().stream().filter(reserva -> reserva.getQuadra().getId().equals(idQuadra)).collect(Collectors.toList());
+        List<Reserva> reservasQuadra = this.reservaRepository.findAll().stream().filter(reserva -> reserva.getQuadra().getIdQuadra().equals(idQuadra)).collect(Collectors.toList());
         if (reservasQuadra.isEmpty()) {
             return ResponseEntity.status(404).build();
         }
@@ -99,7 +99,7 @@ public class ReservaController {
     }
 
     public ResponseEntity postFilaReservasQuadra(Integer idQuadra) {
-        List<Reserva> reservasAtleta = this.reservaRepository.findAllByOrderByHoraPartidaAsc().stream().filter(reserva -> reserva.getQuadra().getId().equals(idQuadra)).collect(Collectors.toList());
+        List<Reserva> reservasAtleta = this.reservaRepository.findAllByOrderByHoraPartidaAsc().stream().filter(reserva -> reserva.getQuadra().getIdQuadra().equals(idQuadra)).collect(Collectors.toList());
         if (!reservasAtleta.isEmpty()) {
             this.filaCircularObj = new FilaCircularObj<Object>(reservasAtleta.size());
             for (int i = 0; i < reservasAtleta.size(); i++) {
