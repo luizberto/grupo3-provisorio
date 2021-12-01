@@ -67,8 +67,7 @@ public class TxtController {
 
         // Abre o arquivo para leitura
         try {
-            System.out.println("TXT " + txt.getName() + " name");
-            entrada = new BufferedReader(new FileReader(txt.getResource().getFile().getPath()));
+            entrada = new BufferedReader(new FileReader(txt.getOriginalFilename()));
             System.out.println("Arquivo Aberto");
         } catch (IOException erro) {
             System.out.println("Erro na abertura do arquivo: " +
