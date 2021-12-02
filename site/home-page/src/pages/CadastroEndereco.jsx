@@ -1,9 +1,13 @@
 import React, {useState} from "react";
 import Footer from "../components/Footer";
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
+import { useForm } from "react-hook-form";
 import api from '../api';
 
 function CadastroEndereco(props){
+
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const onSubmit = data => console.log(data);
 
         const [campo1, setCampo1] = useState("");
         const [campo2, setCampo2] = useState("");

@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import api from '../api';
 import InputMask from 'react-input-mask';
 import {Button, Form} from "react-bootstrap";
-
+import {useForm} from "react-hook-form";
 function CadastroAtleta(props) {
 
     const [campo1, setCampo1] = useState("");
@@ -15,6 +15,9 @@ function CadastroAtleta(props) {
     const [campo4, setCampo4] = useState("");
     const [campo5, setCampo5] = useState("");
     const history = useHistory();
+
+
+    const {register} = useForm();
 
     function atleta(e) {
         e.preventDefault();
