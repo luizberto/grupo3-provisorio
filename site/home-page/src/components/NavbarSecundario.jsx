@@ -12,7 +12,11 @@ function NavbarSecundario(props){
  
         <nav>
         <Link to = "/"><Button variant="success">Home</Button>{' '}</Link>
-           <Link to = {props.voltar}><a>{props.anterior}</a></Link>
+           <Link to = {props.voltar}>
+              <Button variant = "success">
+              voltar
+              </Button>
+              </Link>
         </nav>
     </header>
  </>

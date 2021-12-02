@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar.jsx";
 import api from '../api';
 import {useHistory} from "react-router-dom";
+import NavbarSecundario from "../components/NavbarSecundario";
 
 
 function CadastroQuadras(props){
@@ -35,7 +36,7 @@ function CadastroQuadras(props){
       
     return (
         <>
-            <Navbar/>
+            <NavbarSecundario/>
             <div class="container4">
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">Cadastro Quadra</h4>

@@ -54,9 +54,15 @@ function LoginAtleta() {
                     </Form>
 
 
-
-                    <b>É administrador de alguma quadra?</b>
+                    <div className = "container9">
+                    <b>
+                    É administrador de quadra? <br/>
                     <Link to="/loginAdm"><a>clique aqui</a></Link>
+                    </b>
+                  
+
+                    <Link to = "/cadastroAtleta"><Button variant="success">Cadastrar</Button>{' '}</Link> 
+                    </div>
                 </div>
 
 

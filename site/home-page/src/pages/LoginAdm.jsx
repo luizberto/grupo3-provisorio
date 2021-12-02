@@ -35,7 +35,7 @@ function LoginAdm() {
     return (
 
         <>
-            <NavbarSecundario />
+            <NavbarSecundario/>
             <div class="containerLogin">
                 <div class="logar">
                     <h3>Administrador</h3>
@@ -59,8 +59,16 @@ function LoginAdm() {
 
 
 
-                    <h5>É atleta?</h5>
+                  
+                    <div className = "container9">
+                    <b>
+                    É atleta? <br/>
                     <Link to="/loginAtleta"><a>clique aqui</a></Link>
+                    </b>
+                  
+
+                    <Link to = "/cadastroAdm"><Button variant="success">Cadastrar</Button>{' '}</Link> 
+                    </div>
                 </div>
 
 

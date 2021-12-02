@@ -45,7 +45,7 @@ function PerfilAdm() {
           </Form>
         <h1>Suas quadras</h1>
         <button className="quadraBtn download">
-          Download lista
+          Dwld lista
         </button>
       </Container>
       <Container className="containerQuadras">

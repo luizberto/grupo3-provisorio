@@ -19,7 +19,7 @@ function VislualizacaoAtleta() {
     <h1>Descrição</h1>
 </span>
 <DadosQuadra/>
-<ButtonEdit acao = "alugar" />
+<ButtonEdit acao = "alugar" path = "/pagamento" />
 </div>
 
 <div class="box-info-quadra">

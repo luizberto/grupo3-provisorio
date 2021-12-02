@@ -4,9 +4,7 @@ body, ul, li, p{
     list-style: none;
     font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
-    font-family: 'Roboto', sans-serif;
-    color: rgb(233, 247, 240);
-   
+    font-family: 'Roboto', sans-serif; 
 
 }
 
@@ -142,6 +140,12 @@ body::-webkit-scrollbar {
     align-items: center;   
 }
 
+.container9{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 /*sobre do site*/
 
 .sobre{
@@ -264,6 +268,7 @@ body::-webkit-scrollbar {
 
 .boxImage p{
     color: black;
+    text-align: center;
 }
 
 .boxImage img{
