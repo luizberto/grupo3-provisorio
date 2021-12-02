@@ -30,7 +30,7 @@ function Pagamento() {
 
   return (
     <>
-      <NavbarSecundario />
+      <NavbarSecundario voltar = "/visualizacaoAtleta"/>
       <div class="container-pagamento">
         <div class="dados-pagamento">
 

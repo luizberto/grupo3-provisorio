@@ -60,7 +60,6 @@ function BuscaQuadra() {
                     ))}
                 </Row>
             </Container>
-            <Footer/>
         </>
     );
 }

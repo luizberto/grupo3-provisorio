@@ -7,10 +7,10 @@ function Footer(){
         <footer class="footer">
         <a class="logo" href="/"><img src={logo} height="40px" alt=""/></a>
         <ul class="menu">
-            <a href=""><li>Ajuda</li></a> 
-            <a href=""><li>Contato</li></a> 
-            <a href=""><li>FAQ</li></a>
-            <a href=""><li>Politica de Privacidade</li></a> 
+            <li>Ajuda</li> 
+            <li>Contato</li> 
+            <li>FAQ</li>
+            <li>Politica de Privacidade</li> 
         </ul>
     </footer>
     </>

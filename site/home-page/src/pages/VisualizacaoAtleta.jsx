@@ -8,7 +8,7 @@ import NavbarSecundario from "../components/NavbarSecundario";
 function VislualizacaoAtleta() {
     return (
         <>
-        <NavbarSecundario voltar = "/" />
+        <NavbarSecundario voltar = "/buscaQuadra" />
         <section class="containerDescricao">
             <ImageQuadra />
 

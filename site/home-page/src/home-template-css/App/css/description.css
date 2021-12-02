@@ -15,12 +15,15 @@
 }
 
 .box-quadra img{
-    width: 50vw;
+    box-shadow: rgba(0, 0, 0, 0.61) 0px 19px 38px, rgba(0, 0, 0, 0.521) 0px 15px 12px;
+    margin-top: 20px;
+    width: 620px;
+    height: 400px;
 }
 
 .containerBoxInfos{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 95%;
     height: 450px;
     padding: 2%;
@@ -41,8 +44,11 @@
 
 .box-info-quadra{
     margin-top: 10px;
-    width: 278px;
-    height: 316px;
+    box-shadow: rgba(0, 0, 0, 0.61) 0px 19px 38px, rgba(0, 0, 0, 0.521) 0px 15px 12px;
+    margin: 10px;
+    width: 300px;
+    height: 450px;
+    border-radius:10px;
     background-color: #EFF2EC;
     color: black;
     border: 5px solid green;
@@ -77,9 +83,9 @@
 .botaoAcao{
     background-color: black;
     color: blanchedalmond;
-    border: 2/px solid green;
-    border-radius: 4%;
-    width: 20%;
+    border: 2px solid green;
+    border-radius: 5px;
+    width: 100%;
     margin: 2%;
     align-self: center;
     justify-self: center;

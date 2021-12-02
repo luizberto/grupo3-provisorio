@@ -8,7 +8,6 @@ function HomePage(){
         <>
         <Banner/>
         <Servicos/>             
-        <ServicosDetalhe/>
         </>
     );
 }
