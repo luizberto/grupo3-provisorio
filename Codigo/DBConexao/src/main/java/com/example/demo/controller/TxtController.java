@@ -73,7 +73,7 @@ public class TxtController {
         List<Object> listaLida = new ArrayList();
 
 
-        File convFile = new File("C:\\Users\\joaov\\Downloads\\"  + inputFile.getOriginalFilename());
+        File convFile = new File("C:\\arqTXT\\"  + inputFile.getOriginalFilename());
         inputFile.transferTo(convFile);
         
 
