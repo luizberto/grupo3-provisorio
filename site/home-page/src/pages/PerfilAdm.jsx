@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import api from "../api";
 import { useEffect, useState } from "react";
 import {Card, Button, Form, Offcanvas, Container, Row, Col} from "react-bootstrap";
+import CardQuadras from "../components/CardQuadras";
 
 function PerfilAdm() {
   const [quadra, setQuadra] = useState([]);
@@ -51,29 +52,15 @@ function PerfilAdm() {
           <Row xs={1} md={3} className="g-4">
         {quadra.map((quadra) => (
             <>
-            <Offcanvas show={show} onHide={handleClose}>
-                <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                    {quadra.limitePessoas}
-                </Offcanvas.Body>
-
-            </Offcanvas>
-            <Col>
-            <Card border="success" style={{ width: '18rem', color:"black" }}>
-                <Card.Img variant="top" src={"http://localhost:8080/quadras/foto/"+quadra.idQuadra} />
-                <Card.Body>
-                    <Card.Title>{quadra.nomeQuadra}</Card.Title>
-                    <Card.Text style={{ color:"black" }}>
-                        Limite de pessoas: {quadra.limitePessoas}<br></br>
-                        Descrição:{quadra.complemento}
-                    </Card.Text>
-                    <Button variant="primary" onClick={handleShow}>Detalhe</Button>
-                </Card.Body>
-
-            </Card>
-            </Col>
+                <Col md="auto">
+                    <CardQuadras
+                        id={quadra.idQuadra}
+                        descricao={quadra.descQuadra}
+                        nome={quadra.nomeQuadra}
+                        limite={quadra.limitePessoas}
+                        usuario="administrador"
+                    />
+                </Col>
             </>
         ))}
           </Row>

@@ -1,6 +1,0 @@
-00ATLETAS01-12-2021 13:10:3801
-0371290252475Lucas Ferreira                email@email.com                         *******             1999-02-1808466060Rua Renata                    Casa amarela Esquina000178Vila Roseira II               SÃO Paulo                     SP
-010000000001
-00QUADRAS01-12-2021 13:10:4801
-02Arena do Nordeste             Quadras de Futebol e Society                                                                        1012.0008466060Rua Renata                    Quadra próxima a Pau001230Vila Roseira II               SÃO Paulo                     SP
-010000000001

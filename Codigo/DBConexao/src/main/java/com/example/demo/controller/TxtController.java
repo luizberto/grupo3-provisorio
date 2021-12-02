@@ -7,13 +7,17 @@ import com.example.demo.exportacao.GravaTxt;
 import com.example.demo.repositorio.AtletaRepository;
 import com.example.demo.repositorio.EnderecoRepository;
 import com.example.demo.repositorio.QuadraRepository;
+import org.apache.tomcat.jni.FileInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletContext;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -36,7 +40,7 @@ public class TxtController {
 
     @GetMapping("/quadra")
     public ResponseEntity getTxt() {
-        List<Quadra> listaQuadras = this.quadraRepository.findAll();
+        List<Quadra> listaQuadras = quadraRepository.findAll();
         if (listaQuadras.size() > 0) {
             GravaTxt gravarTxt = new GravaTxt();
             gravarTxt.gravaArquivoTxt(listaQuadras, "export.txt");
@@ -56,8 +60,11 @@ public class TxtController {
 //        return ResponseEntity.status(404).build();
 //    }
 
+    @Autowired
+    ServletContext context;
+
     @PostMapping("/import")
-    public ResponseEntity importTxt(@RequestParam MultipartFile txt) throws IOException {
+    public ResponseEntity importTxt(@RequestParam MultipartFile inputFile) throws IOException {
         BufferedReader entrada = null;
         String registro, tipoRegistro;
         int contaRegDados = 0;
@@ -65,9 +72,14 @@ public class TxtController {
 
         List<Object> listaLida = new ArrayList();
 
+
+        File convFile = new File("C:\\Users\\joaov\\Downloads\\"  + inputFile.getOriginalFilename());
+        inputFile.transferTo(convFile);
+        
+
         // Abre o arquivo para leitura
         try {
-            entrada = new BufferedReader(new FileReader(txt.getOriginalFilename()));
+            entrada = new BufferedReader(new FileReader(convFile));
             System.out.println("Arquivo Aberto");
         } catch (IOException erro) {
             System.out.println("Erro na abertura do arquivo: " +

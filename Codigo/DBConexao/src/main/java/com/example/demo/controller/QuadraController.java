@@ -98,6 +98,18 @@ public class QuadraController {
         return ResponseEntity.status(200).build();
     }
 
+    @GetMapping("/foto/{id}")
+    public ResponseEntity gerFoto(@PathVariable Integer id) throws IOException {
+
+        Quadra q = quadraRepository.findById(id).get();
+
+        byte[] foto = q.getFoto();
+
+        return ResponseEntity
+                .status(200)
+                .header("content-type", "image/jpeg")
+                .body(foto);
+    }
     @GetMapping("/csv")
     public ResponseEntity getCsv() {
         GravaLista g = new GravaLista();

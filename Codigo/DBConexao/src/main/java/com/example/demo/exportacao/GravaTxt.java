@@ -56,13 +56,13 @@ public class GravaTxt {
             corpo += String.format("%-100.100s", quadra.getDescQuadra());
             corpo += String.format("%02d", quadra.getLimitePessoas());
             corpo += String.format("%5.2f", quadra.getClassificacaoQuadra()).replace(',', '.');
-            corpo += String.format("%-8.8s", quadra.getFkEndereco().getCep());
-            corpo += String.format("%-30.30s", quadra.getFkEndereco().getLogradouro());
-            corpo += String.format("%-20.20s", quadra.getComplemento());
-            corpo += String.format("%06d", quadra.getNumero());
-            corpo += String.format("%-30.30s", quadra.getFkEndereco().getBairro());
-            corpo += String.format("%-30.30s", quadra.getFkEndereco().getCidade());
-            corpo += String.format("%-2.2s", quadra.getFkEndereco().getEstado());
+            //corpo += String.format("%-8.8s", quadra.getFkEndereco().getCep());
+            //corpo += String.format("%-30.30s", quadra.getFkEndereco().getLogradouro());
+            //corpo += String.format("%-20.20s", quadra.getComplemento());
+            //corpo += String.format("%06d", quadra.getNumero());
+            //corpo += String.format("%-30.30s", quadra.getFkEndereco().getBairro());
+            //corpo += String.format("%-30.30s", quadra.getFkEndereco().getCidade());
+            //corpo += String.format("%-2.2s", quadra.getFkEndereco().getEstado());
             gravaRegistro(nomeArq, corpo);
             contaRegistro++;
         }
