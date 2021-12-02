@@ -19,7 +19,7 @@ function CadastroEndereco(props){
     
     return(
         <>
-        <NavbarSecundario/>
+        <NavbarSecundario voltar = "/cadastroQuadra"/>
         <div class="container4">
         <div class="dadosCadastro">
         <h4 class="tituloForm">Endereço</h4>

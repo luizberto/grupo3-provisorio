@@ -31,7 +31,7 @@ function PerfilAdm() {
     }
   return (
     <>
-      <NavbarSecundario />
+      <NavbarSecundario voltar = "/" />
 
       <Container className="titulo">
           <Form onSubmit={enviaArquivo}>

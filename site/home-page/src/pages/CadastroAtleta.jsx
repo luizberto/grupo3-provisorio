@@ -42,7 +42,7 @@ function CadastroAtleta(props) {
 
     return (
         <>
-            <NavbarSecundario />
+            <NavbarSecundario voltar = "/loginAtleta" />
             <div class="container4">
                 <div class="dadosCadastro">
                     <Form onSubmit={atleta}>

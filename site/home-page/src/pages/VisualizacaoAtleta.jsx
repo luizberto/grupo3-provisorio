@@ -8,7 +8,7 @@ import NavbarSecundario from "../components/NavbarSecundario";
 function VislualizacaoAtleta() {
     return (
         <>
-        <NavbarSecundario/>
+        <NavbarSecundario />
         <section class="containerDescricao">
             <ImageQuadra />
 

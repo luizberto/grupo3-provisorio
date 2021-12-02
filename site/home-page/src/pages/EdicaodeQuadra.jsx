@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function EdicaodeQuadra(){
     return(
         <>
-        <NavbarSecundario voltar = "/perfilAdm" anterior = "Sair"/>
+        <NavbarSecundario voltar = "/perfilAdm"/>
 <section class="containerDescricao"> 
  <ImageQuadra/> 
 

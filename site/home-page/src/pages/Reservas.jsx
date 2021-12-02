@@ -6,7 +6,7 @@ import NavbarSecundario from "../components/NavbarSecundario";
 function Reservas() {
     return (
         <>
-            <NavbarSecundario/>
+            <NavbarSecundario voltar = "/visualizacaoAtleta"/>
             <div class="container6">
                 <h1 class="titulo-horario">Horarios</h1>
                 <div class="box-horario">

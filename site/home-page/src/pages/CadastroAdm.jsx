@@ -39,7 +39,7 @@ function CadastroAdm(props){
       
     return (
         <>
-            <NavbarSecundario voltar = "/loginAdm" anterior = "voltar"/>
+            <NavbarSecundario voltar = "/loginAdm"/>
             <div class="container4">
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">Administrador</h4>

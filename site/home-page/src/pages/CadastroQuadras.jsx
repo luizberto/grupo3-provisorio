@@ -36,7 +36,7 @@ function CadastroQuadras(props){
       
     return (
         <>
-            <NavbarSecundario/>
+            <NavbarSecundario voltar = "/perfilAdm"/>
             <div class="container4">
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">Cadastro Quadra</h4>
