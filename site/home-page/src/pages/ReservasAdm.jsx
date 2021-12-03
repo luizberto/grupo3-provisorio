@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import NavbarSecundario from "../components/NavbarSecundario";
 import api from "../api";
-import {Button, Card, Col, Container, Row, ListGroup} from "react-bootstrap";
+import {Card, Col, Container, Row, ListGroup} from "react-bootstrap";
 
 function ReservasAdm() {
     const [reserva, setReserva] = useState([]);

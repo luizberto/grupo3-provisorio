@@ -1,9 +1,6 @@
 import React, {useState} from "react";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar.jsx";
 import api from '../api';
-import InputMask from 'react-input-mask';
-import { Link } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
 import {Button, Form} from "react-bootstrap";
 import NavbarSecundario from "../components/NavbarSecundario";

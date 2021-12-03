@@ -7,7 +7,6 @@ import git from '../home-template-css/img/git.png'
 import linkedn from '../home-template-css/img/linkedin.png'
 import insta from '../home-template-css/img/insta.png'
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
-import FormLogin from "../componentsPagina/FormLogin";
 import api from "../api";
 import { useHistory } from 'react-router-dom';
 import {Button, Form} from "react-bootstrap";

@@ -1,10 +1,6 @@
 import React from "react";
 import NavbarSecundario from "../components/NavbarSecundario";
-import { useState, useEffect } from "react";
-import ListItem from '../components/ListItem'
-import NewTaskInput from '../components/NewTaskInput'
-import api from "../api";
-import { useHistory } from "react-router-dom";
+import { useState } from "react";
 import Footer from "../components/Footer";
 
 function Pagamento() {

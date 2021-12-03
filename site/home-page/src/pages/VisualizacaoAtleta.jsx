@@ -3,7 +3,6 @@ import DadosQuadra from "../componentsPagina/DadosQuadra";
 import ButtonEdit from "../components/ButtonEdit";
 import ImageQuadra from "../components/ImageQuadra";
 import DadosHorario from "../componentsPagina/DadosHorario";
-import Navbar from "../components/Navbar";
 import NavbarSecundario from "../components/NavbarSecundario";
 function VislualizacaoAtleta() {
     return (
