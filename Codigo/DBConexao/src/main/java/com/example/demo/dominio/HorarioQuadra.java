@@ -1,6 +1,7 @@
 package com.example.demo.dominio;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Table(name = "horario_quadra", indexes = {
@@ -14,7 +15,7 @@ public class HorarioQuadra {
     private Integer id;
 
     @Column(name = "data_quadra")
-    private LocalDateTime dataQuadra;
+    private String dataQuadra;
 
     @Column(name = "reservado")
     private String reserva;
@@ -30,11 +31,11 @@ public class HorarioQuadra {
         this.fkQuadra = fkQuadra;
     }
 
-    public LocalDateTime getData() {
+    public String getDataQuadra() {
         return dataQuadra;
     }
 
-    public void setData(LocalDateTime data) {
+    public void setDataQuadra(String data) {
         this.dataQuadra = data;
     }
 
@@ -53,5 +54,15 @@ public class HorarioQuadra {
 
     public void setReserva(String reserva) {
         this.reserva = reserva;
+    }
+
+    @Override
+    public String toString() {
+        return "HorarioQuadra{" +
+                "id=" + id +
+                ", dataQuadra=" + dataQuadra +
+                ", reserva='" + reserva + '\'' +
+                ", fkQuadra=" + fkQuadra +
+                '}';
     }
 }
