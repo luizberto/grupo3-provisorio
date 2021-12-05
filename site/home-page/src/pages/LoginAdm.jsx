@@ -9,7 +9,7 @@ import insta from '../home-template-css/img/insta.png'
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
 import api from "../api";
 import { useHistory } from 'react-router-dom';
-import {Button, Form} from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 function LoginAdm() {
 
@@ -34,16 +34,15 @@ function LoginAdm() {
     return (
 
         <>
-            <NavbarSecundario/>
+            <NavbarSecundario />
             <div class="containerLogin">
                 <div class="logar">
                     <h3>Administrador</h3>
                     <Form onSubmit={login}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control onChange={e => setCampo1(e.target.value)}  type="email" placeholder="Enter email" />
+                            <Form.Control onChange={e => setCampo1(e.target.value)} type="email" placeholder="Enter email" />
                         </Form.Group>
-
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Senha</Form.Label>
                             <Form.Control onChange={e => setCampo2(e.target.value)} type="password" placeholder="Password" />
@@ -55,22 +54,19 @@ function LoginAdm() {
                             Entrar
                         </Button>
                     </Form>
-
-
-
-                  
-                    <div className = "container9">
-                    <b>
-                    É atleta? <br/>
-                    <Link to="/loginAtleta"><a>clique aqui</a></Link>
-                    </b>
-                  
-
-                    <Link to = "/cadastroAdm"><Button variant="success">Cadastrar</Button>{' '}</Link> 
+                    <div className="container9">
+                        <b>
+                            É atleta?
+                            <br />
+                            <Link to="/loginAtleta"><a>clique aqui</a></Link>
+                        </b>
+                        <b>
+                            Não tem cadastro?
+                            <br />
+                            <Link to="/cadastroAdm"><a>clique aqui</a></Link>
+                        </b>
                     </div>
                 </div>
-
-
 
             </div>
 

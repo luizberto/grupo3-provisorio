@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Footer from "../components/Footer";
 import api from '../api';
 import { useHistory } from 'react-router-dom';
-import {Button, Form} from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import NavbarSecundario from "../components/NavbarSecundario";
 
-function CadastroAdm(props){ 
+function CadastroAdm(props) {
     const [campo1, setCampo1] = useState("");
     const [campo2, setCampo2] = useState("");
     const [campo3, setCampo3] = useState("");
@@ -19,31 +19,31 @@ function CadastroAdm(props){
         e.preventDefault();
         alert(campo4);
         api.post("/adm", {
-          nomeDono: campo1,
-          email: campo2,
-          senha: campo3,
-          dataNasc: campo4,
-          cpf: campo5
+            nomeDono: campo1,
+            email: campo2,
+            senha: campo3,
+            dataNasc: campo4,
+            cpf: campo5
         }).then((resposta) => {
-          if (resposta.status === 201) {
-            alert("aperte enter para se redirecionar");
-            
-          }
+            if (resposta.status === 201) {
+                alert("aperte enter para se redirecionar");
+
+            }
         }).catch((erro) => {
-          console.log(erro);
+            console.log(erro);
         })
-      }
-      
+    }
+
     return (
         <>
-            <NavbarSecundario voltar = "/loginAdm"/>
+            <NavbarSecundario voltar="/loginAdm" />
             <div class="container4">
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">Administrador</h4>
                     <Form onSubmit={adm}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Nome</Form.Label>
-                            <Form.Control onChange={e => setCampo1(e.target.value)}  type="String" placeholder="Nome" />
+                            <Form.Control onChange={e => setCampo1(e.target.value)} type="String" placeholder="Nome" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -69,7 +69,9 @@ function CadastroAdm(props){
                             Entrar
                         </Button>
                     </Form>
+                    
                 </div>
+
 
             </div>
             <Footer />

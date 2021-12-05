@@ -2,9 +2,9 @@
 .containerDescricao{
     display: flex;
     flex-direction: column;
-    margin: auto;
-    height: auto;
-  
+    background-image: url("../img/stadium-2606345_1920\ \(1\).jpg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .box-quadra{
@@ -17,7 +17,7 @@
 .box-quadra img{
     box-shadow: rgba(0, 0, 0, 0.61) 0px 19px 38px, rgba(0, 0, 0, 0.521) 0px 15px 12px;
     margin-top: 20px;
-    width: 620px;
+    width: 820px;
     height: 400px;
 }
 
@@ -25,8 +25,6 @@
     display: flex;
     justify-content: center;
     width: 95%;
-    height: 450px;
-    padding: 2%;
     margin: auto;
 }
 
@@ -42,18 +40,24 @@
 
 
 
-.box-info-quadra{
+.box-info-quadra{   
     margin-top: 10px;
     box-shadow: rgba(0, 0, 0, 0.61) 0px 19px 38px, rgba(0, 0, 0, 0.521) 0px 15px 12px;
     margin: 10px;
-    width: 300px;
-    height: 450px;
+    width: 400px;
     border-radius:10px;
     background-color: #EFF2EC;
     color: black;
-    border: 5px solid green;
+    border: 1px solid;
     padding: 2%;
+}
 
+.box-info-quadra input{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .box-info-quadra p{
@@ -86,7 +90,7 @@
     border: 2px solid green;
     border-radius: 5px;
     width: 100%;
-    margin: 2%;
+    margin-top: 300px;
     align-self: center;
     justify-self: center;
     cursor: pointer;
@@ -95,7 +99,7 @@
 .botaoAcao:hover{
     background-color: honeydew;
     color: black;
-    transition: 500ms;
+    border: 2px solid black;
 }
 
 .botaoReserva{
