@@ -36,7 +36,6 @@ function Routes(){
             <Route path = "/reservas" exact component = {Reservas}/>
             <Route path = "/foto" exact component = {Foto}/>
             <Route path = "/reservasAdm" exact component = {ReservasAdm}/>
-
         </Switch>
     </BrowserRouter>
     );
