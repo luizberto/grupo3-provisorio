@@ -37,6 +37,8 @@ function DadosHorario(){
         <span class="tituloCard">
           <h1>Horarios</h1>
         </span>
+        <input type="datetime-local" class="box-info-quadra-input">
+        </input>
         {horario.map((horario)=>(
             <div className = "botaoReserva" onClick={e => hora(horario.id, horario.fkQuadra, format(new Date(horario.data), 'yyyy-MM-dd hh:mm:ss'))}>{
                 format(new Date(horario.data), 'hh:mm dd/MM')

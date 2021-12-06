@@ -7,26 +7,27 @@ import NavbarSecundario from "../components/NavbarSecundario";
 function VislualizacaoAtleta() {
     return (
         <>
-        <NavbarSecundario voltar = "/buscaQuadra" />
-        <section class="containerDescricao">
-            <ImageQuadra />
+            <NavbarSecundario voltar="/buscaQuadra" />
+            <section class="containerDescricao">
+                <ImageQuadra />
 
-            <div class="containerBoxInfos">
-            <div class="box-info-quadra">
+                <div class="containerBoxInfos">
+                    <div class="box-info-quadra">
 
-<span class="tituloCard">
-    <h1>Descrição</h1>
-</span>
-<DadosQuadra/>
-<ButtonEdit acao = "alugar" path = "/pagamento" />
-</div>
+                        <span class="tituloCard">
+                            <h1>Informações</h1>
+                        </span>
+                        <DadosQuadra />
+                        
+                    </div>
 
-<div class="box-info-quadra">
-<DadosHorario/>
-</div>
+                    <div class="box-info-quadra">
+                        <DadosHorario />
+                        <ButtonEdit acao="alugar" path="/pagamento" />
+                    </div>
 
-            </div>
-        </section>
+                </div>
+            </section>
         </>
     );
 } export default VislualizacaoAtleta;

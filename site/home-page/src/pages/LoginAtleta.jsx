@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Footer from "../components/Footer";
-import {Link, useHistory} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import api from "../api";
-import {Button, Form} from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import NavbarSecundario from "../components/NavbarSecundario";
 
 
@@ -32,15 +32,14 @@ function LoginAtleta() {
 
         <>
 
-            <NavbarSecundario/>
+            <NavbarSecundario />
             <div class="containerLogin">
                 <div class="logar">
                     <h3>Atleta</h3>
                     <Form onSubmit={login}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control onChange={e => setCampo1(e.target.value)} type="email"
-                                          placeholder="Enter email"/>
+                            <Form.Control onChange={e => setCampo1(e.target.value)} type="email" placeholder="Enter email" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -59,12 +58,15 @@ function LoginAtleta() {
 
                     <div className="container9">
                         <b>
-                            É administrador de quadra? <br/>
-                            <Link to="/loginAdm"><a>clique aqui</a></Link>
+                            É atleta?
+                            <br />
+                            <Link to="/loginAtleta"><a>clique aqui</a></Link>
                         </b>
-
-
-                        <Link to="/cadastroAtleta"><Button variant="success">Cadastrar</Button>{' '}</Link>
+                        <b>
+                            Não tem cadastro?
+                            <br />
+                            <Link to="/cadastroAtleta"><a>clique aqui</a></Link>
+                        </b>
                     </div>
                 </div>
 

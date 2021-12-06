@@ -2,11 +2,12 @@ import React from "react";
 import NavbarSecundario from "../components/NavbarSecundario";
 import { useState } from "react";
 import Footer from "../components/Footer";
+import { Spinner } from "react-bootstrap";
 
 function Pagamento() {
 
   function ouvir() {
-    alert("pagamento realizado")
+    alert("Reserva concluida")
   }
 
   const [formaPagamento, setFormaPagamento] = useState("");
@@ -26,17 +27,15 @@ function Pagamento() {
 
   return (
     <>
-      <NavbarSecundario voltar = "/visualizacaoAtleta"/>
+      <NavbarSecundario voltar="/visualizacaoAtleta" />
       <div class="container-pagamento">
         <div class="dados-pagamento">
 
           <h1>Pagamento</h1>
           <div class="tela-pagamento">
-            <label for="">Selecione quantas <br /> pessoas vão:
-              <input type="text" />
-            </label>
-
-            <label for="">Valor:
+            <label for="">Participantes
+              <br />
+              <input type="number" min="6" max="99"  class="input-jogadores"/>
             </label>
             <div class="parte-pagamento">
               <label for="">
@@ -52,20 +51,20 @@ function Pagamento() {
 
           {formaPagamento === 'pix' ?
             <div className="pagamento-removivel">
-              <h4>Tipo de Chave Pix: email</h4>
-              <p>Chave de pagamento: teste@teste.com </p>
-              <p>Valor da compra: R$ 120,00</p>
-              <button onClick={ouvir} className="buttonStyle">Pagar</button>
+              <h4></h4>
+              <p>Chave de Pix: teste@teste.com </p>
+              <p>R$: R$ 120,00</p>
+              <button onClick={ouvir} className="buttonStyle">Finalizar</button>
             </div>
             : formaPagamento === 'presencial' ?
               <div className="pagamento-removivel">
-                <h5>Pagamento Dinheiro</h5>
-                <p>Valor da compra:</p>
+                <h5>Dinheiro</h5>
+                <p>R$:</p>
                 <button onClick={ouvir} className="buttonStyle">Finalizar</button>
               </div>
               :
               <div className="pagamento-removivel">
-                <h6>Escolha uma forma de pagamento acima</h6>
+
               </div>
 
           }
