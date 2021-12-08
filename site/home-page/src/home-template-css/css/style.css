@@ -204,6 +204,7 @@ body::-webkit-scrollbar {
     background-image: url(../img/the-soccer-field-5357418_1920.jpg);
     background-repeat: no-repeat;
     background-position: center;
+
 }
 
 .servicos h1{
@@ -236,7 +237,8 @@ body::-webkit-scrollbar {
     height: 60vh;
     text-align: left;
     border-radius: 10px;
-    border: solid rgb(19, 150, 15) 2px;
+    margin: 10px;
+    border: solid #13960f 2px;
     background-color: whitesmoke;
     box-shadow: rgba(0, 0, 0, 0.61) 0px 19px 38px, rgba(0, 0, 0, 0.521) 0px 15px 12px;
     padding: 10%;

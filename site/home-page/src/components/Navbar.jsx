@@ -19,7 +19,7 @@ function Navbar({ atleta, dnquadra, cadAtleta, cadAdm }) {
                         <DropdownButton
                             size="md"
                             title="Login"
-                            variant="dark"
+                            variant="success"
                         >
                             <Dropdown.Item href={atleta} eventKey="1">Atleta</Dropdown.Item>
                             <Dropdown.Item href={dnquadra} eventKey="2">Administrador</Dropdown.Item>
@@ -27,7 +27,7 @@ function Navbar({ atleta, dnquadra, cadAtleta, cadAdm }) {
                         <DropdownButton
                             size="md"
                             title="Cadastro"
-                            variant="dark"
+                            variant="success"
                         >
                             <Dropdown.Item href={cadAtleta} eventKey="1">Atleta</Dropdown.Item>
                             <Dropdown.Item href={cadAdm} eventKey="2">Administrador</Dropdown.Item>
