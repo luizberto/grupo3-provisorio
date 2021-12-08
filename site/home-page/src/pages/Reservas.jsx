@@ -8,7 +8,7 @@ function Reservas() {
         <>
             <NavbarSecundario voltar = "/visualizacaoAtleta"/>
             <div class="container6">
-                <h1 class="titulo-horario">Horarios</h1>
+                <h1 class="titulo-horario">Horários</h1>
                 <div class="box-horario">
                     <BoxHorarioReserva/>
                 </div>

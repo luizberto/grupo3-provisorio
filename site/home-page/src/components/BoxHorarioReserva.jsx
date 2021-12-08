@@ -1,10 +1,27 @@
 import React from "react";
 
-function BoxHorarioReserva(){
-    return(
+function BoxHorarioReserva() {
+    return (
         <>
-        <div class="horario">
-            <h4>Reserva</h4>
+            <div class="horario">
+                <h4>Reserva</h4>
+                <p></p>
+            </div>
+            <div class="horario">
+                <h4>Reserva</h4>
+                <p></p>
+            </div>
+            <div class="horario">
+                <h4>Reserva</h4>
+                <p></p>
+            </div>
+            <div class="horario">
+                <h4>Reserva</h4>
+                <p></p>
+            </div>
+            <div class="horario">
+                <h4>Reserva</h4>
+                <p></p>
             </div>
         </>
     );

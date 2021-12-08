@@ -1,5 +1,6 @@
 
 .containerDescricao{
+    height: 150vh;
     display: flex;
     flex-direction: column;
     background-image: url("../img/stadium-2606345_1920\ \(1\).jpg");

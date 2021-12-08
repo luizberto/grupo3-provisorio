@@ -200,7 +200,7 @@ body::-webkit-scrollbar {
     display: grid;
     justify-content: space-around;
     align-items: center;
-    height: 150vh;
+    height: 110vh;
     background-image: url(../img/the-soccer-field-5357418_1920.jpg);
     background-repeat: no-repeat;
     background-position: center;
