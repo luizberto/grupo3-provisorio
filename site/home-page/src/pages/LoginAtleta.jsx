@@ -11,6 +11,7 @@ function LoginAtleta() {
     const [campo1, setCampo1] = useState("");
     const [campo2, setCampo2] = useState("");
     const history = useHistory();
+
     function login(e) {
         e.preventDefault();
         api.post("/atletas/login", {
@@ -26,6 +27,7 @@ function LoginAtleta() {
             console.log(erro);
         })
     }
+
     return (
 
         <>
@@ -42,10 +44,11 @@ function LoginAtleta() {
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Senha</Form.Label>
-                            <Form.Control onChange={e => setCampo2(e.target.value)} type="password" placeholder="Password" />
+                            <Form.Control onChange={e => setCampo2(e.target.value)} type="password"
+                                          placeholder="Password"/>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Salvar" />
+                            <Form.Check type="checkbox" label="Salvar"/>
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Entrar
@@ -68,10 +71,9 @@ function LoginAtleta() {
                 </div>
 
 
-
             </div>
 
-            <Footer />
+            <Footer/>
         </>
     );
 }
