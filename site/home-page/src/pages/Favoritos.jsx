@@ -1,4 +1,7 @@
 import React from "react";
+import BoxHorarioReserva from "../components/BoxHorarioReserva";
+import NavbarSecundario from "../components/NavbarSecundario";
+import Footer from "../components/Footer";
 
 
 function Favoritos(){

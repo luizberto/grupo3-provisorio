@@ -30,13 +30,25 @@ public class QuadraController {
 
     @PostMapping
     public ResponseEntity postQuadra(@RequestBody Quadra quadra) {
-        quadraRepository.save(quadra);
-        return ResponseEntity.status(201).build();
+        Quadra q = quadraRepository.save(quadra);
+        return ResponseEntity.status(201).body(q);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity getQuadra(@PathVariable int id) {
         return ResponseEntity.of(quadraRepository.findById(id));
+    }
+
+    @GetMapping("/nome/{nome}")
+    public ResponseEntity getQuadraByNome(@PathVariable String nome) {
+        List<Quadra> q = quadraRepository.findQuadrasByNomeQuadraIsLike(nome);
+        return ResponseEntity.status(201).body(q);
+    }
+
+    @GetMapping("/cidade/{cidade}")
+    public ResponseEntity getQuadraByCidade(@PathVariable String cidade) {
+        List<Quadra> q = quadraRepository.findQuadrasByCidade(cidade);
+        return ResponseEntity.status(201).body(q);
     }
 
     @DeleteMapping("/{id}")
@@ -52,6 +64,16 @@ public class QuadraController {
     @GetMapping
     public ResponseEntity getQuadras() {
         List<Quadra> quadras = quadraRepository.findAll();
+        if (quadras.isEmpty()) {
+            return ResponseEntity.status(204).build();
+        } else {
+            return ResponseEntity.status(200).body(quadras);
+        }
+    }
+
+    @GetMapping("/dono/{id}")
+    public ResponseEntity getQuadrasByDono(@PathVariable int id) {
+        List<Quadra> quadras = quadraRepository.findQuadrasByDono(id);
         if (quadras.isEmpty()) {
             return ResponseEntity.status(204).build();
         } else {

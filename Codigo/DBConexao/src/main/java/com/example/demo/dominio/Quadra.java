@@ -34,6 +34,10 @@ public class Quadra {
     @JoinColumn(name = "idEndereco")
     private Endereco fkEndereco;
 
+    @ManyToOne
+    @JoinColumn(name = "fk_dono")
+    private DonoQuadra dono;
+
     public Integer getIdQuadra() {
         return idQuadra;
     }
@@ -104,5 +108,13 @@ public class Quadra {
 
     public void setFkEndereco(Endereco fkEndereco) {
         this.fkEndereco = fkEndereco;
+    }
+
+    public DonoQuadra getDono() {
+        return dono;
+    }
+
+    public void setDono(DonoQuadra dono) {
+        this.dono = dono;
     }
 }

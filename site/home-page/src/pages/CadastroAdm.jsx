@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Footer from "../components/Footer";
 import api from '../api';
-import { useHistory } from 'react-router-dom';
-import { Button, Form } from "react-bootstrap";
+import {useHistory} from 'react-router-dom';
+import {Button, Form} from "react-bootstrap";
 import NavbarSecundario from "../components/NavbarSecundario";
 
 function CadastroAdm(props) {
@@ -36,46 +36,48 @@ function CadastroAdm(props) {
 
     return (
         <>
-            <NavbarSecundario voltar="/loginAdm" />
+            <NavbarSecundario voltar="/loginAdm"/>
             <div class="container4">
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">Administrador</h4>
                     <Form onSubmit={adm}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Nome</Form.Label>
-                            <Form.Control onChange={e => setCampo1(e.target.value)} type="String" placeholder="Nome" />
+                            <Form.Control onChange={e => setCampo1(e.target.value)} type="String" placeholder="Nome"/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control onChange={e => setCampo2(e.target.value)} type="email" placeholder="Email" />
+                            <Form.Control onChange={e => setCampo2(e.target.value)} type="email" placeholder="Email"/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Senha</Form.Label>
-                            <Form.Control onChange={e => setCampo3(e.target.value)} type="password" placeholder="Senha" />
+                            <Form.Control onChange={e => setCampo3(e.target.value)} type="password"
+                                          placeholder="Senha"/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Data Nascimento</Form.Label>
-                            <Form.Control onChange={e => setCampo4(e.target.value)} type="date" placeholder="" />
+                            <Form.Control onChange={e => setCampo4(e.target.value)} type="date" placeholder=""/>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>CPF</Form.Label>
-                            <Form.Control onChange={e => setCampo5(e.target.value)} type="String" placeholder="" />
+                            <Form.Control onChange={e => setCampo5(e.target.value)} type="String" placeholder=""/>
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Entrar
                         </Button>
                     </Form>
-                    
+
                 </div>
 
 
             </div>
-            <Footer />
+            <Footer/>
         </>
     );
 }
+
 export default CadastroAdm;

@@ -35,24 +35,23 @@ function CardQuadras(props) {
     }
 
     function enviaHora(e) {
-      alert(hora)
-      api.post("/horarios", {
-        dataQuadra: hora,
-        reserva:"NAO",
-        fkQuadra: props.id,
+        alert(hora)
+        api.post("/horarios/"+props.id, {
+            dataQuadra: hora,
+            reserva: "NAO",
 
-      }).then((resposta) => {
-        if (resposta.status === 201) {
-          alert("aperte enter para se redirecionar");
-          history.push('/cadastroEndereco');
-        }
-      }).catch((erro) => {
-        console.log(erro);
-      })
+        }).then((resposta) => {
+            if (resposta.status === 201) {
+                alert("aperte enter para se redirecionar");
+                history.push('/cadastroEndereco');
+            }
+        }).catch((erro) => {
+            console.log(erro);
+        })
     }
 
     function quadra(e) {
-        if (props.usuario == "atleta") {
+        if (props.usuario == "Alugar") {
 
             sessionStorage.setItem('idQuadra', props.id)
             sessionStorage.setItem('descricao', props.descricao)
@@ -73,8 +72,8 @@ function CardQuadras(props) {
                 <Offcanvas.Body>
                     <Form onSubmit={enviaFoto}>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Upload de lista</Form.Label>
-                            <Form.Control type="File" id="fotos"/>
+                            <Form.Label>Upload de Foto</Form.Label>
+                            <Form.Control type="file" id="fotos"/>
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Submit
@@ -100,7 +99,7 @@ function CardQuadras(props) {
                         Limite de pessoas: {props.limite}<br></br>
                         Descrição:{props.complemento}
                     </Card.Text>
-                    <Button variant="primary" onClick={quadra}>Alugar</Button>
+                    <Button variant="primary" onClick={quadra}>{props.usuario}</Button>
                 </Card.Body>
 
             </Card>

@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dominio.HorarioQuadra;
 import com.example.demo.repositorio.HorarioQuadraRepository;
+import com.example.demo.repositorio.QuadraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,14 +18,21 @@ public class HorarioController {
     @Autowired
     private HorarioQuadraRepository repository;
 
-    @PostMapping
-    public ResponseEntity postHorario(@RequestBody HorarioQuadra h) {
-        System.out.println(h);
-        repository.save(h);
-        return ResponseEntity.status(201).build();
-    }
+    @Autowired
+    private QuadraRepository quadraRepository;
+
 
     @PostMapping("/{id}")
+    public ResponseEntity postHorario(@RequestBody HorarioQuadra h, @PathVariable int id) {
+        if(quadraRepository.existsById(id)){
+            h.setFkQuadra(quadraRepository.findById(id).get());
+            repository.save(h);
+            return ResponseEntity.status(201).build();
+        }
+        return ResponseEntity.status(404).build();
+    }
+
+    @PatchMapping("/{id}")
     public ResponseEntity postReservar(@RequestBody HorarioQuadra horarioAtt, @PathVariable int id) {
         if (repository.existsById(id)) {
             horarioAtt.setId(id);
@@ -37,12 +45,7 @@ public class HorarioController {
 
     @GetMapping("/{id}")
     public ResponseEntity getHorario(@PathVariable int id) {
-        List<HorarioQuadra> listaHora = new ArrayList<>();
-        for(HorarioQuadra h: repository.findAll()){
-            if(h.getFkQuadra() == id){
-                listaHora.add(h);
-            }
-        };
+        List<HorarioQuadra> listaHora = repository.findHorarioQuadraByFk(id);
         return ResponseEntity.status(200).body(listaHora);
     }
 

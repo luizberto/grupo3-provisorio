@@ -1,22 +1,30 @@
 package com.example.demo.controller;
 
 import com.example.demo.dominio.Endereco;
+import com.example.demo.dominio.Quadra;
 import com.example.demo.repositorio.EnderecoRepository;
+import com.example.demo.repositorio.QuadraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController // This means that this class is a Controller
-@RequestMapping("/enderecos") // This means URL's start with /demo (after Application path)
+@RestController
+@RequestMapping("/enderecos")
 public class EnderecoController {
     @Autowired
     EnderecoRepository enderecoRepository;
+    @Autowired
+    QuadraRepository quadraRepository;
 
-    @PostMapping
-    public ResponseEntity postEndereco(@RequestBody Endereco endereco) {
+    @PostMapping("/{id}")
+    public ResponseEntity postEnderecoPorQuadra(@PathVariable int id, @RequestBody Endereco endereco) {
         enderecoRepository.save(endereco);
+        Quadra quadra = quadraRepository.findById(id).get();
+
+        quadra.setFkEndereco(endereco);
+        quadraRepository.save(quadra);
         return ResponseEntity.status(201).build();
     }
 

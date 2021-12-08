@@ -1,8 +1,15 @@
 package com.example.demo.controller;
 
+import com.example.demo.dominio.Atleta;
+import com.example.demo.dominio.HorarioQuadra;
+import com.example.demo.dominio.Quadra;
 import com.example.demo.dominio.Reserva;
 import com.example.demo.fila.FilaCircularObj;
+import com.example.demo.repositorio.AtletaRepository;
+import com.example.demo.repositorio.HorarioQuadraRepository;
+import com.example.demo.repositorio.QuadraRepository;
 import com.example.demo.repositorio.ReservaRepository;
+import com.example.demo.requisicao.ReservaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +25,30 @@ public class ReservaController {
     @Autowired
     private ReservaRepository reservaRepository;
 
+    @Autowired
+    private HorarioQuadraRepository horarioQuadraRepository;
+
+    @Autowired
+    private QuadraRepository quadraRepository;
+
+    @Autowired
+    private AtletaRepository atletaRepository;
+
     public FilaCircularObj filaCircularObj;
 
-    @PostMapping
-    public ResponseEntity postReserva(@RequestBody Reserva novaReserva) {
-        this.reservaRepository.save(novaReserva);
-        return ResponseEntity.status(201).body(novaReserva);
+    @PostMapping("")
+    public ResponseEntity postReserva(@RequestBody ReservaDTO reservaRequest) {
+        Reserva r = new Reserva();
+        HorarioQuadra h = horarioQuadraRepository.findById(reservaRequest.getHorario()).get();
+        r.setHoraPartida(h.getDataQuadra());
+        r.setValorReserva(reservaRequest.getValorReserva());
+        r.setQuadra(quadraRepository.findById(reservaRequest.getQuadra()).get());
+        r.setResponsavel(atletaRepository.findById(reservaRequest.getAtleta()).get());
+        r.setQtdAtletas(reservaRequest.getQtdAtletas());
+
+        reservaRepository.save(r);
+        horarioQuadraRepository.deleteById(reservaRequest.getHorario());
+        return ResponseEntity.status(201).build();
     }
 
     @GetMapping

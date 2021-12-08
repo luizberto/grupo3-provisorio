@@ -24,7 +24,6 @@ function VislualizacaoAtleta() {
 
                     <div class="box-info-quadra">
                         <DadosHorario />
-                        <ButtonEdit acao="alugar" path="/pagamento" />
                     </div>
 
                 </div>

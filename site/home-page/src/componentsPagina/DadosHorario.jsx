@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import api from "../api";
 import { format } from 'date-fns';
 import {useHistory} from "react-router-dom";
-
+import Horario from "../components/Horario";
 
 
 function DadosHorario(){
@@ -13,7 +13,7 @@ function DadosHorario(){
     useEffect(() => {
       async function pegaDados() {
         const resposta = await api.get("/horarios/"+sessionStorage.getItem('idQuadra'));
-        if (resposta.status === 201) {
+        if (resposta.status === 200) {
           setHorario(resposta.data);
         }
 
@@ -22,27 +22,22 @@ function DadosHorario(){
       }
       pegaDados();
     }, []);
-    function hora(id, fk, data){
-        sessionStorage.setItem("idHorario", id)
-        sessionStorage.setItem("fkQuadra", fk)
-        sessionStorage.setItem("dataQuadra", data)
-        alert(id)
-        alert(fk)
-        alert(data)
-        history.push("/pagamento")
-    }
 
   return (
     <>
         <span class="tituloCard">
           <h1>Horarios</h1>
         </span>
-        <input type="datetime-local" class="box-info-quadra-input">
-        </input>
         {horario.map((horario)=>(
-            <div className = "botaoReserva" onClick={e => hora(horario.id, horario.fkQuadra, format(new Date(horario.data), 'yyyy-MM-dd hh:mm:ss'))}>{
-                format(new Date(horario.data), 'hh:mm dd/MM')
-            }</div>
+            //<div>{
+            //    format(new Date(horario.dataQuadra), 'hh:mm dd/MM')
+            //}</div>
+            <Horario
+                id = {horario.id}
+                dataHora = {horario.dataQuadra}
+            />
+
+
         ))}
       </>
   );

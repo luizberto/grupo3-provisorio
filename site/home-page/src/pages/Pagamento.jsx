@@ -3,14 +3,35 @@ import NavbarSecundario from "../components/NavbarSecundario";
 import { useState } from "react";
 import Footer from "../components/Footer";
 import { Spinner } from "react-bootstrap";
+import {useHistory} from "react-router-dom";
+import api from "../api";
 
 function Pagamento() {
+  const history = useHistory();
+  const [formaPagamento, setFormaPagamento] = useState("");
+  const [qtdJogadores, setQtdJogadores] = useState("");
 
   function ouvir() {
+    api.post("/reservas", {
+      dataQuadra: sessionStorage.getItem("dataHorario"),
+      quadra: sessionStorage.getItem("idQuadra"),
+      qtdAtletas: qtdJogadores,
+      horario: sessionStorage.getItem("idHorario"),
+      atleta: sessionStorage.getItem("idAtleta"),
+      horaPartida: sessionStorage.getItem("dataHorario")
+
+    }).then((resposta) => {
+      if (resposta.status === 201) {
+        alert("aperte enter para se redirecionar");
+        history.push('/cadastroEndereco');
+      }
+    }).catch((erro) => {
+      console.log(erro);
+    })
     alert("Reserva concluida")
+    history.push("/reservas")
   }
 
-  const [formaPagamento, setFormaPagamento] = useState("");
 
   function contextPagamento() {
     var formaPagChecked = document.getElementsByName("FormaPagamento");
@@ -35,7 +56,7 @@ function Pagamento() {
           <div class="tela-pagamento">
             <label for="">Participantes
               <br />
-              <input type="number" min="6" max="99"  class="input-jogadores"/>
+              <input type="number" min="6" max="99"  class="input-jogadores" onChange={e => setQtdJogadores(e.target.value)}/>
             </label>
             <div class="parte-pagamento">
               <label for="">

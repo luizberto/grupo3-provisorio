@@ -28,6 +28,7 @@ function CadastroQuadras(props){
           if (resposta.status === 201) {
             alert("aperte enter para se redirecionar");
             history.push('/cadastroEndereco');
+            sessionStorage.setItem("idQuadra", resposta.data.idQuadra)
           }
         }).catch((erro) => {
           console.log(erro);

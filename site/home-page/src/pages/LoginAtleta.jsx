@@ -20,6 +20,7 @@ function LoginAtleta() {
         }).then((resposta) => {
             if (resposta.status === 201) {
                 alert("logado com sucesso");
+                sessionStorage.setItem("idAtleta", resposta.data.id);
                 history.push('/buscaQuadra');
             }
         }).catch((erro) => {

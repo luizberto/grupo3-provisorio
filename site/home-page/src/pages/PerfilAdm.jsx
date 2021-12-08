@@ -36,13 +36,13 @@ function PerfilAdm() {
         api
             .post("/txt/import", form, {
 
-            headers: {
-                "Content-Type": "multpart/form-data",
-            }
+                headers: {
+                    "Content-Type": "multpart/form-data",
+                }
 
-        }).then((response) => {
+            }).then((response) => {
             if (response.status === 201) {
-                alert("Livros cadastrados com sucesso")
+                alert("Quadras cadstradas")
             }
         })
             .catch((err) => {
@@ -60,17 +60,16 @@ function PerfilAdm() {
                         <Form.Label>Upload de lista</Form.Label>
                         <Form.Control type="File" id="files"/>
                     </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
+                    <Button variant="primary" type={"submit"}>
+                        Enviar
                     </Button>
                 </Form>
-                <h1>Suas quadras</h1>
-                <button className="quadraBtn download">
-                    Dwld lista
-                </button>
+                <Button className="quadraBtn download">
+                    Download lista
+                </Button>
             </Container>
             <Container className="containerQuadras">
-                <Row xs={1} md={3} className="g-4">
+                <Row xs={1} md='auto' className="g-4">
                     {quadra.map((quadra) => (
                         <>
                             <Col md="auto">
@@ -79,7 +78,7 @@ function PerfilAdm() {
                                     descricao={quadra.descQuadra}
                                     nome={quadra.nomeQuadra}
                                     limite={quadra.limitePessoas}
-                                    usuario="administrador"
+                                    usuario="Editar"
                                 />
                             </Col>
                         </>

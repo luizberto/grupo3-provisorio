@@ -53,7 +53,7 @@ function BuscaQuadra() {
                                     descricao={quadra.descQuadra}
                                     nome={quadra.nomeQuadra}
                                     limite={quadra.limitePessoas}
-                                    usuario="atleta"
+                                    usuario="Alugar"
                                 />
                             </Col>
                         </>
