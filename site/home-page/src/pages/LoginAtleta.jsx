@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Footer from "../components/Footer";
 import { Link, useHistory } from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css'; 
 import api from "../api";
 import { Form, Button } from "react-bootstrap";
 import NavbarSecundario from "../components/NavbarSecundario";
@@ -19,12 +21,14 @@ function LoginAtleta() {
             senha: campo2,
         }).then((resposta) => {
             if (resposta.status === 201) {
-                alert("logado com sucesso");
+                //alert("logado com sucesso");
+                toast.success('logado com sucesso')
                 sessionStorage.setItem("idAtleta", resposta.data.id);
                 history.push('/buscaQuadra');
             }
         }).catch((erro) => {
-            alert("logado erro");
+            //alert("logado erro");
+            toast.error('email ou senha invalidos ou campos vazios')
             console.log(erro);
         })
     }
@@ -35,6 +39,17 @@ function LoginAtleta() {
 
             <NavbarSecundario />
             <div class="containerLogin">
+            <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
                 <div class="logar">
                     <h3>Atleta</h3>
                     <Form onSubmit={login}>

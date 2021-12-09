@@ -66,6 +66,7 @@ function CadastroAtleta(props) {
             <div class="container4">
                 <div class="dadosCadastro">
                     <Form onSubmit={atleta}>
+                        <h4>Cadastro atleta</h4>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Nome</Form.Label>
                             <Form.Control onChange={e => setCampo1(e.target.value)}  type="String" placeholder="Nome" />

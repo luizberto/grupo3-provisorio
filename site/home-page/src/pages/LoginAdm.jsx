@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-
-import profile from '../home-template-css/img/profile.png'
-import git from '../home-template-css/img/git.png'
-import linkedn from '../home-template-css/img/linkedin.png'
-import insta from '../home-template-css/img/insta.png'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css'; 
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
 import api from "../api";
 import { useHistory } from 'react-router-dom';
@@ -23,11 +20,13 @@ function LoginAdm() {
             senha: campo2,
         }).then((resposta) => {
             if (resposta.status === 201) {
-                alert("logado com sucesso");
+                //alert("logado com sucesso");
+                toast.success('logado com sucesso')
                 history.push('/perfilAdm');
             }
         }).catch((erro) => {
-            alert("logado erro");
+            //alert("logado erro");
+            toast.error('erro na senha, no email ou campos vazios')
             console.log(erro);
         })
     }
@@ -36,6 +35,17 @@ function LoginAdm() {
         <>
             <NavbarSecundario />
             <div class="containerLogin">
+            <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
                 <div class="logar">
                     <h3>Administrador</h3>
                     <Form onSubmit={login}>
