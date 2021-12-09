@@ -49,7 +49,16 @@ function PerfilAdm() {
                 console.error("ops! ocorreu um erro" + err);
             });
     }
-
+    function downloadLista(e) {
+        api.get("/txt/quadra")
+            .then((response) => {
+            if (response.status === 201) {
+                alert("Lista baixada")
+            }
+        }).catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+        });
+    }
     return (
         <>
             <NavbarSecundario voltar="/"/>
@@ -64,7 +73,7 @@ function PerfilAdm() {
                         Enviar
                     </Button>
                 </Form>
-                <Button className="quadraBtn download">
+                <Button className="quadraBtn download" onClick={downloadLista}>
                     Download lista
                 </Button>
             </Container>
@@ -82,6 +91,7 @@ function PerfilAdm() {
                                 />
                             </Col>
                         </>
+
                     ))}
                 </Row>
             </Container>

@@ -108,12 +108,6 @@ public class QuadraController {
 
         byte[] novaFoto = foto.getBytes();
 
-        long tamanho = foto.getSize();
-
-        if (tamanho > 15_728_640.0) {
-            return ResponseEntity.status(413).build();
-        }
-
         quadra.setFoto(novaFoto);
 
         quadraRepository.save(quadra);
