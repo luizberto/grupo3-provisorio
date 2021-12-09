@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar.jsx";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import api from '../api';
 import {useHistory} from "react-router-dom";
 import NavbarSecundario from "../components/NavbarSecundario";
@@ -26,18 +28,31 @@ function CadastroQuadras(props){
          
         }).then((resposta) => {
           if (resposta.status === 201) {
-            alert("aperte enter para se redirecionar");
+            //alert("aperte enter para se redirecionar");
+            toast.success('Cadastrado com sucesso!');
             history.push('/cadastroEndereco');
             sessionStorage.setItem("idQuadra", resposta.data.idQuadra)
           }
         }).catch((erro) => {
-          console.log(erro);
+            toast.error('campos invalidos ou vazios');
+            //console.log(erro);
         })
       }
       
     return (
         <>
             <NavbarSecundario voltar = "/perfilAdm"/>
+            <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             <div class="container4">
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">Cadastro Quadra</h4>

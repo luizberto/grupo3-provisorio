@@ -35,7 +35,7 @@ function CadastroEndereco(props) {
 
                 }
             }).catch((erro) => {
-                toast.error("cadastro invalido");
+                toast.error('campos invalidos ou vazios');
                 //console.log(erro);
         })
 

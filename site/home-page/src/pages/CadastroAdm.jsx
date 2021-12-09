@@ -27,15 +27,7 @@ function CadastroAdm(props) {
             cpf: campo5
         }).then((resposta) => {
             if (resposta.status === 201) {
-                toast.success('Cadastrado com sucesso!', {
-                    position: "top-left",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                });
+                toast.success('Cadastrado com sucesso!');
 
             }else if(resposta.status === 401){
                 toast.error('🦄 Wow so easy!', {
@@ -53,7 +45,7 @@ function CadastroAdm(props) {
 
             }
         }).catch((erro) => {
-            toast.error("cadastro invalido");
+            toast.error('campos invalidos ou vazios');
             //console.log(erro);
         })
     }

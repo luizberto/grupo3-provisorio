@@ -44,7 +44,7 @@ function CadastroAtleta(props) {
                 //alert("Email ja cadastrado")
             }
         }).catch((erro) => {
-            toast.error('email não cadastrado');
+            toast.error('campos invalidos ou vazios');
             //console.log(erro);
         })
     }
