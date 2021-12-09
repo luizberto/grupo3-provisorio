@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import api from '../api';
 import {useHistory} from 'react-router-dom';
 import {Button, Form} from "react-bootstrap";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import NavbarSecundario from "../components/NavbarSecundario";
 
 function CadastroAdm(props) {
@@ -26,11 +28,14 @@ function CadastroAdm(props) {
             cpf: campo5
         }).then((resposta) => {
             if (resposta.status === 201) {
-                alert("aperte enter para se redirecionar");
+                toast.success("voce foi cadastrado")
+                //alert("aperte enter para se redirecionar");
+                history.push('/loginAdm');
 
             }
         }).catch((erro) => {
-            console.log(erro);
+            toast.error("cadastro invalido");
+            //console.log(erro);
         })
     }
 

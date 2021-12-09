@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import {Button} from "react-bootstrap";
+import Servicos from "./Servicos";
+import Footer from "../components/Footer";
 function Banner(){
     return(
         <>
@@ -17,6 +19,7 @@ function Banner(){
         </div>
     </div>
 </section>
+
     </>
     );
 }
