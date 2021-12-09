@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,12 +42,17 @@ public class FavoritoController {
         return ResponseEntity.status(406).build();
     }
 
-    @GetMapping
-    public ResponseEntity getFavoritos() {
+    @GetMapping("/{id}")
+    public ResponseEntity getFavoritos(@PathVariable int id) {
 //       List<Favorito> listaFavoritos = this.favoritoRepository.findAll().stream().map(favorito -> ;
 //        return ResponseEntity.status(200).body(listaFavoritos);
-
-        return ResponseEntity.status(200).body(this.favoritoRepository.findAll());
+        PilhaObj<Quadra> listaQuadra = new PilhaObj<>(25);
+        for(Favorito f: this.favoritoRepository.findAll()){
+            if(f.getAtleta().getId().equals(id)) {
+                listaQuadra.push(f.getQuadra());
+            }
+        }
+        return ResponseEntity.status(200).body(listaQuadra);
     }
 
     @DeleteMapping

@@ -24,6 +24,19 @@ function BuscaQuadra() {
         pegaDados();
     }, []);
 
+    function getFavoritos(e){
+        api.get("/favoritos/"+1)
+            .then((response) => {
+                if (response.status === 200) {
+                    setQuadra(response.data)
+                    console.log(response.data)
+
+                }
+            }).catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+        });
+    }
+
     return (
         <>
             {/*<select name="select">*/}
@@ -41,6 +54,9 @@ function BuscaQuadra() {
                     />
                     <Button variant="outline-secondary" id="button-addon2">
                         Pesquisar
+                    </Button>
+                    <Button className="quadraBtn download" onClick={getFavoritos}>
+                        Meus favoritos
                     </Button>
                 </InputGroup>
                 <Row xs={2} md="auto" >
