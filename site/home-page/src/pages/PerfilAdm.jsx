@@ -60,11 +60,11 @@ function PerfilAdm() {
                         <Form.Label>Upload de lista</Form.Label>
                         <Form.Control type="File" id="files"/>
                     </Form.Group>
-                    <Button variant="primary" type={"submit"}>
+                    <Button variant="success" type={"submit"}>
                         Enviar
                     </Button>
                 </Form>
-                <Button className="quadraBtn download">
+                <Button variant = "success" className="quadraBtn download">
                     Download lista
                 </Button>
             </Container>
@@ -88,7 +88,7 @@ function PerfilAdm() {
             <Container class="content-add-quadra">
                 <Container class="add">
                     <Link to="/cadastroQuadras">
-                        <Button>
+                        <Button variant = "success">
                             <p>+</p>
                         </Button>
                     </Link>
