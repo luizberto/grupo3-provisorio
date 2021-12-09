@@ -7,8 +7,11 @@ function CardQuadras(props) {
 
     const history = useHistory();
     const [show, setShow] = useState(false);
+    const [show2, setShow2] = useState(false);
+
     const [hora, setHora] = useState();
     const handleClose = () => setShow(false);
+    const handleClose2 = () => setShow2(false);
     let form = new FormData();
 
     function enviaFoto(e) {
@@ -50,8 +53,8 @@ function CardQuadras(props) {
         })
     }
 
-    function quadra(e) {
-        if (props.usuario == "Alugar") {
+    function btnPrimario(e) {
+        if (props.primario == "Alugar") {
 
             sessionStorage.setItem('idQuadra', props.id)
             sessionStorage.setItem('descricao', props.descricao)
@@ -60,6 +63,25 @@ function CardQuadras(props) {
             history.push('/visualizacaoAtleta');
         } else {
             setShow(true);
+        }
+    }
+    function btnSecundario(e){
+        if(props.secundario == "Favorito"){
+            api.post("/favoritos", {
+                idQuadra: props.id,
+                idUsuario: sessionStorage.getItem("idAtleta"),
+
+            }).then((resposta) => {
+                if (resposta.status === 201) {
+                    alert("Favoritado");
+                }else if(resposta.status === 204){
+                    alert("Quadra Já esta em favoritos")
+                }
+            }).catch((erro) => {
+                console.log(erro);
+            })
+        }else{
+            setShow2(true);
         }
     }
 
@@ -76,7 +98,7 @@ function CardQuadras(props) {
                             <Form.Control type="file" id="fotos"/>
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Submit
+                            Eviar
                         </Button>
                     </Form>
                     <Form onSubmit={enviaHora}>
@@ -85,11 +107,18 @@ function CardQuadras(props) {
                             <Form.Control type="datetime-local" onChange={e => setHora(e.target.value)}/>
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Submit
+                            Enviar
                         </Button>
                     </Form>
                 </Offcanvas.Body>
 
+            </Offcanvas>
+            <Offcanvas placement={"end"} show={show2} onHide={handleClose2}>
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>{props.nome}</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                </Offcanvas.Body>
             </Offcanvas>
             <Card border="success" style={{width: '18rem', color: "black"}}>
                 <Card.Img variant="top" src={"http://localhost:8080/quadras/foto/" + props.id}/>
@@ -99,7 +128,8 @@ function CardQuadras(props) {
                         Limite de pessoas: {props.limite}<br></br>
                         Descrição:{props.complemento}
                     </Card.Text>
-                    <Button variant="primary" onClick={quadra}>{props.usuario}</Button>
+                    <Button variant="primary" onClick={btnPrimario}>{props.primario}</Button>
+                    <Button variant="primary" style={{float: "right"}} onClick={btnSecundario}>{props.secundario}</Button>
                 </Card.Body>
 
             </Card>

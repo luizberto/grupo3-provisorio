@@ -53,7 +53,7 @@ public class ReservaController {
 
     @GetMapping
     public ResponseEntity getReservas() {
-        List<Reserva> reservas = this.reservaRepository.findAll();
+        List<Reserva> reservas = this.reservaRepository.findAllByOrderByHoraPartidaAsc();
         if (reservas.isEmpty()) {
             return ResponseEntity.status(204).build();
         } else {

@@ -17,6 +17,11 @@ public class AtletaController {
 
     @PostMapping
     public ResponseEntity postAtleta(@RequestBody Atleta a) {
+        for(Atleta atleta: atletaRepository.findAll()){
+            if(a.getEmail() == atleta.getEmail()){
+                return ResponseEntity.status(401).build();
+            }
+        }
         atletaRepository.save(a);
         return ResponseEntity.status(201).build();
     }

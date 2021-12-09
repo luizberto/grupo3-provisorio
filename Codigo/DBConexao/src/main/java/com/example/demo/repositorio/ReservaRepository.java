@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
 
-    public List<Reserva> findAllByOrderByHoraPartidaAsc();
+    List<Reserva> findAllByOrderByHoraPartidaAsc();
 
 }

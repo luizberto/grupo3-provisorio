@@ -37,6 +37,8 @@ function CadastroAtleta(props) {
                 sessionStorage.setItem("user", "adm")
 
                 history.push('/loginAtleta');
+            }else if(resposta.status === 401){
+                alert("Email ja cadastrado")
             }
         }).catch((erro) => {
             console.log(erro);

@@ -7,7 +7,7 @@ import CardQuadras from "../components/CardQuadras";
 function BuscaQuadra() {
     const [quadra, setQuadra] = useState([]);
     const [notFound, setNotFound] = useState();
-
+    const [cidade, setCidade] = useState("");
     useEffect(() => {
         async function pegaDados() {
             const resposta = await api.get("/quadras");
@@ -25,12 +25,23 @@ function BuscaQuadra() {
     }, []);
 
     function getFavoritos(e){
-        api.get("/favoritos/"+1)
+        api.get("/favoritos/"+sessionStorage.getItem("idAtleta"))
             .then((response) => {
                 if (response.status === 200) {
                     setQuadra(response.data)
                     console.log(response.data)
 
+                }
+            }).catch((err) => {
+            console.error("ops! ocorreu um erro" + err);
+        });
+    }
+    function getByCidade(e){
+        api.get("/quadras/cidade/"+cidade)
+            .then((response) => {
+                if (response.status === 201) {
+                    setQuadra(response.data)
+                    console.log(response.data)
                 }
             }).catch((err) => {
             console.error("ops! ocorreu um erro" + err);
@@ -46,13 +57,14 @@ function BuscaQuadra() {
             {/*</select>*/}
             <NavbarSecundario/>
             <Container className="containerQuadras">
-                <InputGroup className="mb-3" style={{width:"20%" , marginLeft:"30px"}}>
+                <InputGroup className="mb-3" style={{width:"35%" , marginLeft:"30px"}}>
                     <FormControl
-                        placeholder="Nome da quadra"
-                        aria-label="Nome da quadra"
+                        placeholder="Cidade"
+                        aria-label="Bairro"
                         aria-describedby="basic-addon2"
+                        onChange={e => setCidade(e.target.value)}
                     />
-                    <Button variant="outline-secondary" id="button-addon2">
+                    <Button onClick={getByCidade} variant="outline-secondary" id="button-addon2">
                         Pesquisar
                     </Button>
                     <Button className="quadraBtn download" onClick={getFavoritos}>
@@ -69,7 +81,8 @@ function BuscaQuadra() {
                                     descricao={quadra.descQuadra}
                                     nome={quadra.nomeQuadra}
                                     limite={quadra.limitePessoas}
-                                    usuario="Alugar"
+                                    primario="Alugar"
+                                    secundario="Favorito"
                                 />
                             </Col>
                         </>

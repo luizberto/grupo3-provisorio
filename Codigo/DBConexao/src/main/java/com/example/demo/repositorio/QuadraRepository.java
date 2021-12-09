@@ -8,9 +8,9 @@ import java.util.List;
 public interface QuadraRepository extends JpaRepository<Quadra, Integer> {
     List<Quadra> findQuadrasByNomeQuadraIsLike(String nome);
 
-    @Query("SELECT u FROM Quadra u where u.fkEndereco = (select e from Endereco e where e.cidade like ?1)")
+    @Query("SELECT u FROM Quadra u where u.fkEndereco in (select e from Endereco e where e.cidade like ?1)")
     List<Quadra> findQuadrasByCidade(String cidade);
 
-    @Query("SELECT u FROM Quadra u where u.dono = (select d from DonoQuadra d where d.id = :id)")
+    @Query("SELECT u FROM Quadra u where u.dono in (select d from DonoQuadra d where d.id = :id)")
     List<Quadra> findQuadrasByDono(int id);
 }

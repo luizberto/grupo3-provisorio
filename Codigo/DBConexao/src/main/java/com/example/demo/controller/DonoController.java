@@ -17,6 +17,11 @@ public class DonoController {
 
     @PostMapping
     public ResponseEntity postDono(@RequestBody DonoQuadra d) {
+        for(DonoQuadra dono : donoRepository.findAll()){
+            if(d.getEmail() == dono.getEmail()){
+                return ResponseEntity.status(401).build();
+            }
+        }
         donoRepository.save(d);
         return ResponseEntity.status(201).build();
     }

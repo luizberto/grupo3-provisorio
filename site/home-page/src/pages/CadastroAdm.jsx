@@ -27,7 +27,8 @@ function CadastroAdm(props) {
         }).then((resposta) => {
             if (resposta.status === 201) {
                 alert("aperte enter para se redirecionar");
-
+            }else if(resposta.status === 401){
+                alert("Email ja cadastrado")
             }
         }).catch((erro) => {
             console.log(erro);
