@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Footer from "../components/Footer";
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css'; 
 import { Link } from "react-router-dom";
 import { useHistory } from 'react-router-dom';
 import api from '../api';
@@ -38,16 +40,29 @@ function CadastroAtleta(props) {
 
                 history.push('/loginAtleta');
             }else if(resposta.status === 401){
-                alert("Email ja cadastrado")
+                toast.error('email ja cadastrado');
+                //alert("Email ja cadastrado")
             }
         }).catch((erro) => {
-            console.log(erro);
+            toast.error('email não cadastrado');
+            //console.log(erro);
         })
     }
 
     return (
         <>
             <NavbarSecundario voltar = "/loginAtleta" />
+            <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             <div class="container4">
                 <div class="dadosCadastro">
                     <Form onSubmit={atleta}>

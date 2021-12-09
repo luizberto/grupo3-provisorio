@@ -29,13 +29,14 @@ function CadastroEndereco(props) {
           })
             .then((resposta) => {
                 if (resposta.status === 201) {
-                    toast.success("endereco cadastrado");
+                    toast.success('Cadastrado com sucesso!');
                     //alert("endereco cadastrado");
                     history.push('/perfilAdm');
 
                 }
             }).catch((erro) => {
-            console.log(erro);
+                toast.error("cadastro invalido");
+                //console.log(erro);
         })
 
 
@@ -44,6 +45,17 @@ function CadastroEndereco(props) {
     return (
         <>
             <NavbarSecundario voltar="/cadastroQuadras"/>
+            <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             <div class="container4">
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">Endereço</h4>
