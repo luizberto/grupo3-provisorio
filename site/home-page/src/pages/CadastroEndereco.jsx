@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, {useState, useHistory} from "react";
 import Footer from "../components/Footer";
 import NavbarSecundario from "../components/NavbarSecundario.jsx";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css'; 
 import {useForm} from "react-hook-form";
 import api from "../api";
 
@@ -8,6 +10,7 @@ function CadastroEndereco(props) {
 
     const {register, handleSubmit, watch, formState: {errors}} = useForm();
     const onSubmit = data => console.log(data);
+    const history = useHistory();
 
     const [campo1, setCampo1] = useState("");
     const [campo2, setCampo2] = useState("");
@@ -26,8 +29,9 @@ function CadastroEndereco(props) {
           })
             .then((resposta) => {
                 if (resposta.status === 201) {
-                    alert("endereco cadastrado");
-                    //history.push('/cadastroEndereco');
+                    toast.success("endereco cadastrado");
+                    //alert("endereco cadastrado");
+                    history.push('/perfilAdm');
 
                 }
             }).catch((erro) => {

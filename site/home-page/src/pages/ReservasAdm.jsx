@@ -22,7 +22,7 @@ function ReservasAdm() {
 
     return (
         <>
-            <NavbarSecundario/>
+            <NavbarSecundario voltar = "/perfilAdm"/>
             <Container className="titulo">
                 <h1>Suas reservas</h1>
             </Container>

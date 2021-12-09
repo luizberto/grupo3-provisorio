@@ -3,6 +3,8 @@ import Footer from "../components/Footer";
 import api from '../api';
 import {useHistory} from 'react-router-dom';
 import {Button, Form} from "react-bootstrap";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import NavbarSecundario from "../components/NavbarSecundario";
 
 function CadastroAdm(props) {
@@ -17,7 +19,6 @@ function CadastroAdm(props) {
 
     function adm(e) {
         e.preventDefault();
-        alert(campo4);
         api.post("/adm", {
             nomeDono: campo1,
             email: campo2,
@@ -26,18 +27,51 @@ function CadastroAdm(props) {
             cpf: campo5
         }).then((resposta) => {
             if (resposta.status === 201) {
-                alert("aperte enter para se redirecionar");
+                toast.success('Cadastrado com sucesso!', {
+                    position: "top-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+
             }else if(resposta.status === 401){
+                toast.error('🦄 Wow so easy!', {
+                    position: "top-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
                 alert("Email ja cadastrado")
+
+                //alert("aperte enter para se redirecionar");
+
             }
         }).catch((erro) => {
-            console.log(erro);
+            toast.error("cadastro invalido");
+            //console.log(erro);
         })
     }
 
     return (
         <>
             <NavbarSecundario voltar="/loginAdm"/>
+            <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
             <div class="container4">
                 <div class="dadosCadastro">
                     <h4 class="tituloForm">Administrador</h4>
