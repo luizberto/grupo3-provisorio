@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 @Entity
-public class Atleta {
+public class eAtleta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
