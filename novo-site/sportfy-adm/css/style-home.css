@@ -1,0 +1,119 @@
+body, ul, li, a{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: 'Fira sans', sans-serif; 
+}   
+
+/*estilo de navbar*/
+.navbar ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.navbar a{
+    color: aliceblue;
+    
+}
+
+.navbar ul span{
+    color: aliceblue;
+    font-family: 'Rambla', sans-serif;
+    margin-right: 10%;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 23px;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #04AA28;
+}
+
+/*estilo de banner*/
+.banner{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    background-image: url(../img/banner22.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(29, 24, 24, 0.356);
+    background-position: 100%;
+    color:#eeede6;
+    padding: 20px 10px 10px 20px;
+    height: 350px;
+}
+
+.container-banner{
+    font-size: larger;
+    margin-left: 10%;
+}
+
+.sub-titulo{
+    width: 38%;
+    text-align: justify;
+}
+
+/*seção de negocios*/
+.negocio{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-negocio{
+    width: 80%;
+    height: 84%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.quadro{
+    width: 33%;
+    height: 64%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quadro p{
+    font-size: small;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    width: 19vw;
+}
+
+.image1{
+    background-image: url('../img/ficha.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 50%;
+    margin-bottom: 10%;
+}
+
+.image2{
+    background-image: url('../img/money.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 75%;
+    height: 50%;
+}
+
+.image3{
+    background-image: url('../img/bola.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 56%;
+    height: 50%;
+    margin-bottom: 10%;
+}

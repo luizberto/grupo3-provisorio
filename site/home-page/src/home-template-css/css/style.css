@@ -1,4 +1,4 @@
-body, ul, li, p{
+body, ul, li, p, h1{
     text-decoration: none;
     margin: 0px;
     padding: 0px;
@@ -21,7 +21,7 @@ a{
     padding: 10px;
     align-items: center;
     flex-wrap: wrap;
-    background-color: rgb(14, 12, 12);
+    background-color: #04AA28;
 }
 
 .titulo{
@@ -97,8 +97,10 @@ body::-webkit-scrollbar {
 
 .tituloBanner{
     display:grid;
+    color: #8AF8A2;
     width: 440px;
     height: 80vh;
+    text-decoration: none;
 }
 
 .tituloBanner h3{
@@ -122,7 +124,7 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(../img/soccer-gdf5e7ca89_1920.jpg);
+    background-image: url(../img/banner2.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: darken;

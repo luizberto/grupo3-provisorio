@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../home-template-css/img/image 22.png";
 import { Link } from "react-router-dom";
-import { DropdownButton, Dropdown, Stack } from "react-bootstrap";
+import { DropdownButton, Dropdown, Stack, Button } from "react-bootstrap";
 
 
 
@@ -16,22 +16,18 @@ function Navbar({ atleta, dnquadra, cadAtleta, cadAdm }) {
 
                 <nav>
                     <Stack direction="horizontal" gap={2}>
-                        <DropdownButton
-                            size="md"
+                        <Button
                             title="Login"
-                            variant="success"
+                            variant="dark"
                         >
-                            <Dropdown.Item href={atleta} eventKey="1">Atleta</Dropdown.Item>
-                            <Dropdown.Item href={dnquadra} eventKey="2">Administrador</Dropdown.Item>
-                        </DropdownButton>
-                        <DropdownButton
-                            size="md"
-                            title="Cadastro"
-                            variant="success"
+                            Login
+                        </Button>
+                        <Button
+                            title="cadastrar"
+                            variant="dark"
                         >
-                            <Dropdown.Item href={cadAtleta} eventKey="1">Atleta</Dropdown.Item>
-                            <Dropdown.Item href={cadAdm} eventKey="2">Administrador</Dropdown.Item>
-                        </DropdownButton>
+                            Cadastrar
+                        </Button>
                     </Stack>
                 </nav>
             </header>

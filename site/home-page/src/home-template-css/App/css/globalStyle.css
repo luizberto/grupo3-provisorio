@@ -5,6 +5,10 @@ body{
   background-color: #EFF2EC;
 }
 
+h1{
+  text-decoration: none;
+}
+
 .navbar{
   position: fixed;
   width: 100%;
