@@ -18,7 +18,7 @@ public class DonoQuadra {
     @Column(name = "cpf", length = 14)
     private String cpf;
 
-    @Column(name = "dataNasc")
+    @Column(name = "data_nasc")
     private LocalDate dataNasc;
 
     @Column(name = "email", length = 100)
