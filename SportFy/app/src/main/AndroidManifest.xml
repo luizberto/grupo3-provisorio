@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SportFy">
         <activity
+            android:name=".TelaCadastroParteDois"
+            android:exported="false" />
+        <activity
+            android:name=".TelaCadastro"
+            android:exported="false" />
+        <activity
             android:name=".TelaLogin"
             android:exported="false" />
         <activity
