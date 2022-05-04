@@ -29,15 +29,12 @@ public class AtletaController {
     @PostMapping("/login")
     public ResponseEntity postLogin(@RequestBody Login login) {
         for (Atleta a : atletaRepository.findAll()) {
+            //System.out.println(a);
             if (a.getEmail().equals(login.getEmail()) && a.getSenha().equals(login.getSenha())) {
-//                ReservaController reservaController = new ReservaController();
-//                while (!reservaController.filaCircularObj.isEmpty()) {
-//                    reservaController.filaCircularObj.poll();
-//                }
                 return ResponseEntity.status(201).body(a);
             }
         }
-        return ResponseEntity.status(418).build();
+        return ResponseEntity.status(401).build();
     }
 
     @GetMapping("/{id}")

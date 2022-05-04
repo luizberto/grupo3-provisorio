@@ -15,6 +15,7 @@
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,17 +28,20 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="40dp"/>
+            android:layout_height="40dp" />
+
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/ic_round_person_24"
-            />
+            android:src="@drawable/ic_round_person_24" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="40dp"/>
+            android:layout_height="40dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,7 +49,6 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_email_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
@@ -55,19 +58,18 @@
                 app:startIconDrawable="@drawable/ic_baseline_email_24">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#03FFFFFF"
-                    app:boxStrokeColor="#36AE03"
-                    />
+                    app:boxStrokeColor="#36AE03" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_senha_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Senha"
@@ -77,6 +79,8 @@
                 app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_senha_login"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#03FFFFFF"
@@ -84,37 +88,39 @@
 
                     />
             </com.google.android.material.textfield.TextInputLayout>
+
             <View
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                />
+                android:layout_height="20dp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:gravity="center"
-                >
+                android:orientation="vertical">
+
                 <Button
                     android:id="@+id/bt_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Entrar"
                     android:backgroundTint="#36AE03"
-                />
+                    android:onClick="teste"
+                    android:text="Entrar" />
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="10dp"
-                    />
+                    android:layout_height="10dp" />
+
                 <Button
                     android:id="@+id/bt_cadastro"
+                    style="?attr/materialButtonOutlinedStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="irParaCadastro"
                     android:text="Cadastrar"
-                    style="?attr/materialButtonOutlinedStyle"
-                    app:strokeWidth="2dp"
-                    app:strokeColor="#36AE03"
                     android:textColor="#1E5E03"
-                    />
+                    app:strokeColor="#36AE03"
+                    app:strokeWidth="2dp" />
             </LinearLayout>
         </LinearLayout>
 

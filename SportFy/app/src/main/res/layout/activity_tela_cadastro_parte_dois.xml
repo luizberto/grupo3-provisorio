@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".TelaLogin">
+    tools:context=".TelaCadastroParteDois">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,7 +66,6 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_email_cadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
@@ -76,6 +75,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email_cadastro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#03FFFFFF"
@@ -88,7 +88,6 @@
                 android:layout_height="20dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_senha_cadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Senha"
@@ -98,11 +97,13 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_senha_cadastro"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#03FFFFFF"
                     app:boxStrokeColor="#36AE03"
-                    android:inputType="numberDecimal"
+                    android:inputType="textPassword"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,7 +112,6 @@
                 android:layout_height="20dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_confirm_senha_cadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Confirmar Senha"
@@ -121,10 +121,11 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_confirm_senha_cadastro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#03FFFFFF"
-                    android:inputType="numberDecimal"
+                    android:inputType="textPassword"
 
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -143,6 +144,7 @@
                     android:layout_height="wrap_content"
                     android:text="Finalizar"
                     android:backgroundTint="#36AE03"
+                    android:onClick="realizarCadastro"
                     />
                 <View
                     android:layout_width="match_parent"

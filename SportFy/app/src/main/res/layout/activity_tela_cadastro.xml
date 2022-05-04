@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".TelaLogin">
+    tools:context=".TelaCadastro">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,7 +66,6 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_nome_completo_cadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nome Completo"
@@ -76,6 +75,7 @@
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_nome_completo_cadastro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#03FFFFFF"
@@ -88,7 +88,6 @@
                 android:layout_height="20dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_cpf_cadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="CPF"
@@ -97,12 +96,15 @@
                 app:endIconMode="clear_text"
                 >
 
-                <com.google.android.material.textfield.TextInputEditText
+
+                <br.com.sapereaude.maskedEditText.MaskedEditText
+                    android:id="@+id/et_cpf_cadastro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#03FFFFFF"
                     app:boxStrokeColor="#36AE03"
-                    android:inputType="numberDecimal"
+                    android:inputType="text"
+                    app:mask="###.###.###-##"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,7 +113,6 @@
                 android:layout_height="20dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_data_nasc_cadastro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Data Nascimento"
@@ -119,12 +120,14 @@
                 app:boxStrokeWidthFocused="3dp"
                 >
 
-                <com.google.android.material.textfield.TextInputEditText
+                <br.com.sapereaude.maskedEditText.MaskedEditText
+                    android:id="@+id/et_data_nasc_cadastro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#03FFFFFF"
+                    app:boxStrokeColor="#36AE03"
                     android:inputType="date"
-
+                    app:mask="####-##-##"
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,13 +142,14 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 >
+
                 <Button
                     android:id="@+id/bt_proxima_etapa_cadastro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Próximo"
                     android:backgroundTint="#36AE03"
-                    />
+                    android:onClick="irParaParteDois"
+                    android:text="Próximo" />
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="10dp"

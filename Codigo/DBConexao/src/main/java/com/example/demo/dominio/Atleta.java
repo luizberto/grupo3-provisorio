@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 @Entity
-public class eAtleta {
+public class Atleta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,26 +34,10 @@ public class eAtleta {
     @Column(name = "senha", length = 50)
     private String senha;
 
-    @Column(name = "complemento", length = 45)
-    private String complemento;
-
-    @Column(name = "numero", length = 6)
-    private Integer numero;
-
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "data_nasc")
     private LocalDate dataNasc;
 
-    @ManyToOne
-    private Endereco fkEndereco;
-
-    public Endereco getFkEndereco() {
-        return fkEndereco;
-    }
-
-    public void setFkEndereco(Endereco fkEndereco) {
-        this.fkEndereco = fkEndereco;
-    }
 
     public LocalDate getDataNasc() {
         return dataNasc;
@@ -103,19 +87,4 @@ public class eAtleta {
         this.id = id;
     }
 
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
-    public Integer getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
 }
