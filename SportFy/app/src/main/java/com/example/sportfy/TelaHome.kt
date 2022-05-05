@@ -19,7 +19,7 @@ class TelaHome : AppCompatActivity() {
             findViewById<LinearLayout>(R.id.sv_quadras).addView(fragmento)
 
 
-            transaction.add(fragmento.id, QuadraFragment::class.java, null)
+           transaction.add(fragmento.id, QuadraFragment::class.java, null)
         }
 
         transaction.commit()
