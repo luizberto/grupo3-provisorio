@@ -7,17 +7,17 @@ import retrofit2.http.*
 
 interface SportyApi {
 
-    @GET("users")
-    fun get() : Call<List<Quadra>> // Call do pacote retrofit2
+    @GET("quadras")
+    fun getQuadras(): Call<List<Quadra>> // Call do pacote retrofit2
 
     @GET("users/{id}")
-    fun get(@Path("id") id:Int) : Call<Quadra>
+    fun get(@Path("id") id: Int): Call<Quadra>
 
     @DELETE("users/{id}")
-    fun delete(@Path("id") id:Int) : Call<Void>
+    fun delete(@Path("id") id: Int): Call<Void>
 
     @POST("atletas/login")
-    fun postLogin(@Body login:Login) : Call<Void>
+    fun postLogin(@Body login: Login): Call<Void>
 
     @POST("atletas")
     fun postAtleta(@Body atleta: Atleta) : Call<Void>

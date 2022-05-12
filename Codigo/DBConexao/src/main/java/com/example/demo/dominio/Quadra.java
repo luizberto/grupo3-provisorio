@@ -31,8 +31,7 @@ public class Quadra {
     private byte[] foto;
 
     @ManyToOne
-    @JoinColumn(name = "idEndereco")
-    private Endereco fkEndereco;
+
 
     @ManyToOne
     @JoinColumn(name = "fk_dono")
