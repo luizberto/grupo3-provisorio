@@ -29,6 +29,7 @@ class TelaHome : AppCompatActivity() {
                         val argumentos = Bundle()
                         argumentos.putString("nome", quadra.nomeQuadra)
                         val fragmento = FragmentContainerView(applicationContext)
+
                         fragmento.id = View.generateViewId()
                         findViewById<LinearLayout>(R.id.ll_quadras).addView(fragmento)
                         transaction.add(fragmento.id, QuadraFragment::class.java, argumentos)

@@ -11,4 +11,10 @@
         android:enabled="true"
         android:icon="@drawable/ic_baseline_favorite_24"
         android:title="Favoritos" />
+
+    <item
+        android:id="@+id/page_3"
+        android:icon="@drawable/ic_round_person_24"
+        android:title="Perfil"
+        />
 </menu>
