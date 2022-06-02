@@ -1,20 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function CompLinks({texto, image, link}){
+function CompLinks({texto, image}){
     return(
         <>
-           
-           <Link to = {link}>
-                <div class="serv">
-                    <img src={image} width="50px" alt=""/>
+                <div class="m-detalhe">
+                    <img src={image} alt=""/>
                     <p>
                         {texto}
                     </p>
                 </div>
-
-            </Link>
-            
         </>
     );
 }

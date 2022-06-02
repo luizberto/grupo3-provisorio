@@ -64,12 +64,8 @@ function LoginAdm() {
                             Entrar
                         </Button>
                     </Form>
+                    
                     <div className="container9">
-                        <b>
-                            É atleta?
-                            <br />
-                            <Link to="/loginAtleta"><a>clique aqui</a></Link>
-                        </b>
                         <b>
                             Não tem cadastro?
                             <br />

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../home-template-css/img/image 22.png";
+import logo from "../home-template-css/App/img-novo/SPORTFY.png";
 import { Link } from "react-router-dom";
 import { Button } from 'react-bootstrap'
 
@@ -7,17 +7,16 @@ import { Button } from 'react-bootstrap'
 function NavbarSecundario(props) {
    return (
       <>
-         <header class="header">
-            <a class="logo" href="/"><img src={logo} height="40px" alt="" /></a>
+         <header class="n-header">
+            <div class="logo" href="/">
+               <img src={logo} alt="" />
+            </div>
 
-            <nav>
-               <Link to="/"><Button variant="success">Home</Button>{' '}</Link>
-               <Link to={props.voltar}>
-                  <Button variant="success">
-                     voltar
-                  </Button>
+            <ul className="n-nav">
+               <Link to="/">
+                  <Button variant="success">Home</Button>{' '}
                </Link>
-            </nav>
+            </ul>
          </header>
       </>
    );

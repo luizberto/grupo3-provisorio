@@ -18,7 +18,7 @@ function FormLogin(props) {
                     </label>
                 </form>
 
-                <button class="btnLogin"  >Login</button>
+                <button class="btnLogin">Login</button>
 
                 <h5>{props.questao}</h5>
                 <Link to={props.path}><a>clique aqui</a></Link>

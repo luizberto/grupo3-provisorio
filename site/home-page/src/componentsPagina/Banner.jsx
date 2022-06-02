@@ -1,21 +1,25 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import {Button} from "react-bootstrap";
-import Servicos from "./Servicos";
-import Footer from "../components/Footer";
+
+
 function Banner(){
     return(
         <>
 
-        <Navbar atleta = "/loginAtleta" dnquadra = "/loginAdm" cadAtleta = "/cadastroAtleta" cadAdm = "/cadastroAdm"/>
-<section class="banner">
-    <div class="container">
-        <div class="tituloBanner">
-            <h1>
-                Encontre quadras para praticar seus esportes favoritos.
-            </h1>
-        </div>
-    </div>
+        <Navbar 
+         dnquadra = "/loginAdm" 
+         cadAdm = "/cadastroAdm"
+         />
+
+<section class="n-banner">
+        <h1 class="slogan">
+            SPORT.FY PARA ADMINISTRADOR
+        </h1>
+
+        <h5 class="subtitulo">
+            Organize e monitore suas quadras e se junte ao maior app de aproimação de clientes ao seu negócio
+        </h5>
+
 </section>
 
     </>

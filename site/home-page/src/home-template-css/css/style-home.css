@@ -9,7 +9,7 @@ body, ul, li, a{
 
 /*estilo de navbar*/
 
-header{
+.n-header{
     width: 100%;
     height: 10vh;
     display: flex;
@@ -22,27 +22,33 @@ header{
     margin-left: 10%;
 }
 
-ul{
+.n-nav{
     display: flex;
+    align-items: center;
     margin-right: 10%;
+    margin-top: 1%;
 }
 
-li{
-    margin-left: 10%;
+.n-li{
+    margin-left: 40%;
     color: #FFF;
+}
+
+.n-link{
+    text-decoration: none;
 }
 
 /*fim do estilo de navbar*/
 
 /*estilo banner*/
-.banner{
+.n-banner{
     width: 100%;
     height: 70vh;
     display: flex;
     flex-direction: column;
-    background-image: url('../img-novo/banner22.png');
+    background-image: url('../App/img-novo/banner22.png');
     color: #FFF;
-    padding-top: 5%;
+    padding-top: 4%;
 }
 
 .slogan{
