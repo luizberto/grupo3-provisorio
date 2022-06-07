@@ -22,6 +22,8 @@ interface SportyApi {
     @POST("atletas")
     fun postAtleta(@Body atleta: Atleta) : Call<Void>
 
+    @GET("horarios/{id}")
+    fun getHorarios(@Path("id") id: Int): Call<List<Horario>>
 
     // companion object serve para disponibilizar método estático
     companion object {

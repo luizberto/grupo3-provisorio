@@ -31,6 +31,7 @@
             app:boxCornerRadiusBottomStart="30dp"
             app:boxCornerRadiusTopEnd="30dp"
             app:boxCornerRadiusTopStart="30dp"
+            app:boxBackgroundColor="@color/white"
             >
 
             <com.google.android.material.textfield.TextInputEditText

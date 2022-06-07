@@ -14,29 +14,36 @@ class TelaHome : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val quadras = mutableListOf<String>()
 
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_tela_home)
+
         val transaction = supportFragmentManager.beginTransaction()
 
         val getQuadra = SportyApi.criar().getQuadras()
+
         getQuadra.enqueue(object : Callback<List<Quadra>> {
             override fun onResponse(call: Call<List<Quadra>>, response: Response<List<Quadra>>) {
                 if (response.isSuccessful) {
                     response.body()?.forEach { quadra ->
-                        println(quadra)
+
+
                         val argumentos = Bundle()
+
                         argumentos.putString("nome", quadra.nomeQuadra)
+                        argumentos.putInt("id", quadra.idQuadra)
+                        argumentos.putDouble("classificacao", quadra.classificacaoQuadra)
+
                         val fragmento = FragmentContainerView(applicationContext)
 
                         fragmento.id = View.generateViewId()
+
                         findViewById<LinearLayout>(R.id.ll_quadras).addView(fragmento)
+
                         transaction.add(fragmento.id, QuadraFragment::class.java, argumentos)
                     }
                     transaction.commitAllowingStateLoss()
-
-
                 }
 
                 Toast.makeText(
@@ -55,6 +62,10 @@ class TelaHome : AppCompatActivity() {
 
 
     }
+    fun abrirDescricao(test: String){
+        Toast.makeText(baseContext, test, Toast.LENGTH_LONG).show()
+    }
+
 
 
 }
