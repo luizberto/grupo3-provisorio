@@ -145,3 +145,11 @@ body, ul, li, a{
     background-color: #FFF;
  }
 /*fim do estilo missao*/
+
+.n-quadras{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

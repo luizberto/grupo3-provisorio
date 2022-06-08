@@ -32,11 +32,10 @@ public class GravaLista {
         try {
             for (int i=0; i< lista.getTamanho(); i++) {
                 Quadra a = lista.getElemento(i);
-                saida.format("%s;%s;%d;%d;%d\n",a.getNomeQuadra(),
+                saida.format("%s;%s;%d;%d\n",a.getNomeQuadra(),
                                                 a.getDescQuadra(),
                                                 a.getLimitePessoas(),
-                                                a.getClassificacaoQuadra(),
-                                                a.getFkEndereco());
+                                                a.getClassificacaoQuadra());
             }
         }
         catch (FormatterClosedException erro) {

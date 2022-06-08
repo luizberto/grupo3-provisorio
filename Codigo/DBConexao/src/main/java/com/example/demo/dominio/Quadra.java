@@ -30,7 +30,7 @@ public class Quadra {
     @Column(name = "foto", length = 15_728_640)
     private byte[] foto;
 
-    @ManyToOne
+
 
 
     @ManyToOne
@@ -99,14 +99,6 @@ public class Quadra {
 
     public void setFoto(byte[] foto) {
         this.foto = foto;
-    }
-
-    public Endereco getFkEndereco() {
-        return fkEndereco;
-    }
-
-    public void setFkEndereco(Endereco fkEndereco) {
-        this.fkEndereco = fkEndereco;
     }
 
     public DonoQuadra getDono() {

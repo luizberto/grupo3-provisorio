@@ -18,16 +18,6 @@ public class EnderecoController {
     @Autowired
     QuadraRepository quadraRepository;
 
-    @PostMapping("/{id}")
-    public ResponseEntity postEnderecoPorQuadra(@PathVariable int id, @RequestBody Endereco endereco) {
-        enderecoRepository.save(endereco);
-        Quadra quadra = quadraRepository.findById(id).get();
-
-        quadra.setFkEndereco(endereco);
-        quadraRepository.save(quadra);
-        return ResponseEntity.status(201).build();
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity getEndereco(@PathVariable int id) {
         return ResponseEntity.of(enderecoRepository.findById(id));

@@ -30,8 +30,13 @@ function CadastroQuadras(props){
           if (resposta.status === 201) {
             //alert("aperte enter para se redirecionar");
             toast.success('Cadastrado com sucesso!');
+<<<<<<< Updated upstream
             history.push('/perfilAdm');
         }
+=======
+            history.push('/perfilAdm')
+          }
+>>>>>>> Stashed changes
         }).catch((erro) => {
             toast.error('campos invalidos ou vazios');
             //console.log(erro);
@@ -40,7 +45,7 @@ function CadastroQuadras(props){
       
     return (
         <>
-            <NavbarSecundario voltar = "/perfilAdm"/>
+            <NavbarSecundario home = "/perfilAdm"/>
             <ToastContainer
                 position="top-left"
                 autoClose={5000}

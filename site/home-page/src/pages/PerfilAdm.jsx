@@ -75,13 +75,14 @@ function PerfilAdm() {
                 </Form>
                 
                 <Button variant = "success" className="quadraBtn download" onClick={downloadLista}>
-                    Download lista
+                    Download
                 </Button>
-                <Link to={"/reservasAdm"}><Button variant = "success">
-                    Minhas reservas
-                </Button></Link>
+
             </Container>
-            <Container className="containerQuadras">
+
+
+            <div className="n-quadras">
+              <Container className="containerQuadras">
                 <Row xs={1} md='auto' className="g-4">
                     {quadra.map((quadra) => (
                         <>
@@ -91,17 +92,20 @@ function PerfilAdm() {
                                     descricao={quadra.descQuadra}
                                     nome={quadra.nomeQuadra}
                                     limite={quadra.limitePessoas}
+                                    complemento={quadra.complemento}
                                     primario={"Editar"}
-                                    secundario={"Mais informações"}
+                                    secundario={"informações"}
                                 />
                             </Col>
                         </>
-
                     ))}
                 </Row>
-            </Container>
+              </Container>
+            </div>
+          
+
             <Container class="content-add-quadra">
-                <Container class="add">
+                <Container  fluid = "md">
                     <Link to="/cadastroQuadras">
                         <Button variant = "success">
                             <p>+</p>
