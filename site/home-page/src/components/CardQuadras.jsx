@@ -8,11 +8,25 @@ function CardQuadras(props) {
     const history = useHistory();
     const [show, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
+    const [quadras, setQuadras] = useState([]);
 
     const [hora, setHora] = useState();
     const handleClose = () => setShow(false);
     const handleClose2 = () => setShow2(false);
     let form = new FormData();
+
+    function deletar(id) {
+        alert('entrei aqui ' + props.id)
+        api.delete(`quadras/${props.id}`).then(res => {
+            setQuadras(quadras.filter(quadra => quadra.id !== props.id))
+            if(res.status === 200){
+                alert('deletado com sucesso a ' + props.nome)
+            }
+            
+        }).catch((err) => {
+           alert("ocorreu um erro" + err) ;
+        });
+    }
 
     function enviaFoto(e) {
         const file = document.getElementById("fotos");
@@ -108,6 +122,12 @@ function CardQuadras(props) {
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Enviar
+                        </Button>
+                    </Form>
+
+                    <Form onClick = {() => deletar(props.id)}>
+                        <Button variant="danger">
+                            Deletar Quadra
                         </Button>
                     </Form>
                 </Offcanvas.Body>
