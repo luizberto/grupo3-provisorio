@@ -13,7 +13,12 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import kotlinx.android.synthetic.main.fragment_quadra.view.*
+import android.graphics.BitmapFactory
 
+import android.graphics.Bitmap
+import android.util.Base64
+import android.widget.ImageView
+import androidx.core.graphics.drawable.toDrawable
 
 
 class QuadraFragment : Fragment() {
@@ -41,6 +46,16 @@ class QuadraFragment : Fragment() {
         val id = arguments?.getInt("id")
         val classificacao = arguments?.getDouble("classificacao")
 
+        val imagem = arguments?.getString("imagem")
+
+        val image: ImageView = view.findViewById(R.id.cardImg) as ImageView
+        val imageBytes = Base64.decode(imagem, Base64.DEFAULT)
+
+        val bMap = imagem?.let { BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size) }
+        println(bMap)
+        image.setImageBitmap(bMap?.let { Bitmap.createScaledBitmap(it, 150, 100, false) });
+
+
         println(nome)
 
         tvClassificacao.text = classificacao.toString()
@@ -49,7 +64,9 @@ class QuadraFragment : Fragment() {
         val card = view.findViewById(R.id.cardQuadra) as CardView
 
         card.setOnClickListener {
-            (activity as TelaHome).abrirDescricao(nome.toString())
+            if (id != null) {
+                (activity as TelaHome).abrirDescricao(id.toInt())
+            }
 
         }
     }

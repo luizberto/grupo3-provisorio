@@ -10,8 +10,8 @@ interface SportyApi {
     @GET("quadras")
     fun getQuadras(): Call<List<Quadra>> // Call do pacote retrofit2
 
-    @GET("users/{id}")
-    fun get(@Path("id") id: Int): Call<Quadra>
+    @GET("quadras/{id}")
+    fun getQuadraById(@Path("id") id: Int): Call<Quadra>
 
     @DELETE("users/{id}")
     fun delete(@Path("id") id: Int): Call<Void>

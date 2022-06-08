@@ -7,5 +7,7 @@ data class Quadra(
     val limitePessoas: Int,
     val classificacaoQuadra: Double,
     val complemento: String,
-    val numero: Int
+    val numero: Int,
+    val foto : String
 )
+

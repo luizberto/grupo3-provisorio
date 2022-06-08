@@ -13,16 +13,6 @@
         <entry key="..\:/Users/55119/Documents/GitHub/grupo3-provisorio/SportFy/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/grupo3-provisorio/SportFy/app/src/main/res/layout/activity_tela_cadastro.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Aluno/AndroidStudioProjects/grupo3-provisorio/SportFy/app/src/main/res/layout/activity_tela_cadastro_parte_dois.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/joao_/Desktop/Nova pasta/grupo3-provisorio/SportFy/app/src/main/res/layout/activity_calendario.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/joao_/Desktop/Nova pasta/grupo3-provisorio/SportFy/app/src/main/res/layout/activity_main.xml" value="0.1661600810536981" />
-        <entry key="..\:/Users/joao_/Desktop/Nova pasta/grupo3-provisorio/SportFy/app/src/main/res/layout/activity_tela_agendamento.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/joao_/Desktop/Nova pasta/grupo3-provisorio/SportFy/app/src/main/res/layout/activity_tela_cadastro.xml" value="0.1661600810536981" />
-        <entry key="..\:/Users/joao_/Desktop/Nova pasta/grupo3-provisorio/SportFy/app/src/main/res/layout/activity_tela_cadastro_parte_dois.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/joao_/Desktop/Nova pasta/grupo3-provisorio/SportFy/app/src/main/res/layout/activity_tela_home.xml" value="0.1661600810536981" />
-        <entry key="..\:/Users/joao_/Desktop/Nova pasta/grupo3-provisorio/SportFy/app/src/main/res/layout/activity_tela_login.xml" value="0.1661600810536981" />
-        <entry key="..\:/Users/joao_/Desktop/Nova pasta/grupo3-provisorio/SportFy/app/src/main/res/layout/activity_tela_usuario.xml" value="0.25" />
-        <entry key="..\:/Users/joao_/Desktop/Nova pasta/grupo3-provisorio/SportFy/app/src/main/res/layout/fragment_detalhes.xml" value="0.1661600810536981" />
-        <entry key="..\:/Users/joao_/Desktop/Nova pasta/grupo3-provisorio/SportFy/app/src/main/res/layout/fragment_quadra.xml" value="0.33" />
         <entry key="..\:/src/AndroidStudioProjects/repo/SportFy/app/src/main/res/layout/activity_tela_login.xml" value="0.36666666666666664" />
         <entry key="..\:/src/AndroidStudioProjects/repo/SportFy/app/src/main/res/layout/activity_tela_usuario.xml" value="0.36666666666666664" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.18385416666666668" />
@@ -36,8 +26,10 @@
         <entry key="app/src/main/res/drawable/rounded_edit_text.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_tela3.xml" value="0.29583333333333334" />
+        <entry key="app/src/main/res/layout/activity_tela_agendamento.xml" value="0.3" />
         <entry key="app/src/main/res/layout/activity_tela_cadastro.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_tela_cadastro_parte_dois.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_tela_desc.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_tela_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_tela_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_bottom_navigation.xml" value="0.1" />

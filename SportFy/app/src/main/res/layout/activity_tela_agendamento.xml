@@ -10,7 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,44 +33,49 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:layout_marginRight="20sp"/>
+                android:layout_marginRight="20sp"
+
+                />
         </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:src="@mipmap/quadra2"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"/>
 
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="510dp"
+            android:layout_height="247dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="68dp"
+            android:src="@mipmap/quadra2" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_height="77dp"
             android:layout_marginTop="20dp"
+            android:orientation="horizontal"
             android:padding="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Descrição:"
-                android:textStyle="bold"
-                android:textColor="#000"/>
+                android:textColor="#000"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_descricao_quadra"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Breve descrição da quadra"
-                android:textStyle="bold"
-                android:textColor="#000"
                 android:layout_marginLeft="5dp"
-                android:id="@+id/tv_descricao_quadra"/>
+                android:text="Breve descrição da quadra"
+                android:textColor="#000"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -98,38 +105,17 @@
                     android:layout_height="wrap_content">
 
                     <LinearLayout
+                        android:id="@+id/ll_horarios"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
-
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="10:00" />
 
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="12:00" />
 
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="14:00" />
 
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="16:00" />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="18:00" />
                     </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>
@@ -152,5 +138,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

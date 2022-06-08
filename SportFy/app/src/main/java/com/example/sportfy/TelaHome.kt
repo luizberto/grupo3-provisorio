@@ -1,5 +1,6 @@
 package com.example.sportfy
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
@@ -34,7 +35,7 @@ class TelaHome : AppCompatActivity() {
                         argumentos.putString("nome", quadra.nomeQuadra)
                         argumentos.putInt("id", quadra.idQuadra)
                         argumentos.putDouble("classificacao", quadra.classificacaoQuadra)
-
+                        argumentos.putString("imagem", quadra.foto)
                         val fragmento = FragmentContainerView(applicationContext)
 
                         fragmento.id = View.generateViewId()
@@ -62,8 +63,12 @@ class TelaHome : AppCompatActivity() {
 
 
     }
-    fun abrirDescricao(test: String){
-        Toast.makeText(baseContext, test, Toast.LENGTH_LONG).show()
+    fun abrirDescricao(id: Int){
+        val telaDesc = Intent(baseContext, activity_tela_agendamento::class.java)
+
+        telaDesc.putExtra("id", id)
+
+        startActivity(telaDesc)
     }
 
 
