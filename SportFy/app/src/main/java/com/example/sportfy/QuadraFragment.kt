@@ -46,14 +46,14 @@ class QuadraFragment : Fragment() {
         val id = arguments?.getInt("id")
         val classificacao = arguments?.getDouble("classificacao")
 
-        val imagem = arguments?.getString("imagem")
+        //val imagem = arguments?.getString("imagem")
 
-        val image: ImageView = view.findViewById(R.id.cardImg) as ImageView
-        val imageBytes = Base64.decode(imagem, Base64.DEFAULT)
+        //val image: ImageView = view.findViewById(R.id.cardImg) as ImageView
+        //val imageBytes = Base64.decode(imagem, Base64.DEFAULT)
 
-        val bMap = imagem?.let { BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size) }
-        println(bMap)
-        image.setImageBitmap(bMap?.let { Bitmap.createScaledBitmap(it, 150, 100, false) });
+        //val bMap = imagem?.let { BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size) }
+        //println(bMap)
+        //image.setImageBitmap(bMap?.let { Bitmap.createScaledBitmap(it, 150, 100, false) });
 
 
         println(nome)
@@ -65,7 +65,8 @@ class QuadraFragment : Fragment() {
 
         card.setOnClickListener {
             if (id != null) {
-                (activity as TelaHome).abrirDescricao(id.toInt())
+                    (activity as TelaHome).abrirDescricao(id.toInt())
+
             }
 
         }

@@ -14,6 +14,9 @@
         android:theme="@style/Theme.SportFy"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity_tela_agendament"
+            android:exported="false" />
+        <activity
             android:name=".Calendario"
             android:exported="false" />
         <activity

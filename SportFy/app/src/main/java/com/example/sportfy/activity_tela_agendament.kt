@@ -10,33 +10,35 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_tela_agendamento.*
+import kotlinx.android.synthetic.main.activity_tela_agendament.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class activity_tela_agendamento : AppCompatActivity() {
+class activity_tela_agendament : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tela_agendamento)
+        setContentView(R.layout.activity_tela_agendament)
 
         val tvDescricao: TextView = findViewById(R.id.tv_descricao_quadra)
-        val ivImg: ImageView = findViewById(R.id.iv_img)
         var id = intent.getIntExtra("id", 1)
 
         val getQuadraById = SportyApi.criar().getQuadraById(id)
 
         getQuadraById.enqueue(object : Callback<Quadra> {
             override fun onResponse(call: Call<Quadra>, response: Response<Quadra>) {
+                val descricao = response.body()?.descQuadra
                 val imagem = response.body()?.foto
+                val image: ImageView = findViewById<ImageView>(R.id.iv_img)
                 val imageBytes = Base64.decode(imagem, Base64.DEFAULT)
 
                 val bMap = imagem?.let { BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size) }
                 println(bMap)
-                ivImg.setImageBitmap(bMap?.let { Bitmap.createScaledBitmap(it, 510, 247, false) });
+                image.setImageBitmap(bMap?.let { Bitmap.createScaledBitmap(it, 150, 100, false) });
 
+                tvDescricao.text = descricao
 
 
             }
