@@ -30,9 +30,8 @@ function CadastroQuadras(props){
           if (resposta.status === 201) {
             //alert("aperte enter para se redirecionar");
             toast.success('Cadastrado com sucesso!');
-            history.push('/cadastroEndereco');
-            sessionStorage.setItem("idQuadra", resposta.data.idQuadra)
-          }
+            history.push('/perfilAdm');
+        }
         }).catch((erro) => {
             toast.error('campos invalidos ou vazios');
             //console.log(erro);
