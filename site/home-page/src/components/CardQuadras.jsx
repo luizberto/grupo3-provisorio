@@ -29,25 +29,23 @@ function CardQuadras(props) {
     }
 
     function enviaFoto(e) {
+        alert('estou te chamando')
         const file = document.getElementById("fotos");
         console.log("Cadastrando", file);
-
         form.append("foto", file.files[0]);
-
-        api
-            .patch("/quadras/foto/" + props.id, form, {
-
+        api.patch(`/quadras/foto/${props.id}`, form, {
                 headers: {
                     "Content-Type": "multpart/form-data",
                 }
-
             }).then((response) => {
+                alert('deu certo estou aqui')
             if (response.status === 200) {
                 alert("Foto cadastrada")
             }
         })
             .catch((err) => {
                 console.error("ops! ocorreu um erro" + err);
+                alert('erro é ' + err)
             });
     }
 
@@ -107,12 +105,13 @@ function CardQuadras(props) {
                 </Offcanvas.Header>
 
                 <Offcanvas.Body>
+
                     <Form onSubmit={enviaFoto}>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Upload de Foto</Form.Label>
                             <Form.Control type="file" id="fotos"/>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type = "submit">
                             Enviar
                         </Button>
                     </Form>
@@ -127,7 +126,7 @@ function CardQuadras(props) {
                             Enviar
                         </Button>
                     </Form>
-
+                        <br/>
                     <Form onClick = {() => deletar(props.id)}>
                         <Button variant="danger">
                             Deletar Quadra

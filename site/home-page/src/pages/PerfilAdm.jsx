@@ -63,24 +63,6 @@ function PerfilAdm() {
         <>
             <NavbarSecundario voltar="/"/>
 
-            <Container className="titulo">
-                <Form onSubmit={enviaArquivo}>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Upload de lista</Form.Label>
-                        <Form.Control type="File" id="files"/>
-                    </Form.Group>
-                    <Button variant="success" type={"submit"}>
-                        Enviar
-                    </Button>
-                </Form>
-                
-                <Button variant = "success" className="quadraBtn download" onClick={downloadLista}>
-                    Download
-                </Button>
-
-            </Container>
-
-
             <div className="n-quadras">
               <Container className="containerQuadras">
                 <Row xs={1} md='auto' className="g-4">
