@@ -7,6 +7,8 @@ import com.example.demo.exportacao.GravaTxt;
 import com.example.demo.lista.ListaObj;
 import com.example.demo.repositorio.EnderecoRepository;
 import com.example.demo.repositorio.QuadraRepository;
+import com.example.demo.repositorio.QuadraRepositoryDTO;
+import com.example.demo.requisicao.QuadraDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +28,9 @@ public class QuadraController {
     private QuadraRepository quadraRepository;
 
     @Autowired
+    private QuadraRepositoryDTO quadraRepositoryDTO;
+
+    @Autowired
     private EnderecoRepository enderecoRepository;
 
     @PostMapping
@@ -41,13 +46,13 @@ public class QuadraController {
 
     @GetMapping("/nome/{nome}")
     public ResponseEntity getQuadraByNome(@PathVariable String nome) {
-        List<Quadra> q = quadraRepository.findQuadrasByNomeQuadraIsLike(nome);
+        List<QuadraDTO> q = quadraRepositoryDTO.findQuadrasByNomeQuadraIsLike(nome);
         return ResponseEntity.status(201).body(q);
     }
 
     @GetMapping("/cidade/{cidade}")
     public ResponseEntity getQuadraByCidade(@PathVariable String cidade) {
-        List<Quadra> q = quadraRepository.findQuadrasByCidade(cidade);
+        List<QuadraDTO> q = quadraRepositoryDTO.findQuadrasByCidade(cidade);
         return ResponseEntity.status(201).body(q);
     }
 
@@ -63,7 +68,7 @@ public class QuadraController {
 
     @GetMapping
     public ResponseEntity getQuadras() {
-        List<Quadra> quadras = quadraRepository.findAll();
+        List<QuadraDTO> quadras = quadraRepositoryDTO.findAll();
         if (quadras.isEmpty()) {
             return ResponseEntity.status(204).build();
         } else {
@@ -115,7 +120,7 @@ public class QuadraController {
     }
 
     @GetMapping("/foto/{id}")
-    public ResponseEntity gerFoto(@PathVariable Integer id) throws IOException {
+    public ResponseEntity getFoto(@PathVariable Integer id) throws IOException {
 
         Quadra q = quadraRepository.findById(id).get();
 
@@ -126,6 +131,7 @@ public class QuadraController {
                 .header("content-type", "image/jpeg")
                 .body(foto);
     }
+
     @GetMapping("/csv")
     public ResponseEntity getCsv() {
         GravaLista g = new GravaLista();

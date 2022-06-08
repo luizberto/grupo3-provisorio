@@ -105,6 +105,7 @@ function CardQuadras(props) {
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>{props.nome}</Offcanvas.Title>
                 </Offcanvas.Header>
+
                 <Offcanvas.Body>
                     <Form onSubmit={enviaFoto}>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -112,14 +113,16 @@ function CardQuadras(props) {
                             <Form.Control type="file" id="fotos"/>
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Eviar
+                            Enviar
                         </Button>
                     </Form>
+
                     <Form onSubmit={enviaHora}>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Upload de Horario</Form.Label>
                             <Form.Control type="datetime-local" onChange={e => setHora(e.target.value)}/>
                         </Form.Group>
+
                         <Button variant="primary" type="submit">
                             Enviar
                         </Button>
@@ -133,20 +136,33 @@ function CardQuadras(props) {
                 </Offcanvas.Body>
 
             </Offcanvas>
+
             <Offcanvas placement={"end"} show={show2} onHide={handleClose2}>
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>{props.nome}</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
+
+                <Card.Img variant="top" src={"http://18.210.124.171:8080/quadras/foto/" + props.id}/>
+
+                    <Form.Text>
+                        Descrição: {props.descricao} <br/>
+                    </Form.Text>
+
+                    <Form.Text>
+                        materiais espotivos: {props.complemento}
+                    </Form.Text>
+
                 </Offcanvas.Body>
             </Offcanvas>
+
             <Card border="success" style={{width: '18rem', color: "black"}}>
-                <Card.Img variant="top" src={"http://localhost:8080/quadras/foto/" + props.id}/>
                 <Card.Body>
                     <Card.Title>{props.nome}</Card.Title>
+
                     <Card.Text style={{color: "black"}}>
                         Limite de pessoas: {props.limite}<br></br>
-                        Descrição:{props.complemento}
+                        Descrição:{props.descricao}
                     </Card.Text>
                     <Button variant="primary" onClick={btnPrimario}>{props.primario}</Button>
                     <Button variant="primary" style={{float: "right"}} onClick={btnSecundario}>{props.secundario}</Button>

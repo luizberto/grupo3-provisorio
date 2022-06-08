@@ -9,6 +9,7 @@ import './home-template-css/css/pagamento2.css'
 import './home-template-css/css/horario.css'
 import './home-template-css/css/foto.css'
 import './home-template-css/css/foto2.css'
+import './home-template-css/css/style-home.css'
 import Routes from './routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

@@ -13,4 +13,5 @@ public interface QuadraRepository extends JpaRepository<Quadra, Integer> {
 
     @Query("SELECT u FROM Quadra u where u.dono in (select d from DonoQuadra d where d.id = :id)")
     List<Quadra> findQuadrasByDono(int id);
+    
 }

@@ -40,7 +40,7 @@ function CadastroQuadras(props){
       
     return (
         <>
-            <NavbarSecundario voltar = "/perfilAdm"/>
+            <NavbarSecundario home = "/perfilAdm"/>
             <ToastContainer
                 position="top-left"
                 autoClose={5000}

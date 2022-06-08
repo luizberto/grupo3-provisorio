@@ -1,0 +1,155 @@
+body, ul, li, a{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: 'Fira sans', sans-serif; 
+}   
+
+/*estilo de navbar*/
+
+.n-header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #04AA28;
+}
+
+.logo{
+    margin-left: 10%;
+}
+
+.n-nav{
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+    margin-top: 1%;
+}
+
+.n-li{
+    margin-left: 40%;
+    color: #FFF;
+}
+
+.n-link{
+    text-decoration: none;
+}
+
+/*fim do estilo de navbar*/
+
+/*estilo banner*/
+.n-banner{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../App/img-novo/banner22.png');
+    color: #FFF;
+    padding-top: 4%;
+}
+
+.slogan{
+    width: 5%;
+    font-size: 3.0rem;
+    margin-left: 10%;
+}
+
+.subtitulo{
+    width: 30%;
+    font-size: 1.5rem;
+    margin-left: 10%;
+}
+/*fim do estilo banner*/
+
+/*estilo missao*/
+ .missao{
+     width: 100%;
+     height: 70vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .m-titulo{
+     align-self: center;
+ }
+
+ .detalhes{
+     width: 80%;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+ }
+
+ .m-detalhe{
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 3%;
+ }
+
+ .m-detalhe p{
+    width: 95%;
+    text-align: justify;
+    font-size: 1.0rem;
+ }
+
+ .agendamento{
+     width: 100%;
+     height: 90vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+ }
+
+ .a-cards{
+     width: 80%;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+ }
+
+ .a-image-artigo{
+     width: 50%;
+ }
+
+ .a-artigo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid green 10px;
+    height: 95%;
+
+ }
+
+ .a-artigo p{
+     width: 70%;
+     text-align: center;
+     font-size: 1.4rem;
+ }
+
+ .botao{
+     cursor: pointer;
+    border: solid 3px #04AA28;
+    border-radius: 10%;
+    padding: 2%;
+    background-color: #FFF;
+ }
+/*fim do estilo missao*/
+
+.n-quadras{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,5 +1,7 @@
 package com.example.sportfy
 
+import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
@@ -14,28 +16,36 @@ class TelaHome : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val quadras = mutableListOf<String>()
 
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_tela_home)
+
         val transaction = supportFragmentManager.beginTransaction()
 
         val getQuadra = SportyApi.criar().getQuadras()
+
         getQuadra.enqueue(object : Callback<List<Quadra>> {
             override fun onResponse(call: Call<List<Quadra>>, response: Response<List<Quadra>>) {
                 if (response.isSuccessful) {
                     response.body()?.forEach { quadra ->
-                        println(quadra)
+
+
                         val argumentos = Bundle()
+
                         argumentos.putString("nome", quadra.nomeQuadra)
+                        argumentos.putInt("id", quadra.idQuadra)
+                        argumentos.putDouble("classificacao", quadra.classificacaoQuadra)
+                        //argumentos.putString("imagem", quadra.foto)
                         val fragmento = FragmentContainerView(applicationContext)
+
                         fragmento.id = View.generateViewId()
+
                         findViewById<LinearLayout>(R.id.ll_quadras).addView(fragmento)
+
                         transaction.add(fragmento.id, QuadraFragment::class.java, argumentos)
                     }
                     transaction.commitAllowingStateLoss()
-
-
                 }
 
                 Toast.makeText(
@@ -54,6 +64,13 @@ class TelaHome : AppCompatActivity() {
 
 
     }
+    fun abrirDescricao(id: Int){
+        val telaDesc = Intent(baseContext, activity_tela_agendament::class.java)
+
+        telaDesc.putExtra("id", id)
+        startActivity(telaDesc)
+    }
+
 
 
 }

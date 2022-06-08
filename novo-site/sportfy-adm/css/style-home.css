@@ -8,157 +8,134 @@ body, ul, li, a{
 }   
 
 /*estilo de navbar*/
-.navbar ul{
+
+header{
+    width: 100%;
+    height: 10vh;
     display: flex;
-    justify-content: space-around;
-}
-
-
-.navbar a{
-    color: aliceblue;
-    
-}
-
-.navbar ul span{
-    color: aliceblue;
-    font-family: 'Rambla', sans-serif;
-    margin-right: 10%;
-}
-
-.navbar{
-    display: flex;
-    justify-content: space-around;
-    padding: 23px;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content:space-between;
     background-color: #04AA28;
 }
 
-/*estilo de banner*/
-.banner{
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    background-image: url(../img/banner22.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: rgba(29, 24, 24, 0.356);
-    background-position: 100%;
-    color:#eeede6;
-    padding: 20px 10px 10px 20px;
-    height: 350px;
-}
-
-.container-banner{
-    font-size: larger;
+.logo{
     margin-left: 10%;
 }
 
-.sub-titulo{
-    width: 38%;
-    text-align: justify;
+ul{
+    display: flex;
+    margin-right: 10%;
 }
 
-/*seção de negocios*/
-.negocio{
+li{
+    margin-left: 10%;
+    color: #FFF;
+}
+
+/*fim do estilo de navbar*/
+
+/*estilo banner*/
+.banner{
     width: 100%;
-    height: 668px;
+    height: 70vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    background-image: url('../img-novo/banner22.png');
+    color: #FFF;
+    padding-top: 5%;
 }
 
-.container-negocio{
-    width: 80%;
-    height: 84%;
+.slogan{
+    width: 5%;
+    font-size: 3.0rem;
+    margin-left: 10%;
+}
+
+.subtitulo{
+    width: 30%;
+    font-size: 1.5rem;
+    margin-left: 10%;
+}
+/*fim do estilo banner*/
+
+/*estilo missao*/
+ .missao{
+     width: 100%;
+     height: 70vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .m-titulo{
+     align-self: center;
+ }
+
+ .detalhes{
+     width: 80%;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+ }
+
+ .m-detalhe{
+    width: 33.33%;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-}
+    margin-right: 3%;
+ }
 
-
-.quadro{
-    width: 33%;
-    height: 64%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.quadro p{
-    font-size: 0.8em;
-    font-weight: 700;
-    font-family: 'Roboto', sans-serif;
-    font-style: oblique;
+ .m-detalhe p{
+    width: 95%;
     text-align: justify;
-    width: 23vw;
-}
+    font-size: 1.0rem;
+ }
 
-.image1{
-    background-image: url('../img/ficha.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+ .agendamento{
+     width: 100%;
+     height: 90vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+ }
+
+ .a-cards{
+     width: 80%;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+ }
+
+ .a-image-artigo{
+     width: 50%;
+ }
+
+ .a-artigo{
     width: 50%;
-    height: 50%;
-}
-
-.image2{
-    background-image: url('../img/money.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 75%;
-    height: 50%;
-}
-
-.image3{
-    background-image: url('../img/bola.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 56%;
-    height: 50%;
-}
-
-/*inicio do resumo*/
-
-.resumo{
-    width: 80%;
-    height: 500px;
-    padding: 5%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-
-}
-
-.resumo h1{
-    width: 100%;
-    text-align: center;
-}
-
-.conteudo{
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-evenly;
     align-items: center;
-}
+    border: solid green 10px;
+    height: 95%;
 
-.artigo{
-    width: 35%;
-    height: 80%;
-    border-radius: 4%;
-    background-color: #04AA28;
-}
+ }
 
-.capa{
-    width: 50%;
-    height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+ .a-artigo p{
+     width: 70%;
+     text-align: center;
+     font-size: 1.4rem;
+ }
 
-.capa img{
-    height: 100%;
-    
-}
+ .botao{
+     cursor: pointer;
+    border: solid 3px #04AA28;
+    border-radius: 10%;
+    padding: 2%;
+    background-color: #FFF;
+ }
+/*fim do estilo missao*/

@@ -1,16 +1,7 @@
-body, ul, li, p, h1{
-    text-decoration: none;
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    font-size: 1.2rem;
-    font-family: 'Roboto'; 
-
-}
 
 /*navbar do site*/
 
-a{
+a {
     text-decoration: none;
     color: blanchedalmond;
 }
@@ -24,29 +15,11 @@ a{
     background-color: #04AA28;
 }
 
-.titulo{
-    font-style: italic;
-}
-
 .menu{
     display: flex;
 
 
 }
-
-body::-webkit-scrollbar {
-    width: 10px;               /* width of the entire scrollbar */
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: black;        /* color of the tracking area */
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: rgb(3, 53, 3);    /* color of the scroll thumb */
-    border-radius: 1x;       /* roundness of the scroll thumb */
-    border: 1px solid green;  /* creates padding around scroll thumb */
-  }
 
 .menu li a{
     display: block;
@@ -91,61 +64,6 @@ body::-webkit-scrollbar {
 
 .subMenu li a:hover{
     color: rgb(56, 247, 56);
-}
-
-/*banner com gif*/
-
-.tituloBanner{
-    display:grid;
-    color: #8AF8A2;
-    width: 440px;
-    height: 80vh;
-    text-decoration: none;
-}
-
-.tituloBanner h3{
-      text-align: start;
-}
-
-.tituloBanner button{
-    margin: auto;
-    background-color: black;
-    width: 200px;
-    border: 2px solid green;
-}
-
-.tituloBanner button:hover{
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-}
-
-.banner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url(../img/banner2.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: darken;
-    background-color: rgba(29, 24, 24, 0.356);
-    background-position: 100%;
-    color:#eeede6;
-    padding: 20px 10px 10px 20px;
-    height: 100vh;
-}
-
-.container2 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;   
-}
-
-.container9{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
 /*sobre do site*/
@@ -296,16 +214,6 @@ body::-webkit-scrollbar {
   font-family: Open Sans;
 }
 
-section {
-  width: 100%;
-  display: inline-block;
-  background: #333;
-  height: 50vh;
-  text-align: center;
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: underline;
-}
 
 .footer-distributed{
 	background: rgb(0, 0, 0);
