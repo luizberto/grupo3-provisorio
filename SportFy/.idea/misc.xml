@@ -38,6 +38,7 @@
         <entry key="app/src/main/res/layout/activity_tela_desc.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_tela_home.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_tela_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_bottom_navigation.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_detalhes.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_dynamic_android.xml" value="0.14733542319749215" />

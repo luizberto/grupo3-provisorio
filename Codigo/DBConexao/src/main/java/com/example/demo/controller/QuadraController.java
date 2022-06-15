@@ -7,8 +7,6 @@ import com.example.demo.exportacao.GravaTxt;
 import com.example.demo.lista.ListaObj;
 import com.example.demo.repositorio.EnderecoRepository;
 import com.example.demo.repositorio.QuadraRepository;
-import com.example.demo.repositorio.QuadraRepositoryDTO;
-import com.example.demo.requisicao.QuadraDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,9 +26,6 @@ public class QuadraController {
     private QuadraRepository quadraRepository;
 
     @Autowired
-    private QuadraRepositoryDTO quadraRepositoryDTO;
-
-    @Autowired
     private EnderecoRepository enderecoRepository;
 
     @PostMapping
@@ -46,15 +41,10 @@ public class QuadraController {
 
     @GetMapping("/nome/{nome}")
     public ResponseEntity getQuadraByNome(@PathVariable String nome) {
-        List<QuadraDTO> q = quadraRepositoryDTO.findQuadrasByNomeQuadraIsLike(nome);
+        List<Quadra> q = quadraRepository.findQuadrasByNomeQuadraIsLike(nome);
         return ResponseEntity.status(201).body(q);
     }
 
-    @GetMapping("/cidade/{cidade}")
-    public ResponseEntity getQuadraByCidade(@PathVariable String cidade) {
-        List<QuadraDTO> q = quadraRepositoryDTO.findQuadrasByCidade(cidade);
-        return ResponseEntity.status(201).body(q);
-    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity deleteQuadra(@PathVariable int id) {
@@ -68,7 +58,7 @@ public class QuadraController {
 
     @GetMapping
     public ResponseEntity getQuadras() {
-        List<QuadraDTO> quadras = quadraRepositoryDTO.findAll();
+        List<Quadra> quadras = quadraRepository.findAll();
         if (quadras.isEmpty()) {
             return ResponseEntity.status(204).build();
         } else {

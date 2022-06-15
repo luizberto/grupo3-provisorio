@@ -6,14 +6,14 @@ import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
+import androidx.fragment.app.FragmentContainerView
 import kotlinx.android.synthetic.main.activity_tela_agendament.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class activity_tela_agendament : AppCompatActivity() {
@@ -49,6 +49,36 @@ class activity_tela_agendament : AppCompatActivity() {
 
         })
 
+        val transaction = supportFragmentManager.beginTransaction()
+
+        val getHorarioByQuadra = SportyApi.criar().getHorarios(id)
+
+        getHorarioByQuadra.enqueue(object : Callback <List<Horario>>{
+            override fun onResponse(call: Call<List<Horario>>, response: Response<List<Horario>>) {
+                response.body()?.forEach { horario ->
+                    val fragmento = FragmentContainerView(applicationContext)
+                    val argumentos = Bundle()
+
+                    val formatter = DateTimeFormatter.ofPattern("HH:mm")
+                    val formatted = horario.dataQuadra.format(formatter)
+                    argumentos.putString("horario", formatted)
+
+
+                    fragmento.id = View.generateViewId()
+
+                    findViewById<LinearLayout>(R.id.ll_horarios).addView(fragmento)
+
+                    transaction.add(fragmento.id, FragmentBotao::class.java, argumentos)
+
+                }
+                transaction.commitAllowingStateLoss()
+            }
+
+            override fun onFailure(call: Call<List<Horario>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 }
 

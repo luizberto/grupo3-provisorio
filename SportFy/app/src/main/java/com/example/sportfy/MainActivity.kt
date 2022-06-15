@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,5 +15,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(tela2)
         }, 1500)
 
+
+
     }
+
 }
